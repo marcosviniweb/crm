@@ -9,6 +9,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { FunilComponent } from './components/pages/funil/funil.component';
 import { VendedorComponent } from './components/pages/vendedor/vendedor.component';
+import { TodosComponent } from './components/pages/funil/todos/todos.component';
+import { NovoFunilComponent } from './components/pages/funil/novo-funil/novo-funil.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { VendedorComponent } from './components/pages/vendedor/vendedor.componen
     HomeComponent,
     FunilComponent,
     VendedorComponent,
+    TodosComponent,
+    NovoFunilComponent,
   ],
   
   imports: [
