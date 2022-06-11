@@ -1,4 +1,3 @@
-import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
