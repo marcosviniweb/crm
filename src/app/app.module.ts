@@ -11,6 +11,7 @@ import { FunilComponent } from './components/pages/funil/funil.component';
 import { VendedorComponent } from './components/pages/vendedor/vendedor.component';
 import { TodosComponent } from './components/pages/funil/todos/todos.component';
 import { NovoFunilComponent } from './components/pages/funil/novo-funil/novo-funil.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NovoFunilComponent } from './components/pages/funil/novo-funil/novo-fun
     VendedorComponent,
     TodosComponent,
     NovoFunilComponent,
+    LoginComponent,
   ],
   
   imports: [
