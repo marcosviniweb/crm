@@ -1,3 +1,4 @@
+import { FunilRoutingModule } from './components/pages/funil/funil.routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -12,6 +13,8 @@ import { VendedorComponent } from './components/pages/vendedor/vendedor.componen
 import { TodosComponent } from './components/pages/funil/todos/todos.component';
 import { NovoFunilComponent } from './components/pages/funil/novo-funil/novo-funil.component';
 import { LoginComponent } from './login/login.component';
+import { NavbarComponent } from './components/pages/funil/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
@@ -20,15 +23,17 @@ import { LoginComponent } from './login/login.component';
     HomeComponent,
     FunilComponent,
     VendedorComponent,
-    TodosComponent,
-    NovoFunilComponent,
     LoginComponent,
+    NavbarComponent,
+    NovoFunilComponent,
+    TodosComponent
   ],
-  
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FunilRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

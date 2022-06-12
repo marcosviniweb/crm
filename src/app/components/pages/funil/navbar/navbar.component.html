@@ -1,0 +1,16 @@
+<app-header></app-header>
+<nav class="navbar">
+  <div class="nav-content">
+    <div class="back" id="back" [routerLink]="['/home']">
+      <fa-icon [icon]="back"></fa-icon>
+    </div>
+    <div class="add-funnel" id="add-funnel"  [routerLink]="['/funil/add']">
+      <img src="assets/img/botao-adicionar.png" alt="">
+      <p>Adicionar novo funil</p>
+    </div>
+    <div class="all-funnels" id="all-funnels" [routerLink]="['/funil/all']">
+      <fa-icon [icon]="allFunnels"></fa-icon>
+      <p>Mostrar todos os funis</p>
+    </div>
+  </div>
+</nav>

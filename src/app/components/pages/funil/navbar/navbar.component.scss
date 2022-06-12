@@ -1,0 +1,71 @@
+.navbar {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: #efab35;
+  box-shadow: 2px 3px 5px gray;
+}
+
+.nav-content {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 68%;
+  fa-icon{
+    font-size: 30px;
+    color: white;
+  }
+  p{
+    font-size: 17px;
+    color: rgb(243, 243, 243);
+    font-weight: 600;
+  }
+
+  img{
+    width: 36px;
+    height: 36px;
+  }
+  .back{
+    margin-right: 30px;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 1px;
+  }
+  .all-funnels{
+    margin-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 230px;
+    border: 3px solid white;
+    border-radius: 10px;
+  }
+
+  .add-funnel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 230px;
+    border: 3px solid white;
+    border-radius: 10px;
+  }
+}
+
+#back:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
+#add-funnel:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
+#all-funnels:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
