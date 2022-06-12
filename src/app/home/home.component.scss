@@ -144,9 +144,8 @@ main{
 
 
     .resume{
-        display: flex;
-        flex-direction: column;
-        width: 500px;
+
+        width: 550px;
         height: 350px;
         background-color: #ffffff;
         border-radius: 20px;
@@ -155,15 +154,17 @@ main{
 
           width: max-content;
           margin: 20px;
+          margin-bottom: -20px;
           margin-left: 50px;
           font-size: 20px;
           color: #5855d6;
         }
         .info{
-          display: flex;
-          flex-flow: column wrap;
-          height: 300px;
-          justify-content: space-evenly;
+          display: grid;
+          grid-template-columns: 50% 50%;
+          text-align: center;
+          padding: 30px;
+          justify-content: center;
           align-items: center;
           .tag{
             font-size: 18px;
@@ -172,13 +173,10 @@ main{
           }
 
           .contacts,.sales,.tasks,.gain{
-            margin: 5px;
+            margin: 10px;
             border-radius: 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 150px;
+
+
             padding: 30px;
           }
           .contacts{
@@ -198,7 +196,7 @@ main{
       .activity-flow{
         display: flex;
         flex-direction: column;
-        width: 500px;
+        width: 550px;
         height: 350px;
         background-color: #ffffff;
         border-radius: 20px;
@@ -452,4 +450,8 @@ main{
 #seller:hover {
   border: #22c7fb solid 2px;
   cursor: pointer;
+}
+
+.text-button{
+     font-size: 25px;
 }
