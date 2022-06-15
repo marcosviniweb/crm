@@ -1,5 +1,6 @@
 
-.navbar {
+
+.userBar {
   width: 100%;
   padding: 10px;
   box-shadow: 1px 5px 8px gray;
@@ -86,7 +87,7 @@
 
     fa-icon{
       margin-top: 5px;
-      color: #eee;
+      color: #6e83b7;
       font-size: 40px;
 
     }
@@ -97,15 +98,112 @@
     fa-icon {
       width: 30px;
       height: 30px;
-      color: rgb(202, 202, 202);
+      color: gray;
+    }
+    fa-icon:hover{
+      color: black;
     }
   }
   .out {
     margin-left: 25px;
     fa-icon{
       font-size: 18px;
-      color: rgb(224, 224, 224);
+      color: gray;
     }
+    fa-icon:hover{
+      color: black;
+    }
+
   }
 }
 
+//NavBar
+
+.navbar {
+  display: inline-flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 5px;
+  background-color: #efab35;
+  box-shadow: 2px 3px 5px gray;
+}
+
+.nav-content {
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 68%;
+  fa-icon{
+    font-size: 30px;
+    color: white;
+  }
+  p{
+    font-size: 17px;
+    color: rgb(243, 243, 243);
+    font-weight: 600;
+  }
+
+  img{
+    width: 36px;
+    height: 36px;
+  }
+  .back{
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    width: 50px;
+    border: 3px solid white;
+    border-radius: 5px;
+  }
+  .all-funnels{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 250px;
+    border: 3px solid white;
+    border-radius: 10px;
+  }
+
+  .add-funnel{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 230px;
+    border: 3px solid white;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+}
+
+#back:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
+#add-funnel:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
+#all-funnels:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}
+
+.add-vendedor{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 260px;
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+#add-vendedor:hover {
+  border: 3px solid rgb(207, 207, 207);
+  cursor: pointer;
+}

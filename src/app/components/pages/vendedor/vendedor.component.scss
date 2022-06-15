@@ -1,0 +1,68 @@
+main{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.content{
+  width: 69%;
+  margin-top: 70px;
+
+  .title{
+    p{
+      font-size: 17px;
+      font-weight: 500;
+      padding-bottom: 20px;
+      border-bottom: 1px solid gray;
+      box-shadow: 5px;
+    }
+  }
+
+  .saller{
+    margin-top: 50px;
+    .saller-content{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 3px 3px 5px gray;
+
+      .userIcon{
+        font-size: 40px;
+        margin-right: 10px;
+        color: #6e83b7;
+      }
+      p{
+        font-size: 18px;
+      }
+
+      .saller-name{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+}
+
+#actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90px;
+  img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  fa-icon{
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0;
+  }
+}
+
+

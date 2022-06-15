@@ -8,19 +8,21 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FunilModule } from './components/pages/funil/funil.module';
+import { VendedorModule } from './components/pages/vendedor/vendedor.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
  ],
 
   imports: [
     BrowserModule,
     AppRoutingModule,
     FunilModule,
+    VendedorModule,
     FontAwesomeModule,
   ],
 

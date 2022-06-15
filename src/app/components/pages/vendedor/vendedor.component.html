@@ -1,1 +1,23 @@
-<p>vendedor works!</p>
+<app-header></app-header>
+<main>
+  <div class="content">
+    <div class="title">
+      <p>Nome do vendedor(1)</p>
+    </div>
+    <div class="saller">
+      <div class="saller-content">
+        <div class="saller-name">
+          <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
+        <p>Fonseca Santos</p>
+        </div>
+        <div id="actions">
+          <div id="actions">
+            <fa-icon [icon]="view" [routerLink]="['/funil/all/add']"></fa-icon>
+            <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit']"></fa-icon>
+            <fa-icon [icon]="delete"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

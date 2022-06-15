@@ -8,7 +8,6 @@ import { FunilComponent } from './funil.component';
 import { NovoFunilComponent } from './novo-funil/novo-funil.component';
 import { EditFunilComponent } from './todos-funil/edit-funil/edit-funil.component';
 import { AddVendedorComponent } from './todos-funil/add-vendedor/add-vendedor.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { FuniRoutingModule } from './funil.routing.module';
 import { HeaderComponent } from '../../header/header.component';
 
@@ -17,7 +16,6 @@ import { HeaderComponent } from '../../header/header.component';
 @NgModule({
   declarations: [
     HeaderComponent,
-    NavbarComponent,
     FunilComponent,
     NovoFunilComponent,
     TodosFunilComponent,

@@ -73,9 +73,9 @@ main{
         justify-content: space-between;
         align-items: center;
         background-color: white;
-        padding: 10px;
         padding-left: 15px;
         padding-right: 90px;
+        box-shadow: 3px 3px 5px gray;
         p{
           font-size: 14px;
           font-weight: 600;
@@ -89,8 +89,10 @@ main{
           justify-content: space-between;
           align-items: center;
           width: 180px;
-          fa-icon{
+          .userIcon{
             font-size: 40px;
+            color: #6e83b7;
+
           }
         }
 
