@@ -1,0 +1,65 @@
+main{
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.content{
+  width: 69%;
+  margin-top: 100px;
+
+  .title{
+    p{
+      font-size: 17px;
+      font-weight: 600;
+    }
+  }
+
+  .funnels{
+    margin-top: 20px;
+    .funnels-content{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: white;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: 3px 3px 5px gray;
+
+      fa-icon{
+        font-size: 30px;
+        margin-right: 10px;
+        color: black;
+      }
+      p{
+        font-size: 18px;
+      }
+
+      .funnel-name{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+  }
+}
+
+#actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90px;
+  img{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  fa-icon{
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0;
+  }
+}
+
+

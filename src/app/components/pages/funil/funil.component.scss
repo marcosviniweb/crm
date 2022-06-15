@@ -1,0 +1,105 @@
+main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.content{
+  display: flex;
+  width: 68%;
+  max-width: 1200px;
+  flex-direction: column;
+
+  .filters{
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .filter{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      p{
+        font-size: 1.2em;
+        margin-right: 15px;
+      }
+      select {
+        width: 180px;
+        font-size: 1em;
+        text-indent: 5px;
+        padding: 3px;
+        border-radius: 5px;
+        background-color: white;
+        color: gray;
+      }
+    }
+
+  }
+  .info-content{
+    margin-top: 25px;
+
+    .title{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      padding-left: 15px;
+      padding-right: 10px;
+      padding-bottom: 20px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid rgb(184, 182, 182);
+
+
+      p{
+
+        font-size: 18px;
+        font-weight: 700;
+        color: black;
+      }
+    }
+
+    .inform{
+      .title-inform{
+        h2{
+          font-size: 17px;
+          padding-left: 10px;
+        }
+      }
+      .inform-content{
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 10px;
+        padding-left: 15px;
+        padding-right: 90px;
+        p{
+          font-size: 14px;
+          font-weight: 600;
+          color: gray;
+
+        }
+
+        .name{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          width: 180px;
+          fa-icon{
+            font-size: 40px;
+          }
+        }
+
+
+
+      }
+
+
+    }
+
+  }
+}

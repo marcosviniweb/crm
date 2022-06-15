@@ -3,7 +3,7 @@
   <div class="content">
     <div class="add-funnel">
       <div class="title">
-        <p>Criar um novo funil</p>
+        <p>Adicionar Vendedor</p>
       </div>
       <form class="form" autocomplete="off" >
         <div class="form">
@@ -14,20 +14,23 @@
           <label for="company">Empresa</label>
           <input type="text" id="company" >
         </div>
-        <div class="form">
-          <label for="phase-funnel">Fase do Funil</label>
-          <input type="text" id="phase-funnel" >
+        <div class="saller">
+          <p>Adicionar vendedor no funil</p>
+          <div class="saller-selector">
+            <input type="checkbox" id="saller">
+            <label for="saller">Todos os vendedores</label>
+          </div>
         </div>
-        <div class="add-phase">
-          <button id="add-phase">
+        <div class="add-saller">
+          <button id="add-saller">
             <fa-icon [icon]="add"></fa-icon>
             <p>Adicionar fase</p>
           </button>
         </div>
       </form>
-      <div class="create">
-        <button id="create">
-          <p>Criar</p>
+      <div class="edit">
+        <button id="edit">
+          <p>Editar</p>
         </button>
       </div>
     </div>

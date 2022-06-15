@@ -65,7 +65,7 @@ main{
         button{
           display: flex;
           flex-direction: row;
-          width: 130px;
+          width: 150px;
           justify-content: space-around;
           align-items: center;
           padding: 8px;
@@ -89,7 +89,7 @@ main{
       }
     }
 
-    .create{
+    .edit{
       display: flex;
       width:100%;
       justify-content: center;
@@ -121,7 +121,10 @@ main{
   cursor: pointer;
 }
 
-#create:hover {
+#edit:hover {
   box-shadow: 4px 4px 5px gray;
   cursor: pointer;
+  fa-icon{
+    font-size: 12px;
+  }
 }

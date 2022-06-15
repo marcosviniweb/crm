@@ -38,6 +38,11 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //voltar para home
+  backPage(){
+    sessionStorage.setItem("back", "/home")
+  }
+
   timeSelect(a:string){
 
   let borderSelect = function(yes:string,no1:string,no2:string){

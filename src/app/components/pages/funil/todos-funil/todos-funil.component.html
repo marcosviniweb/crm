@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+<main>
+  <div class="content">
+    <div class="title">
+      <p>Todos os Funis (3)</p>
+    </div>
+    <div class="funnels">
+      <div class="funnels-content">
+        <div class="funnel-name">
+          <fa-icon [icon]="funnel"></fa-icon>
+        <p>Vendas pelo whatsapp</p>
+        </div>
+        <div id="actions">
+          <div id="actions">
+            <img src="assets/img/add.png" alt="Adicionar" (click)="backPage('back')" [routerLink]="['/funil/all/add']">
+            <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit']"></fa-icon>
+            <fa-icon [icon]="delete"></fa-icon>
+          </div>
+        </div>
+      </div>
+      <div class="funnels-content">
+        <div class="funnel-name">
+          <fa-icon [icon]="funnel"></fa-icon>
+        <p>Vendas pelas redes socias</p>
+        </div>
+        <div id="actions">
+          <img src="assets/img/add.png" alt="Adicionar" (click)="backPage('back')" [routerLink]="['/funil/all/add']">
+          <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit']"></fa-icon>
+          <fa-icon [icon]="delete"></fa-icon>
+        </div>
+      </div>
+      <div class="funnels-content">
+        <div class="funnel-name">
+          <fa-icon [icon]="funnel"></fa-icon>
+        <p>Vendas pelo site</p>
+        </div>
+        <div id="actions">
+          <img src="assets/img/add.png" alt="Adicionar" (click)="backPage('back')" [routerLink]="['/funil/all/add']">
+          <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit']"></fa-icon>
+          <fa-icon [icon]="delete"></fa-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+

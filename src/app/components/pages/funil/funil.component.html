@@ -1,1 +1,54 @@
 <app-navbar></app-navbar>
+<main>
+  <div class="content">
+    <div class="filters">
+      <div class="filter">
+        <p>Tipo de Funil:</p>
+        <select>
+          <option value="instagram">Vendas Instagram</option>
+        </select>
+      </div>
+      <div class="filter">
+        <p>Responsável:</p>
+        <select>
+          <option value="victorSanches">Victor Sanches</option>
+        </select>
+      </div>
+      <div class="filter">
+        <p>Etapas:</p>
+        <select>
+          <option value="todas">Todas as Etapas</option>
+        </select>
+      </div>
+    </div>
+    <div class="info-content">
+      <div class="title">
+        <p >Nome do Lead</p>
+        <p >Responsável</p>
+        <p >Última atualização</p>
+        <p >Úlitma tarefa Realizada</p>
+      </div>
+      <div class="inform">
+        <div class="title-inform">
+          <h2>Todas as etapas (1)</h2>
+        </div>
+        <!-- ngfor -->
+        <div class="inform-content" >
+          <div class="name">
+            <fa-icon [icon]="userIcon"></fa-icon>
+            <p>Ricardo Lafuente</p>
+          </div>
+          <div class="phase-info">
+            <p>Prospecção</p>
+          </div>
+          <div class="date">
+            <p>20/03/2022 ás 14:35</p>
+          </div>
+          <div class="info-task">
+            <p>Contato adicionado</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
