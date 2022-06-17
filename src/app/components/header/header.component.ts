@@ -35,6 +35,7 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this.routes)
     this.backPage()
   }
 
@@ -63,6 +64,21 @@ export class HeaderComponent implements OnInit {
     }
     if(this.routes == 'vendedor/new'){
       this.routerBack = '/vendedor'
+    }
+    if(this.routes == 'vendedor/edit'){
+      this.routerBack = '/vendedor'
+    }
+    if(this.routes == 'vendedor/details'){
+      this.routerBack = '/vendedor'
+    }
+    if(this.routes == 'landingPage'){
+      this.routerBack = '/home'
+    }
+    if(this.routes == 'landingPage/new'){
+      this.routerBack = '/landingPage'
+    }
+    if(this.routes == 'landingPage/edit'){
+      this.routerBack = '/landingPage'
     }
 
   }

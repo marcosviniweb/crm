@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { FunilModule } from './components/pages/funil/funil.module';
 import { VendedorModule } from './components/pages/vendedor/vendedor.module';
+import { LandingPageModule } from './components/pages/landing-page/landing-page.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { VendedorModule } from './components/pages/vendedor/vendedor.module';
     AppRoutingModule,
     FunilModule,
     VendedorModule,
+    LandingPageModule,
     FontAwesomeModule,
   ],
 
