@@ -5,10 +5,11 @@
           </div>
           <div class = "info-login">
                   <h2> Login</h2><br><br>
-                  <input type="text" placeholder="Usuário: "/>
-                  <input type="password" placeholder="Senha: "/>
+                  <input type="email" name = "email" [(ngModel)]="userLogin.email" placeholder="Usuário: "/>
+                  <input type="password" name = "password" [(ngModel)]="userLogin.password" placeholder="Senha: " [(ngModel)]="userLogin.password"/>
                   <div align = "center"><Br>
-                     <button class = "button" [routerLink]="['/home']">Login</button>
+                     <button class = "button"  (click)="login()">Login</button>
+
                   </div>
           </div>
      </div>
