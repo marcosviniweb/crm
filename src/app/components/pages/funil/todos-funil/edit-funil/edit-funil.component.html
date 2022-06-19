@@ -19,7 +19,7 @@
           <div class="form">
             <div class="form" >
 
-          <input type="text" id="fase"    (ngModelChange)="alterar()" [(ngModel)] = "FaseEdit" name = "fase" >
+          <input type="text" id="fase"    (ngModelChange)="alterar($event)" [(ngModel)] = "FaseEdit" name = "fase" >
             </div>
         </div>
 
@@ -32,7 +32,7 @@
 
       </form><Br>
       <div class="edit">
-        <button id="edit" (click)="alterar()">
+        <button id="edit" (click)="editar()">
           <p>Editar</p>
         </button>
       </div>

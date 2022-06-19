@@ -39,8 +39,9 @@ export class IdeaService {
     var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where('id', '==', id)).valueChanges()
     return ordenacao
    }
-   getFases(id: string){
-    var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where("fase","array-contains", "FASE 01")).valueChanges()
-    return ordenacao
-   }
+   editarFunil(id: any, dados: any){
+    return this.afs.collection('Funil').doc(id).update(dados)
+ }
+
+
 }

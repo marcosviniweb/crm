@@ -22,6 +22,7 @@ export class EditFunilComponent implements OnInit {
    FaseEdit: string = "";
    index: any;
    item: any;
+   id: string = "";
   //private funilSubscriptions : Subscription;
 
   add = faPlus
@@ -31,15 +32,11 @@ export class EditFunilComponent implements OnInit {
     private router: Router,
     private activeRoute: ActivatedRoute
   ) {
-       let id = this.activeRoute.snapshot.params['id'];
-       this.service.getFunilId(id).subscribe(res =>{
+       this.id = this.activeRoute.snapshot.params['id'];
+       this.service.getFunilId(this.id ).subscribe(res =>{
         this.funil = res;
         for(let item of this.funil){
-
           this.arrayFase = item.fase
-
-          console.log(this.fases.length);
-
         }
         console.log(res)
       })
@@ -53,18 +50,18 @@ export class EditFunilComponent implements OnInit {
         this.FaseEdit =  this.arrayFase[index]
    }
 
-   alterar(){
-
-
-      this.arrayFase[this.index] =  this.FaseEdit
+   alterar(event: any){
+      console.log(event)
+      this.arrayFase[this.index] =  event
       console.log(this.FaseEdit)
-
-
    }
   ngOnInit(): void {
   }
 
   editar(){
+        console.log( this.funil[0])
+
+      this.service.editarFunil(this.id, this.funil[0] )
 
   }
 
