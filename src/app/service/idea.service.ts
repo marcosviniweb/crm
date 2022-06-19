@@ -14,7 +14,7 @@ export interface Idea {
 export class IdeaService {
   //private ideas: Observable<Idea[]>;
   //private ideaCollection: AngularFirestoreCollection<Idea>;
-  private funil = this.afs.collection<Funil>('Funil');
+  public funil = this.afs.collection<Funil>('Funil');
 
   constructor(
     public afs: AngularFirestore
@@ -35,8 +35,12 @@ export class IdeaService {
     );
    }
 
-   getFunilId(id: string){
+   getFunilId(id: string): Observable<Funil[]>{
     var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where('id', '==', id)).valueChanges()
+    return ordenacao
+   }
+   getFases(id: string){
+    var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where("fase","array-contains", "FASE 01")).valueChanges()
     return ordenacao
    }
 }

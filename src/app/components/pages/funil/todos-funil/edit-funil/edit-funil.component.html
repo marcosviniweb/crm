@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main>
-  <div class="content">
+  <div class="content" *ngFor = "let item of funil">
     <div class="add-funnel">
       <div class="title">
         <p>Editar funil</p>
@@ -8,25 +8,31 @@
       <form class="form" autocomplete="off" >
         <div class="form">
           <label for="name">Nome do Funil</label>
-          <input type="text" id="name" >
+          <input type="text" id="nome" name = "nome" placeholder = "item.nome" [(ngModel)] = "item.nome">
         </div>
         <div class="form">
           <label for="company">Empresa</label>
-          <input type="text" id="company" >
+          <input type="text" id="empresa"  name = "empresa" [(ngModel)] = "item.empresa">
+        </div><br>
+        <label for="phase-funnel">Fases Cadastradas: </label>
+        <!-- <div class="form" *ngFor="let fase of fases; index as i; "> -->
+          <div class="form">
+            <div class="form" >
+
+          <input type="text" id="fase"    (ngModelChange)="alterar()" [(ngModel)] = "FaseEdit" name = "fase" >
+            </div>
         </div>
-        <div class="form">
-          <label for="phase-funnel">Fase do Funil</label>
-          <input type="text" id="phase-funnel" >
+
+        <div *ngFor="let item of arrayFase">
+          <h4 >
+                {{item}}
+          </h4>
+          <fa-icon [icon]="add" (click) = "editarFase(item)"></fa-icon>
         </div>
-        <div class="add-phase">
-          <button id="add-phase">
-            <fa-icon [icon]="add"></fa-icon>
-            <p>Adicionar fase</p>
-          </button>
-        </div>
-      </form>
+
+      </form><Br>
       <div class="edit">
-        <button id="edit">
+        <button id="edit" (click)="alterar()">
           <p>Editar</p>
         </button>
       </div>

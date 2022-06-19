@@ -15,8 +15,14 @@ import { IdeaService } from 'src/app/service/idea.service';
 export class EditFunilComponent implements OnInit {
 
 
-  public funil = new Array<Funil>();
-  private funilSubscriptions : Subscription;
+   funil : any;
+   tamanhoArray:any;
+   fases:any = []
+   arrayFase:any = []
+   FaseEdit: string = "";
+   index: any;
+   item: any;
+  //private funilSubscriptions : Subscription;
 
   add = faPlus
   constructor(
@@ -26,14 +32,40 @@ export class EditFunilComponent implements OnInit {
     private activeRoute: ActivatedRoute
   ) {
        let id = this.activeRoute.snapshot.params['id'];
-       this.funilSubscriptions = this.service.getFunilId(id).subscribe(res =>{
+       this.service.getFunilId(id).subscribe(res =>{
         this.funil = res;
-        console.log(this.funil)
+        for(let item of this.funil){
+
+          this.arrayFase = item.fase
+
+          console.log(this.fases.length);
+
+        }
+        console.log(res)
       })
    }
 
+   editarFase(item: any){
+        this.item = item;
+        let index = this.arrayFase.indexOf(item)
+        this.index = this.arrayFase.indexOf(item)
+        console.log(this.index )
+        this.FaseEdit =  this.arrayFase[index]
+   }
+
+   alterar(){
+
+
+      this.arrayFase[this.index] =  this.FaseEdit
+      console.log(this.FaseEdit)
+
+
+   }
   ngOnInit(): void {
   }
 
+  editar(){
+
+  }
 
 }
