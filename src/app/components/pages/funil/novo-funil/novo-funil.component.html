@@ -8,15 +8,15 @@
       <form class="form" autocomplete="off" >
         <div class="form">
           <label for="name">Nome do Funil</label>
-          <input type="text" id="nome"  name = "nome" [(ngModel)]="Dadosfunil.nome">
+          <input required  type="text" id="nome"  name = "nome" [(ngModel)]="Dadosfunil.nome">
         </div>
         <div class="form">
           <label for="company">Empresa</label>
-          <input type="text" id="empresa" name = "empresa" [(ngModel)]="Dadosfunil.empresa"  >
+          <input required  type="text" id="empresa" name = "empresa" [(ngModel)]="Dadosfunil.empresa"  >
         </div>
         <div class="form">
           <label for="phase-funnel">Fase do Funil</label>
-          <input type="text" id="fase"  name = "fase" [(ngModel)]="Dadosfunil.fase" >
+          <input required  type="text" id="fase"  name = "fase" [(ngModel)]="Dadosfunil.fase" >
         </div>
         <div class="add-phase">
           <button id="add-phase" (click)="criarFase()">
@@ -32,7 +32,7 @@
         </div>
       </form>
       <div class="create">
-        <button id="create" (click)="addFunil()">
+        <button id="create" (click)="addFunil()" [disabled]="!Dadosfunil">
           <p>Criar</p>
         </button>
       </div>

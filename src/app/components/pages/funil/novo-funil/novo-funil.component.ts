@@ -4,6 +4,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { IdeaService } from 'src/app/service/idea.service';
 import { isNgTemplate } from '@angular/compiler';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-novo-funil',
   templateUrl: './novo-funil.component.html',
@@ -19,7 +20,8 @@ export class NovoFunilComponent implements OnInit {
   add = faPlus
   constructor(
     public fireservice: AngularFirestore,
-    public service: IdeaService
+    public service: IdeaService,
+    private router: Router
   ) { }
 
 
@@ -57,8 +59,15 @@ export class NovoFunilComponent implements OnInit {
            fase: fase
          }
      ]
-     console.log(dados[0])
-     this.service.criarFunil(id, dados[0]);
+     try{
+      console.log(dados[0])
+      this.service.criarFunil(id, dados[0]);
+      this.router.navigate(['/home'])
+     }catch(error){
+      console.log(error);
+     }
+
+
   }
 
 
