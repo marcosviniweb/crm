@@ -19,10 +19,16 @@
           <input type="text" id="fase"  name = "fase" [(ngModel)]="Dadosfunil.fase" >
         </div>
         <div class="add-phase">
-          <button id="add-phase">
+          <button id="add-phase" (click)="criarFase()">
             <fa-icon [icon]="add"></fa-icon>
             <p>Adicionar fase</p>
           </button>
+        </div>
+        <div *ngFor="let item of arrayFase">
+          <h4 >
+                {{item}}
+          </h4>
+          <fa-icon [icon]="add" (click) = "deleteFase(item)"></fa-icon>
         </div>
       </form>
       <div class="create">
