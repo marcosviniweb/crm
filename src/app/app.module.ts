@@ -15,6 +15,7 @@ import { AngularFireModule } from "@angular/fire/compat";
 import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
     FontAwesomeModule,
     AngularFireAuthModule,
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    AngularFirestoreModule
 
   ],
 

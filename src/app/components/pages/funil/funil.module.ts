@@ -10,7 +10,7 @@ import { EditFunilComponent } from './todos-funil/edit-funil/edit-funil.componen
 import { AddVendedorComponent } from './todos-funil/add-vendedor/add-vendedor.component';
 import { FuniRoutingModule } from './funil.routing.module';
 import { HeaderComponent } from '../../header/header.component';
-
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -27,7 +27,8 @@ import { HeaderComponent } from '../../header/header.component';
   imports: [
     CommonModule,
     FontAwesomeModule,
-    FuniRoutingModule
+    FuniRoutingModule,
+    FormsModule
   ],
 
   exports: [
