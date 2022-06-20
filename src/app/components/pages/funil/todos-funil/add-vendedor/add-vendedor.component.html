@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main>
-  <div class="content">
+  <div class="content"  *ngFor = "let item of funil">
     <div class="add-funnel">
       <div class="title">
         <p>Adicionar Vendedor</p>
@@ -8,11 +8,11 @@
       <form class="form" autocomplete="off" >
         <div class="form">
           <label for="name">Nome do Funil</label>
-          <input type="text" id="name" >
+          <input type="text" id="name"  readonly name = "nome" [(ngModel)] = "item.nome">
         </div>
         <div class="form">
           <label for="company">Empresa</label>
-          <input type="text" id="company" >
+          <input type="text"  readonly name = "empresa" [(ngModel)] = "item.empresa" >
         </div>
         <div class="saller">
           <p>Adicionar vendedor no funil</p>
@@ -21,12 +21,7 @@
             <label for="saller">Todos os vendedores</label>
           </div>
         </div>
-        <div class="add-saller">
-          <button id="add-saller">
-            <fa-icon [icon]="add"></fa-icon>
-            <p>Adicionar fase</p>
-          </button>
-        </div>
+
       </form>
       <div class="edit">
         <button id="edit">
