@@ -21,9 +21,11 @@ const routes: Routes = [
   {path:'vendedor', component:VendedorComponent},
   {path:'vendedor/new', component:NovoVendedorComponent},
   {path:'vendedor/edit', component:EditarVendedorComponent},
+  {path:'vendedor/edit/:id', component:EditarVendedorComponent},
   {path:'vendedor/details', component:DetalhesVendedorComponent,
   children:[
     {path:'historic', component:HistoricoComponent },
+    {path:'historic/:id', component:HistoricoComponent },
     {path:'email', component:EmailComponent },
     {path:'tasks', component:TarefasComponent },
     {path:'products', component:ProdutosComponent },
