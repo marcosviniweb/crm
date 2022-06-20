@@ -1,8 +1,9 @@
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { Funil } from 'src/app/interfaces/funil';
 import { IdeaService } from 'src/app/service/idea.service';
@@ -24,7 +25,8 @@ export class EditFunilComponent implements OnInit {
    item: any;
    id: string = "";
   //private funilSubscriptions : Subscription;
-
+  funnel = faFilter
+  edit = faEdit
   add = faPlus
   constructor(
     public fireservice: AngularFirestore,

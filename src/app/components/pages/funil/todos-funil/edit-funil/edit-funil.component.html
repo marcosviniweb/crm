@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
   <div class="content" *ngFor = "let item of funil">
-    <div class="add-funnel">
+    <div class="edit-funnel">
       <div class="title">
         <p>Editar funil</p>
       </div>
@@ -13,26 +13,24 @@
         <div class="form">
           <label for="company">Empresa</label>
           <input type="text" id="empresa"  name = "empresa" [(ngModel)] = "item.empresa">
-        </div><br>
-        <label for="phase-funnel">Fases Cadastradas: </label>
-        <!-- <div class="form" *ngFor="let fase of fases; index as i; "> -->
-          <div class="form">
-            <div class="form" >
-
+        </div>
+        <div class="form">
+          <label for="phase-funnel">Fases Cadastradas: </label>
           <input type="text" id="fase"    (ngModelChange)="alterar($event)" [(ngModel)] = "FaseEdit" name = "fase" >
-            </div>
         </div>
-
-        <div *ngFor="let item of arrayFase">
-          <h4 >
-                {{item}}
-          </h4>
-          <fa-icon [icon]="add" (click) = "editarFase(item)"></fa-icon>
+      </form>
+      <div class="funnels">
+        <div class="funnels-content" *ngFor="let item of arrayFase" >
+          <div class="funnel">
+            <fa-icon [icon]="funnel">
+            </fa-icon>
+            <p>{{item}}</p>
+          </div>
+          <fa-icon [icon]="edit" (click)="editarFase(item)"></fa-icon>
         </div>
-
-      </form><Br>
+      </div>
       <div class="edit">
-        <button id="edit" (click)="editar()">
+      <button id="edit" (click)="editar()">
           <p>Editar</p>
         </button>
       </div>
