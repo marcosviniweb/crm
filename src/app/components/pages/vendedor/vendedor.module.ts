@@ -15,7 +15,7 @@ import { TarefasComponent } from './detalhes-vendedor/tarefas/tarefas.component'
 import { NovoProdutoComponent } from './detalhes-vendedor/produtos/novo-produto/novo-produto.component';
 import { EnviarEmailComponent } from './detalhes-vendedor/email/enviar-email/enviar-email.component';
 import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nova-tarefa.component';
-
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -37,7 +37,8 @@ import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nov
     CommonModule,
     FontAwesomeModule,
     VendedorRoutingModule,
-    FunilModule
+    FunilModule,
+    FormsModule
   ]
 })
 export class VendedorModule { }

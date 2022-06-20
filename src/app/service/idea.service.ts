@@ -4,6 +4,7 @@ import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { first } from 'rxjs/operators';
 import { Funil } from 'src/app/interfaces/funil';
+import { Vendedor } from "../interfaces/vendedor";
 export interface Idea {
    nome:'',
 
@@ -15,6 +16,7 @@ export class IdeaService {
   //private ideas: Observable<Idea[]>;
   //private ideaCollection: AngularFirestoreCollection<Idea>;
   public funil = this.afs.collection<Funil>('Funil');
+  public vendedor = this.afs.collection<Vendedor>('Vendedor');
 
   constructor(
     public afs: AngularFirestore
@@ -39,9 +41,13 @@ export class IdeaService {
     var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where('id', '==', id)).valueChanges()
     return ordenacao
    }
-   editarFunil(id: any, dados: any){
-    return this.afs.collection('Funil').doc(id).update(dados)
- }
+      editarFunil(id: any, dados: any){
+        return this.afs.collection('Funil').doc(id).update(dados)
+    }
+
+    cadastrarVendedor(id: any, dados: any){
+      return this.afs.collection('Vendedor').doc(id).set(dados)
+    }
 
 
 }
