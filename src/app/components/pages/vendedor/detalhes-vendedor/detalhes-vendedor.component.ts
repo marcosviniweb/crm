@@ -12,4 +12,8 @@ export class DetalhesVendedorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectButton(id:string){
+
+  
+  }
 }

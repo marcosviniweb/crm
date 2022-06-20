@@ -1,1 +1,9 @@
 <app-header></app-header>
+<nav class="menu">
+  <button routerLinkActive="active" (click)="selectButton('historic')" routerLink="/vendedor/details/historic" >Histórico</button>
+  <button routerLinkActive="active" (click)="selectButton('email')" routerLink="/vendedor/details/email" >Email</button>
+  <button routerLinkActive="active" (click)="selectButton('tasks')" routerLink="/vendedor/details/tasks" >Tarefas</button>
+  <button routerLinkActive="active" (click)="selectButton('products')" routerLink="/vendedor/details/products" >Produtos e Serviços</button>
+</nav>
+<router-outlet></router-outlet>
+
