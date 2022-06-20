@@ -41,7 +41,7 @@ export class IdeaService {
     var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where('id', '==', id)).valueChanges()
     return ordenacao
    }
-      editarFunil(id: any, dados: any){
+   editarFunil(id: any, dados: any){
         return this.afs.collection('Funil').doc(id).update(dados)
     }
 
@@ -60,6 +60,17 @@ export class IdeaService {
         })
       );
      }
+
+     getvendedorId(id: string): Observable<Vendedor[]>{
+      var ordenacao =  this.afs.collection<Vendedor>("Vendedor", ref => ref.where('id', '==', id)).valueChanges()
+      return ordenacao
+     }
+
+  editarVendedor(id: any, dados: any){
+      return this.afs.collection('Vendedor').doc(id).update(dados)
+   }
+
+
 
 
 }

@@ -28,9 +28,20 @@ export class NovoVendedorComponent implements OnInit {
   async add(){
         // console.log(this.vendedor)
       let id = this.fireservice.createId();
+      let dados = [
+        {
+          id: id,
+          cpf: this.vendedor.cpf,
+          email: this.vendedor.email,
+          empresa: this.vendedor.empresa,
+          endereco: this.vendedor.endereco,
+          nome: this.vendedor.nome,
+          telefone: this.vendedor.telefone,
+        }
+      ]
       try{
         await this.afa.createUserWithEmailAndPassword(this.vendedor.email, this.vendedor.senha);
-        this.service.cadastrarVendedor(id, this.vendedor);
+        this.service.cadastrarVendedor(id, dados);
         alert('Cadastrado com sucesso');
         this.router.navigate(['vendedor'])
       }catch(error){
