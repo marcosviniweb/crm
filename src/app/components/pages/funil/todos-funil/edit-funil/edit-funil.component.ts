@@ -59,9 +59,12 @@ export class EditFunilComponent implements OnInit {
   }
 
   editar(){
-        console.log( this.funil[0])
+      try{
+        this.service.editarFunil(this.id, this.funil[0] )
+      }catch(error){
+        console.log(error)
+      }
 
-      this.service.editarFunil(this.id, this.funil[0] )
 
   }
 

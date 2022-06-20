@@ -14,6 +14,7 @@ const routes: Routes = [
   {path:'funil/new', component: NovoFunilComponent},
   {path:'funil/all', component: TodosFunilComponent},
   {path:'funil/all/add', component:AddVendedorComponent },
+  {path:'funil/all/add/:id', component:AddVendedorComponent },
   {path:'funil/all/edit', component: EditFunilComponent},
   {path:'funil/all/edit/:id', component: EditFunilComponent},
 

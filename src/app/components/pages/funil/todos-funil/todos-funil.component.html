@@ -12,7 +12,7 @@
         </div>
         <div id="actions">
           <div id="actions">
-            <img src="assets/img/add.png" alt="Adicionar" (click)="backPage('back')" [routerLink]="['/funil/all/add']">
+            <img src="assets/img/add.png" alt="Adicionar" (click)="backPage('back')" [routerLink]="['/funil/all/add',  funil.id]">
             <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit', funil.id]" (click)="backPage('back')"></fa-icon>
             <fa-icon [icon]="delete"></fa-icon>
           </div>
