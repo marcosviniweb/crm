@@ -4,6 +4,7 @@ import { DetalhesVendedorComponent } from './detalhes-vendedor/detalhes-vendedor
 import { EmailComponent } from './detalhes-vendedor/email/email.component';
 import { EnviarEmailComponent } from './detalhes-vendedor/email/enviar-email/enviar-email.component';
 import { HistoricoComponent } from './detalhes-vendedor/historico/historico.component';
+import { EditProdutoComponent } from './detalhes-vendedor/produtos/edit-produto/edit-produto.component';
 import { NovoProdutoComponent } from './detalhes-vendedor/produtos/novo-produto/novo-produto.component';
 import { ProdutosComponent } from './detalhes-vendedor/produtos/produtos.component';
 import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nova-tarefa.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
     {path:'products', component:ProdutosComponent },
     {path:'send', component:EnviarEmailComponent },
     {path:'newTask',component:NovaTarefaComponent},
-    {path:'newProducts', component:NovoProdutoComponent}
+    {path:'newProducts', component:NovoProdutoComponent},
+    {path:'editProducts', component:EditProdutoComponent}
 
 
   ]}

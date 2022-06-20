@@ -16,6 +16,8 @@ import { NovoProdutoComponent } from './detalhes-vendedor/produtos/novo-produto/
 import { EnviarEmailComponent } from './detalhes-vendedor/email/enviar-email/enviar-email.component';
 import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nova-tarefa.component';
 import {FormsModule} from "@angular/forms";
+import { EditProdutoComponent } from './detalhes-vendedor/produtos/edit-produto/edit-produto.component';
+
 
 
 @NgModule({
@@ -31,6 +33,7 @@ import {FormsModule} from "@angular/forms";
     NovoProdutoComponent,
     TarefasComponent,
     NovaTarefaComponent,
+    EditProdutoComponent,
 
   ],
   imports: [
