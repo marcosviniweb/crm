@@ -15,6 +15,7 @@ import { TarefasComponent } from './detalhes-vendedor/tarefas/tarefas.component'
 import { NovoProdutoComponent } from './detalhes-vendedor/produtos/novo-produto/novo-produto.component';
 import { EnviarEmailComponent } from './detalhes-vendedor/email/enviar-email/enviar-email.component';
 import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nova-tarefa.component';
+import { EditProdutoComponent } from './detalhes-vendedor/produtos/edit-produto/edit-produto.component';
 
 
 
@@ -31,6 +32,7 @@ import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nov
     NovoProdutoComponent,
     TarefasComponent,
     NovaTarefaComponent,
+    EditProdutoComponent,
 
   ],
   imports: [
