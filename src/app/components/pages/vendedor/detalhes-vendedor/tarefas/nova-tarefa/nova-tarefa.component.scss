@@ -1,0 +1,125 @@
+main{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.content {
+  width: 68%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(207, 207, 207);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 550px;
+    width: 70%;
+    border-radius: 30px;
+
+
+    .form-content{
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      width: 80%;
+      margin-top: 20px;
+      height: 200px;
+      margin-bottom: 20px;
+
+      .form-select{
+        display: flex;
+        flex-flow: column wrap;
+        margin-bottom: 10px;
+        label{
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+        select{
+          font-size: 14px;
+          text-indent: 5px;
+          width: 200px;
+          height: 25px;
+
+        }
+
+      }
+    }
+
+    .form{
+      display: flex;
+      flex-flow: column wrap;
+
+
+      label{
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      input{
+        width: 300px;
+        height: 25px;
+        border: none;
+        font-size: 14px;
+        border-radius: 10px;
+        text-indent: 10px;
+        margin-bottom: 10px;
+      }
+      #hour{
+        font-size: 13px;
+        font-weight: 600;
+        width: 100px;
+      }
+
+      #date{
+        width: 140px;
+      }
+    }
+    .annotation{
+      width: 80%;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+
+      label{
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      textarea{
+        text-indent: 10px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: sans-serif;
+      }
+
+    }
+
+    button{
+      background: #3e96f5;
+      color: white;
+      border-radius: 5px;
+      height: 30px;
+      width: 120px;
+      font-weight: 600;
+      margin-top: 30px;
+      border: none;
+      box-shadow: 1px 2px 3px gray;
+      cursor: pointer;
+
+    }
+    button:hover{
+      background: #1064bd;
+      color: #cfcfcd;
+    }
+  }
+}

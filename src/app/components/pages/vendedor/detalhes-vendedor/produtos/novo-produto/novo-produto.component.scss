@@ -1,0 +1,100 @@
+main{
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.content {
+  width: 68%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(207, 207, 207);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: 300px;
+    width: 90%;
+    border-radius: 10px;
+
+
+    .form-content{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      height: 160px;
+      margin-top: 20px;
+
+      .form-select{
+        display: flex;
+        flex-flow: column wrap;
+        margin-bottom: 10px;
+        label{
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 5px;
+        }
+        select{
+          font-size: 14px;
+          text-indent: 5px;
+          width: 200px;
+          height: 25px;
+        }
+
+      }
+    }
+
+    .form{
+      margin-top: 25px;
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+      max-width: 800px;
+      width: 100%;
+
+      .products, .price{
+        display: flex;
+        flex-direction: column;
+        label{
+          font-size: 18px;
+          font-weight: 600;
+          margin-bottom: 10px;
+        }
+        input{
+          width: 300px;
+          height: 25px;
+          border: none;
+          border-radius: 10px;
+        }
+      }
+
+
+    }
+    button{
+      background: #3e96f5;
+      color: white;
+      border-radius: 5px;
+      height: 30px;
+      width: 150px;
+      font-weight: 600;
+      margin-top: 30px;
+      border: none;
+      box-shadow: 1px 2px 3px gray;
+      cursor: pointer;
+
+    }
+    button:hover{
+      background: #1064bd;
+      color: #cfcfcd;
+    }
+  }
+}
