@@ -8,6 +8,13 @@ import { VendedorRoutingModule } from './vendedor.routing.module';
 import { FunilModule } from '../funil/funil.module';
 import { EditarVendedorComponent } from './editar-vendedor/editar-vendedor.component';
 import { DetalhesVendedorComponent } from './detalhes-vendedor/detalhes-vendedor.component';
+import { EmailComponent } from './detalhes-vendedor/email/email.component';
+import { HistoricoComponent } from './detalhes-vendedor/historico/historico.component';
+import { ProdutosComponent } from './detalhes-vendedor/produtos/produtos.component';
+import { TarefasComponent } from './detalhes-vendedor/tarefas/tarefas.component';
+import { NovoProdutoComponent } from './detalhes-vendedor/produtos/novo-produto/novo-produto.component';
+import { EnviarEmailComponent } from './detalhes-vendedor/email/enviar-email/enviar-email.component';
+import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nova-tarefa.component';
 
 
 
@@ -16,7 +23,15 @@ import { DetalhesVendedorComponent } from './detalhes-vendedor/detalhes-vendedor
     VendedorComponent,
     NovoVendedorComponent,
     EditarVendedorComponent,
-    DetalhesVendedorComponent
+    DetalhesVendedorComponent,
+    EmailComponent,
+    EnviarEmailComponent,
+    HistoricoComponent,
+    ProdutosComponent,
+    NovoProdutoComponent,
+    TarefasComponent,
+    NovaTarefaComponent,
+
   ],
   imports: [
     CommonModule,
