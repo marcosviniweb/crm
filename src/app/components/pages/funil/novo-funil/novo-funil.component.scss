@@ -13,9 +13,9 @@ main{
 
   .add-funnel {
     width: 100%;
-    height: 550px;
+    height: 800px;
     margin-top: 50px;
-    background-color: white;
+    background-color: rgb(189, 189, 189);
     border-radius: 20px;
     margin-bottom: 50px;
 
@@ -46,6 +46,7 @@ main{
         text-indent: 15px;
         font-size: 15px;
         background-color: #eee;
+        border: none;
       }
       .form{
         display: flex;
@@ -59,7 +60,7 @@ main{
         justify-content: right;
         align-items: center;
         margin-top: 25px;
-        margin-bottom: 70px;
+        margin-bottom: 10px;
         height: 50px;
 
         button{
@@ -110,6 +111,51 @@ main{
 
       }
 
+    }
+
+    .funnels{
+      margin-top: 25px;
+      margin-left: 25px;
+      margin-bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: right;
+      align-items: center;
+      width: 60%;
+      padding: 10px;
+      height: 250px;
+      overflow: auto;
+      background: rgb(168, 168, 168);
+      border-radius: 10px;
+      box-shadow: 2px 3px 4px gray;
+
+      .funnels-content{
+        background: white;
+        padding: 5px;
+        box-shadow: 2px 2px 3px rgba(189, 189, 189, 0.952);
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 95%;
+        margin-bottom: 10px;
+        fa-icon{
+          font-size: 20px;
+          border: 1px;
+          cursor: pointer;
+        }
+
+        .funnel{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          fa-icon {
+            font-size: 30px;
+            margin-right: 15px;
+            cursor: pointer;
+          }
+        }
+      }
     }
   }
 

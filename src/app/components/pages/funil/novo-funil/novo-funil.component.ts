@@ -1,6 +1,7 @@
+import { faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { Funil } from 'src/app/interfaces/funil';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { IdeaService } from 'src/app/service/idea.service';
 import { isNgTemplate } from '@angular/compiler';
@@ -18,6 +19,8 @@ export class NovoFunilComponent implements OnInit {
   //IMPORTANDO DADOS DA INTERFACE
   public Dadosfunil: Funil = {};
   add = faPlus
+  delete = faTrashAlt
+  funnel = faFilter
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,

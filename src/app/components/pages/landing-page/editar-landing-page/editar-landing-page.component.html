@@ -1,11 +1,31 @@
 <app-header></app-header>
 <main>
   <div class="content">
-    <div class="new-saller">
+    <form >
       <div class="title">
-        <h2>Editar Landing Page</h2>
+        <h2>Editar Landing page</h2>
       </div>
-    </div>
+      <div class="form">
+        <label for="name">Nome da Landing Page</label>
+        <input type="text" id="name">
+      </div>
+      <div class="form-select">
+        <label for="funnel">Selecione o Funi</label>
+        <select name="funnel" id="funnel">
+          <option value="Vendas instagram">Vendas Instagram</option>
+        </select>
+      </div>
+      <div class="form" >
+        <label for="input">Adicionar campos na Landing Page</label>
+        <input *ngFor="let item of input" item type="text" id="input" placeholder="Campo {{item}}">
+      </div>
+      <div class="add-input" (click)="campoInput()">
+        <fa-icon [icon]="add"></fa-icon>
+        <p>Adicionar campo</p>
+      </div>
+      <div class="edit">
+        <button>Editar</button>
+      </div>
+    </form>
   </div>
 </main>
-

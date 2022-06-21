@@ -24,11 +24,15 @@
             <p>Adicionar fase</p>
           </button>
         </div>
-        <div *ngFor="let item of arrayFase">
-          <h4 >
-                {{item}}
-          </h4>
-          <fa-icon [icon]="add" (click) = "deleteFase(item)"></fa-icon>
+        <div class="funnels">
+          <div class="funnels-content" *ngFor="let item of arrayFase" >
+            <div class="funnel">
+              <fa-icon [icon]="funnel">
+              </fa-icon>
+              <p>{{item}}</p>
+            </div>
+            <fa-icon [icon]="delete" (click)="deleteFase(item)"></fa-icon>
+          </div>
         </div>
       </form>
       <div class="create">
