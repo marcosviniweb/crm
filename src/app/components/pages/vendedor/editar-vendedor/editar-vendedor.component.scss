@@ -101,7 +101,7 @@ main{
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: #1793fd;
+        background-color: #3e96f5;
         border: none;
         padding: 10px;
         width: 150px;
@@ -112,6 +112,10 @@ main{
         font-weight: 600;
         box-shadow: 3px 3px 5px gray;
 
+      }
+      button:hover{
+        background: #1064bd;
+        color: black;
       }
 
     }
