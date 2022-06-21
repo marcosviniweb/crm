@@ -1,48 +1,19 @@
 <main>
-  <div class="content">
+  <div class="content" >
     <button routerLink="/vendedor/details/newTask">
       <fa-icon [icon]="add" ></fa-icon>
       Adicionar tarefa
     </button>
-   <div class="info">
+   <div class="info" *ngFor = "let tarefa of tarefas">
       <div class="icon">
-        <fa-icon [icon]="agendamento"></fa-icon>
+        <fa-icon [icon]="icon"></fa-icon>
         </div>
         <div class="info-content">
-          <h2>Fez um agendamento</h2>
-          <p>22/03/2022 - 10:00</p>
-          <p>Agendamento feito para o dia 30/03/2022</p>
+          <h2>{{tarefa.atividade}}</h2>
+          <p>{{tarefa.data}} - {{tarefa.hora}}</p>
+          <p>{{tarefa.anotacao}}</p>
         </div>
     </div>
-   <div class="info">
-    <div class="icon">
-      <fa-icon [icon]="whats"></fa-icon>
-    </div>
-    <div class="info-content">
-      <h2>Enviou uma mensagem via Whatsapp</h2>
-      <p>22/03/2022 - 10:00</p>
-      <p>Agendamento feito para o dia 30/03/2022</p>
-    </div>
-   </div>
-   <div class="info">
-    <div class="icon">
-      <fa-icon [icon]="ligar"></fa-icon>
-    </div>
-    <div class="info-content">
-      <h2>Fez uma ligação</h2>
-      <p>22/03/2022 - 10:00</p>
-      <p>Agendamento feito para o dia 30/03/2022</p>
-    </div>
-   </div>
-   <div class="info">
-    <div class="icon">
-      <fa-icon [icon]="anotar"></fa-icon>
-    </div>
-    <div class="info-content">
-      <h2>Fez uma anotação</h2>
-      <p>22/03/2022 - 10:00</p>
-      <p>Agendamento feito para o dia 30/03/2022</p>
-    </div>
-   </div>
+
   </div>
 </main>

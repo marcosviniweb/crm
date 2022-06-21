@@ -4,22 +4,22 @@
       <div class="form-content">
         <div class="form-select">
           <label for="funnel">Funil</label>
-          <select name="funnel" id="funnel">
-            <option value="Whatsapp">Whatsapp</option>
+          <select name="funnel" id="funnel"  name = "funil" [(ngModel)]="produto.funil">
+            <option [value]="funil.nome"  *ngFor="let funil of funels">{{funil.nome}}</option>
           </select>
         </div>
         <div class="form">
           <div class="products">
           <label for="product">Nome do serviço/produto:</label>
-          <input type="text" id="product">
+          <input type="text" id="product" name = "nome" [(ngModel)]="produto.nome">
           </div>
           <div class="price">
-          <label for="price">Valor:</label>
-          <input type="text" id="price">
+          <label for="price" >Valor:</label>
+          <input type="number" id="price" name = "valor" [(ngModel)]="produto.valor">
           </div>
         </div>
       </div>
-      <button>Criar Produto/Serviço</button>
+      <button (click) = "criarProduto()">Criar Produto/Serviço</button>
     </form>
   </div>
 </main>
