@@ -15,13 +15,13 @@
           <input required  type="text" id="empresa" name = "empresa" [(ngModel)]="Dadosfunil.empresa"  >
         </div>
         <div class="form">
-          <label for="phase-funnel">Fase do Funil</label>
+          <label for="phase-funnel">Etapa do Funil</label>
           <input required  type="text" id="fase"  name = "fase" [(ngModel)]="Dadosfunil.fase" >
         </div>
         <div class="add-phase">
           <button id="add-phase" (click)="criarFase()">
             <fa-icon [icon]="add"></fa-icon>
-            <p>Adicionar fase</p>
+            <p>Adicionar etapa</p>
           </button>
         </div>
         <div class="funnels">

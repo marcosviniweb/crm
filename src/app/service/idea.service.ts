@@ -17,11 +17,13 @@ export interface Idea {
   providedIn: 'root'
 })
 export class IdeaService {
-  public landing = this.afs.collection<Landing>('Landing')
+
   public funil = this.afs.collection<Funil>('Funil');
   public vendedor = this.afs.collection<Vendedor>('Vendedor');
   public tarefa = this.afs.collection<Tarefa>('Tarefa');
   public produto = this.afs.collection<Produtos>('Produto');
+  public landing = this.afs.collection<Landing>('Landing');
+
 
   constructor(
     public afs: AngularFirestore
@@ -115,5 +117,17 @@ export class IdeaService {
  addLanding(id: any, dados: any){
   return this.afs.collection('Landing').doc(id).set(dados)}
 
+  getCampanha(){
+    return this.landing.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
+
+  }
 
 }

@@ -1,6 +1,6 @@
 <app-header></app-header>
 <main>
-  <div class="content">
+  <div class="content" *ngFor = "let item of dados">
     <div class="title">
       <p>Lista de Landing Pages</p>
     </div>
@@ -8,11 +8,11 @@
       <div class="landing-content">
         <div class="landing-name">
           <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
-        <p>Landing Page 01</p>
+        <p>{{item.nome}}</p>
         </div>
         <div id="actions">
           <div id="actions">
-            <fa-icon [icon]="view" [routerLink]="['/campanha']"></fa-icon>
+            <fa-icon [icon]="view" [routerLink]="['/campanha', item.link]"></fa-icon>
             <fa-icon [icon]="edit" [routerLink]="['/landingPage/edit']"></fa-icon>
             <fa-icon [icon]="delete"></fa-icon>
           </div>
