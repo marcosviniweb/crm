@@ -106,6 +106,10 @@ export class IdeaService {
 
   }
 
+  editarProdutos(id: any, dados: any){
+    return this.afs.collection('Produto').doc(id).update(dados)
+ }
+
 
 
 

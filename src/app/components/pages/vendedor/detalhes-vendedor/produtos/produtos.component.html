@@ -14,7 +14,7 @@
       <p>Valor: R$ {{product.valor}},00</p>
     </div>
     <div class="actions">
-      <fa-icon [icon]="edit" routerLink="/vendedor/details/editProducts"></fa-icon>
+      <fa-icon [icon]="edit"  [routerLink]="['/vendedor/details/editProducts', product.id]"></fa-icon>
       <fa-icon [icon]="delete"></fa-icon>
     </div>
     </div>

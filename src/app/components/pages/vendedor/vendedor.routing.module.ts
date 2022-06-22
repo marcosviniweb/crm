@@ -32,7 +32,8 @@ const routes: Routes = [
     {path:'send', component:EnviarEmailComponent },
     {path:'newTask',component:NovaTarefaComponent},
     {path:'newProducts', component:NovoProdutoComponent},
-    {path:'editProducts', component:EditProdutoComponent}
+    {path:'editProducts', component:EditProdutoComponent},
+    {path:'editProducts/:id', component:EditProdutoComponent}
 
 
   ]}
