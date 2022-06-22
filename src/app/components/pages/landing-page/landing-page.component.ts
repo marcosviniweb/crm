@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { Landing } from 'src/app/interfaces/landing';
 
 @Component({
   selector: 'app-landing-page',
@@ -10,7 +11,9 @@ import { faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class LandingPageComponent implements OnInit {
 
-  constructor() { }
+  public landing:Landing = {}
+
+  constructor( ) { }
 
   userIcon = faUserCircle
   delete = faTrashAlt

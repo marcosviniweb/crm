@@ -7,6 +7,8 @@ import { Funil } from 'src/app/interfaces/funil';
 import { Vendedor } from "../interfaces/vendedor";
 import { Tarefa } from "../interfaces/tarefa";
 import { Produtos } from "../interfaces/produtos";
+import { Landing } from './../interfaces/landing';
+
 export interface Idea {
    nome:'',
 
@@ -15,7 +17,7 @@ export interface Idea {
   providedIn: 'root'
 })
 export class IdeaService {
-
+  public landing = this.afs.collection<Landing>('Landing')
   public funil = this.afs.collection<Funil>('Funil');
   public vendedor = this.afs.collection<Vendedor>('Vendedor');
   public tarefa = this.afs.collection<Tarefa>('Tarefa');
@@ -110,7 +112,8 @@ export class IdeaService {
     return this.afs.collection('Produto').doc(id).update(dados)
  }
 
-
+ addLanding(id: any, dados: any){
+  return this.afs.collection('Landing').doc(id).set(dados)}
 
 
 }

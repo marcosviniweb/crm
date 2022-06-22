@@ -8,6 +8,7 @@ import { NovaLandingPageComponent } from './nova-landing-page/nova-landing-page.
 import { EditarLandingPageComponent } from './editar-landing-page/editar-landing-page.component';
 import { LandingPageRoutingModule } from './landing-page.routing.module';
 import { FunilModule } from '../funil/funil.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -22,7 +23,8 @@ import { FunilModule } from '../funil/funil.module';
     CommonModule,
     FontAwesomeModule,
     LandingPageRoutingModule,
-    FunilModule
+    FunilModule,
+    FormsModule
   ]
 })
 export class LandingPageModule { }
