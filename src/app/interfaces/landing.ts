@@ -4,6 +4,8 @@ export interface Landing {
   link?: string | undefined;
   nome?: string | undefined;
   funil?: string | undefined;
-  campos?: string [] | undefined;
+  campos?: Object[] | undefined;
+  titulo?:string | undefined;
+  butao?: string | undefined
 
 }

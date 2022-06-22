@@ -19,13 +19,29 @@
           <option *ngFor="let item of funis" [value]="item.nome" >{{item.nome}}</option>
         </select>
       </div>
-      <div class="form" >
-        <label for="input">Adicionar campos na Landing Page</label>
-        <input type="text" id="input" placeholder="Campo" [(ngModel)]="landing.campos" [ngModelOptions]="{standalone: true}">
+      <div class="form">
+        <label for="title">Titulo</label>
+        <input type="text" id="title" name="title" [(ngModel)]="landing.titulo">
       </div>
-      <div class="add-input" (click)="campoInput()">
+      <div class="form" >
+        <label for="campo">Adicionar campos na Landing Page</label>
+        <input type="text" id="campo" name="campo"  [(ngModel)]="campos.campo" >
+      </div>
+      <div class="form-select">
+        <label for="tipo">Tipo do campo</label>
+        <select name="tipo" id="tipo" [(ngModel)]="campos.tipo">
+          <option value="text">Texto</option>
+          <option value="tel">Telefone</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+      <button id="add" class="add-input" (click)="addCampos()">
         <fa-icon [icon]="add"></fa-icon>
         <p>Adicionar campo</p>
+      </button>
+      <div class="form">
+        <label for="button">Titulo do botão</label>
+        <input type="text" id="button" name="button" [(ngModel)]="landing.butao">
       </div>
       <div class="add">
         <button (click)="addLanding()" >Adicionar</button>

@@ -1,8 +1,11 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 import { Landing } from './../../../../interfaces/landing';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IdeaService } from 'src/app/service/idea.service';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+
 
 @Component({
   selector: 'app-nova-landing-page',
@@ -12,11 +15,18 @@ import { IdeaService } from 'src/app/service/idea.service';
 export class NovaLandingPageComponent implements OnInit {
 
   public landing:Landing = {}
+
   funis:any = []
-  count = 2
   add = faPlus
-  input = [1]
-  constructor( public service: IdeaService ) { }
+
+  campos = {
+    campo:'',
+    tipo:''
+  }
+
+  arrayCampos:Object[] = []
+
+  constructor( public service: IdeaService,  public fireservice: AngularFirestore, public router:Router ) { }
 
   ngOnInit(){
     this.service.getFunil().subscribe((res)=> {
@@ -25,20 +35,30 @@ export class NovaLandingPageComponent implements OnInit {
     })
   }
 
-  campoInput(){
-    this.count = 1+
-    this.input.push(this.count)
-    console.log(this.input)
-    console.log(this.count)
+  addCampos(){
+
+    let dadosCampos = JSON.stringify(this.campos)
+
+    let dados = JSON.parse(dadosCampos)
+
+    this.arrayCampos.push(dados)
+
+    this.landing.campos = this.arrayCampos
+
+
   }
 
   addLanding(){
     console.log(this.landing);
+    let id = this.fireservice.createId()
+
+    try{
+      this.service.addLanding(id,this.landing)
+      alert('Landing Page cadastrada com sucesso !')
+      this.router.navigate(['/landingPage'])
+    }catch(error){console.log(error)}
 
   }
 
-  getCampo(){
-    let input = document.querySelector('#input')
-    console.log(input!.nodeValue)
-  }
+
 }
