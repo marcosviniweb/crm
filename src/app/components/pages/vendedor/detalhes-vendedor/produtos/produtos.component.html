@@ -4,14 +4,14 @@
       <fa-icon [icon]="add" ></fa-icon>
       Adicionar novo
     </button>
-    <div class="info">
+    <div class="info" *ngFor = "let product of products">
     <div class="icon">
       <fa-icon [icon]="curso"></fa-icon>
     </div>
     <div class="info-content">
-      <h2>Curso de enfermagem</h2>
-      <p>22/03/2022 - 10:00</p>
-      <p>Valor:R$ 130,00</p>
+      <h2>{{product.nome}}</h2>
+      <p>{{product.data}} - {{product.hora}}</p>
+      <p>Valor: R$ {{product.valor}},00</p>
     </div>
     <div class="actions">
       <fa-icon [icon]="edit" routerLink="/vendedor/details/editProducts"></fa-icon>

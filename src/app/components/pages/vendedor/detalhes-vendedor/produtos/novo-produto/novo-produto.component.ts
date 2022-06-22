@@ -31,11 +31,15 @@ export class NovoProdutoComponent implements OnInit {
 
   criarProduto(){
     let id = this.fireservice.createId();
+    let hora = new Date().toLocaleTimeString()
+    let data = new Date().toLocaleDateString()
     let dados = [{
       id: id,
       funil: this.produto.funil,
       nome: this.produto.nome,
       valor: this.produto.valor,
+      data: data,
+      hora: hora
 
       }]
       try{

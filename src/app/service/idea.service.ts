@@ -19,7 +19,7 @@ export class IdeaService {
   public funil = this.afs.collection<Funil>('Funil');
   public vendedor = this.afs.collection<Vendedor>('Vendedor');
   public tarefa = this.afs.collection<Tarefa>('Tarefa');
-  public produto = this.afs.collection<Produtos>('Produtos');
+  public produto = this.afs.collection<Produtos>('Produto');
 
   constructor(
     public afs: AngularFirestore
@@ -92,6 +92,19 @@ export class IdeaService {
     addProduto(id: any, dados: any){
       return this.afs.collection('Produto').doc(id).set(dados)
    }
+
+   getProdutos(){
+    return this.produto.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
+
+  }
 
 
 
