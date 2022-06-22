@@ -8,6 +8,7 @@ const routes: Routes = [
   {path:'landingPage',component:LandingPageComponent},
   {path:'landingPage/new',component:NovaLandingPageComponent},
   {path:'landingPage/edit',component:EditarLandingPageComponent}
+  
 ];
 
 

@@ -16,12 +16,14 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule} from '@angular/fire/compat/auth';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { CampanhaComponent } from './campanha/campanha.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CampanhaComponent
  ],
 
   imports: [
