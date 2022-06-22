@@ -21,14 +21,14 @@
       </div>
       <div class="form" >
         <label for="input">Adicionar campos na Landing Page</label>
-        <input *ngFor="let item of input" type="text" id="input" placeholder="Campo {{item}}" >
+        <input type="text" id="input" placeholder="Campo" [(ngModel)]="landing.campos" [ngModelOptions]="{standalone: true}">
       </div>
       <div class="add-input" (click)="campoInput()">
         <fa-icon [icon]="add"></fa-icon>
         <p>Adicionar campo</p>
       </div>
       <div class="add">
-        <button (click)="getCampo()" >Adicionar</button>
+        <button (click)="addLanding()" >Adicionar</button>
       </div>
     </form>
   </div>

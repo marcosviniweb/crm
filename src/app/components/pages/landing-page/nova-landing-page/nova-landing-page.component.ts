@@ -12,7 +12,7 @@ import { IdeaService } from 'src/app/service/idea.service';
 export class NovaLandingPageComponent implements OnInit {
 
   public landing:Landing = {}
-  funis:any = {}
+  funis:any = []
   count = 2
   add = faPlus
   input = [1]
