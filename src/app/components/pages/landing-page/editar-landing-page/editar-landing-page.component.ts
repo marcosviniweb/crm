@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-landing-page.component.scss']
 })
 export class EditarLandingPageComponent implements OnInit {
+
+  backPage = '/landingPage'
+
   count = 2
   add = faPlus
   input = [1]

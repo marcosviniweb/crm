@@ -1,5 +1,5 @@
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 import { faArrowLeft, faEye, faCrosshairs } from '@fortawesome/free-solid-svg-icons';
 import { HeaderService } from '../header.service';
@@ -12,7 +12,7 @@ import { HeaderService } from '../header.service';
 export class NavbarComponent implements OnInit {
 
   routes:string | undefined
-  routerBack = ''
+  @Input() public routerBack = '/home'
 
   back = faArrowLeft
   allFunnels = faEye
@@ -23,10 +23,10 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.headerService.backEvent.subscribe((event)=> console.log(event))
+
+
   }
 
-  backPage(event:string){
-    this.routerBack = event
-  }
+
+
 }

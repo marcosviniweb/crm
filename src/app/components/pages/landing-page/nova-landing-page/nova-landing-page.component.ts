@@ -16,6 +16,8 @@ export class NovaLandingPageComponent implements OnInit {
 
   public landing:Landing = {}
 
+  backPage = '/landingPage'
+
   funis:any = []
   produtos: any = []
   add = faPlus

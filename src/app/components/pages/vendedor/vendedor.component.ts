@@ -15,11 +15,13 @@ import { HeaderService } from '../../header/header.service';
 })
 export class VendedorComponent implements OnInit {
 
-  userIcon = faUserCircle
-  delete = faTrashAlt
-  edit = faEdit
-  view = faEye
-  vendedores: any;
+  backPage = '/home';
+
+  userIcon = faUserCircle;
+  delete = faTrashAlt;
+  edit = faEdit;
+  view = faEye;
+  vendedores: any;;
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
@@ -28,7 +30,7 @@ export class VendedorComponent implements OnInit {
 
   ngOnInit() {
 
-    this.headerService.backPage(true)
+
 
     this.service.getVendedor().subscribe(res =>{
       this.vendedores = res;

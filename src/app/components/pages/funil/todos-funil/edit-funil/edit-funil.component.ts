@@ -15,6 +15,7 @@ import { IdeaService } from 'src/app/service/idea.service';
 })
 export class EditFunilComponent implements OnInit {
 
+  backPage = '/funil/all'
 
    funil : any;
    tamanhoArray:any;

@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [routerBack]="backPage"></app-navbar>
 <main>
   <div class="content">
     <div class="title">
@@ -12,8 +12,8 @@
         </div>
         <div id="actions">
           <div id="actions">
-            <img src="assets/img/add.png" alt="Adicionar" (click)="backPage('back')" [routerLink]="['/funil/all/add',  funil.id]">
-            <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit', funil.id]" (click)="backPage('back')"></fa-icon>
+            <img src="assets/img/add.png" alt="Adicionar" [routerLink]="['/funil/all/add',  funil.id]">
+            <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit', funil.id]"></fa-icon>
             <fa-icon [icon]="delete"></fa-icon>
           </div>
         </div>

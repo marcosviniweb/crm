@@ -14,6 +14,8 @@ import { Subscription } from 'rxjs';
 })
 export class TodosFunilComponent implements OnInit {
 
+  backPage = '/funil'
+
   funnel = faFilter
   delete = faTrashAlt
   edit = faEdit
@@ -35,10 +37,7 @@ export class TodosFunilComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  backPage(e:string){
-    if(e== 'back'){
-      sessionStorage.setItem('back', '/funil/all')
-    }
-  }
+
+
 
 }

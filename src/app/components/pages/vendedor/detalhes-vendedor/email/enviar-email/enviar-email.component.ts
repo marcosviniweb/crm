@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnviarEmailComponent implements OnInit {
 
+  backPage = 'vendendor/details/email';
+
   constructor() { }
 
   ngOnInit(): void {

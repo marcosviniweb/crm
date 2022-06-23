@@ -14,8 +14,8 @@ export class HeaderService {
     this.viewEvent.emit(val);
   }
 
-  public backPage(val:boolean){
-    
+  public backPage(val:string){
+    this.backEvent.emit((val))
   }
 
 }

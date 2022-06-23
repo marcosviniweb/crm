@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetalhesVendedorComponent implements OnInit {
 
+  backPage = '/vendedor'
+
   constructor() { }
 
   ngOnInit(): void {
@@ -14,6 +16,6 @@ export class DetalhesVendedorComponent implements OnInit {
 
   selectButton(id:string){
 
-  
+
   }
 }

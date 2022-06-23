@@ -11,7 +11,7 @@ import { IdeaService } from 'src/app/service/idea.service';
   styleUrls: ['./editar-vendedor.component.scss']
 })
 export class EditarVendedorComponent implements OnInit {
-
+  backPage = '/vendedor'
   id: string = "";
   vendedores: any;
   constructor(

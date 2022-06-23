@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
+import { HeaderService } from 'src/app/components/header/header.service';
 import { Vendedor } from 'src/app/interfaces/vendedor';
 import { AuthService } from 'src/app/service/auth.service';
 import { IdeaService } from 'src/app/service/idea.service';
@@ -18,12 +19,20 @@ export class NovoVendedorComponent implements OnInit {
     public fireservice: AngularFirestore,
     public service: IdeaService,
     private router: Router,
-    private authService: AuthService,
     private afa: AngularFireAuth,
+    public headerService:HeaderService
+
   ) { }
 
+  backPage = '/vendedor'
+
   ngOnInit(): void {
+
+
   }
+
+
+
 
   async add(){
         // console.log(this.vendedor)

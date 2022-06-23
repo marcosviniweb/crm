@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
 })
 export class NovoFunilComponent implements OnInit {
 
+  backPage = '/funil'
 
   arrayFase:any = []
 

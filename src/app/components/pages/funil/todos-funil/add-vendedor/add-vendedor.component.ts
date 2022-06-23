@@ -12,6 +12,8 @@ import { IdeaService } from 'src/app/service/idea.service';
 })
 export class AddVendedorComponent implements OnInit {
 
+  backPage = '/funil/all'
+
   add = faPlus
   id: string = '';
   funil: any;
