@@ -1,0 +1,41 @@
+<!-- navbar funil -->
+<nav *ngIf="routes?.includes('funil')" class="navbar">
+  <div class="nav-content">
+    <div class="back" id="back" [routerLink]="routerBack">
+      <fa-icon [icon]="back"></fa-icon>
+    </div>
+    <div *ngIf="routes !== 'funil/new'" class="add" id="add"  [routerLink]="['/funil/new']">
+      <img src="assets/img/botao-adicionar.png" alt="">
+      <p>Adicionar novo funil</p>
+    </div>
+    <div *ngIf="routes !== 'funil/all'" class="all" id="all" [routerLink]="['/funil/all']">
+      <fa-icon [icon]="allFunnels"></fa-icon>
+      <p>Mostrar todos os funis</p>
+    </div>
+  </div>
+</nav>
+<!-- navbar vendedor -->
+<nav *ngIf="routes?.includes('vendedor')" style="background-color: #3e96f5;" class="navbar">
+  <div class="nav-content">
+    <div class="back" id="back" [routerLink]="routerBack">
+      <fa-icon [icon]="back"></fa-icon>
+    </div>
+    <div *ngIf="routes == 'vendedor'" style="width: 260px" class="add" id="add"  [routerLink]="['/vendedor/new']">
+      <img src="assets/img/botao-adicionar.png" alt="">
+      <p>Adicionar novo Vendedor</p>
+    </div>
+  </div>
+</nav>
+
+<!--navbar LandingPage-->
+<nav *ngIf="routes?.includes('landingPage')" style="background-color: #9e77f5;;" class="navbar">
+  <div class="nav-content">
+    <div class="back" id="back" [routerLink]="routerBack">
+      <fa-icon [icon]="back"></fa-icon>
+    </div>
+    <div class="add" id="add" style="width: 290px;" [routerLink]="['/landingPage/new']">
+      <img src="assets/img/botao-adicionar.png" alt="">
+      <p>Adicionar nova Landing Page</p>
+    </div>
+  </div>
+</nav>

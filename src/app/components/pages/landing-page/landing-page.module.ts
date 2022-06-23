@@ -9,6 +9,7 @@ import { EditarLandingPageComponent } from './editar-landing-page/editar-landing
 import { LandingPageRoutingModule } from './landing-page.routing.module';
 import { FunilModule } from '../funil/funil.module';
 import { FormsModule } from '@angular/forms';
+import { HeaderModule } from '../../header/header.module';
 
 
 
@@ -23,8 +24,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     FontAwesomeModule,
     LandingPageRoutingModule,
-    FunilModule,
-    FormsModule
+    FormsModule,
+    HeaderModule
   ]
 })
 export class LandingPageModule { }

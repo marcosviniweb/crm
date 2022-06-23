@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 //userBarIcons
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-//navBar icons
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { faCrosshairs } from '@fortawesome/free-solid-svg-icons';
-import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { HeaderService } from './header.service';
 
 @Component({
   selector: 'app-header',
@@ -23,63 +19,18 @@ export class HeaderComponent implements OnInit {
   userIcon = faUserCircle
   sign = faSignOutAlt
 
-  //navBar
-  routes:string | undefined
-  routerBack = ''
+  showHeader = true
 
-  back = faArrowLeft
-  allFunnels = faEye
-  addFunnel = faCrosshairs
-  constructor(private route:ActivatedRoute) {
-    this.routes = route.routeConfig?.path
+  constructor(private headerService:HeaderService) {
+
    }
 
-  ngOnInit(): void {
-    console.log(this.routes)
-    this.backPage()
+  ngOnInit() {
+    this.headerService.viewEvent.subscribe((event)=> this.viewHeader(event))
   }
 
-  backPage(){
-    if(this.routes == 'funil'){
-      this.routerBack = '/home'
-    }
-
-    if(this.routes == 'funil/all'){
-      this.routerBack = '/funil'
-    }
-
-    if(this.routes == 'funil/new'){
-      this.routerBack = '/funil'
-    }
-
-    if(this.routes == 'funil/all/edit'){
-      this.routerBack = '/funil/all'
-    }
-
-    if(this.routes == 'funil/all/add'){
-      this.routerBack = '/funil/all'
-    }
-    if(this.routes == 'vendedor'){
-      this.routerBack = '/home'
-    }
-    if(this.routes == 'vendedor/new'){
-      this.routerBack = '/vendedor'
-    }
-    if(this.routes == 'vendedor/edit'){
-      this.routerBack = '/vendedor'
-    }
-    if(this.routes == 'vendedor/details'){
-      this.routerBack = '/vendedor'
-    }
-    if(this.routes == 'landingPage'){
-      this.routerBack = '/home'
-    }
-    if(this.routes == 'landingPage/new'){
-      this.routerBack = '/landingPage'
-    }
-    if(this.routes == 'landingPage/edit'){
-      this.routerBack = '/landingPage'
-    }
-
+  viewHeader(view:boolean){
+    this.showHeader = view
   }
+
 }

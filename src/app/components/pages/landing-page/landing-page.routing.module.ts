@@ -5,10 +5,10 @@ import { LandingPageComponent } from './landing-page.component';
 import { NovaLandingPageComponent } from './nova-landing-page/nova-landing-page.component';
 
 const routes: Routes = [
-  {path:'landingPage',component:LandingPageComponent},
-  {path:'landingPage/new',component:NovaLandingPageComponent},
-  {path:'landingPage/edit',component:EditarLandingPageComponent}
-  
+  {path:'',component:LandingPageComponent},
+  {path:'new',component:NovaLandingPageComponent},
+  {path:'edit',component:EditarLandingPageComponent}
+
 ];
 
 

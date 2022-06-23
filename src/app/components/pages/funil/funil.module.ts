@@ -11,11 +11,11 @@ import { AddVendedorComponent } from './todos-funil/add-vendedor/add-vendedor.co
 import { FuniRoutingModule } from './funil.routing.module';
 import { HeaderComponent } from '../../header/header.component';
 import {FormsModule} from "@angular/forms";
+import { HeaderModule } from '../../header/header.module';
 
 
 @NgModule({
   declarations: [
-    HeaderComponent,
     FunilComponent,
     NovoFunilComponent,
     TodosFunilComponent,
@@ -28,11 +28,11 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     FontAwesomeModule,
     FuniRoutingModule,
-    FormsModule
+    FormsModule,
+    HeaderModule
   ],
 
   exports: [
-    HeaderComponent
   ],
 })
 export class FunilModule { }

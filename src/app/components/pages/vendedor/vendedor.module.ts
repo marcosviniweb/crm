@@ -17,6 +17,7 @@ import { EnviarEmailComponent } from './detalhes-vendedor/email/enviar-email/env
 import { NovaTarefaComponent } from './detalhes-vendedor/tarefas/nova-tarefa/nova-tarefa.component';
 import {FormsModule} from "@angular/forms";
 import { EditProdutoComponent } from './detalhes-vendedor/produtos/edit-produto/edit-produto.component';
+import { HeaderModule } from '../../header/header.module';
 
 
 
@@ -40,8 +41,8 @@ import { EditProdutoComponent } from './detalhes-vendedor/produtos/edit-produto/
     CommonModule,
     FontAwesomeModule,
     VendedorRoutingModule,
-    FunilModule,
-    FormsModule
+    FormsModule,
+    HeaderModule
   ]
 })
 export class VendedorModule { }

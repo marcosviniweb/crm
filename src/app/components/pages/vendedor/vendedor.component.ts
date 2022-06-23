@@ -7,6 +7,7 @@ import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/service/auth.service';
 import { IdeaService } from 'src/app/service/idea.service';
+import { HeaderService } from '../../header/header.service';
 @Component({
   selector: 'app-vendedor',
   templateUrl: './vendedor.component.html',
@@ -22,14 +23,12 @@ export class VendedorComponent implements OnInit {
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
-    private router: Router,
-    private authService: AuthService,
-    private afa: AngularFireAuth,
+    public headerService:HeaderService
   ) { }
 
   ngOnInit() {
 
-
+    this.headerService.backPage(true)
 
     this.service.getVendedor().subscribe(res =>{
       this.vendedores = res;

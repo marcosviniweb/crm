@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons';
+import { HeaderService } from '../components/header/header.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -33,9 +34,10 @@ export class HomeComponent implements OnInit {
   perdas = 90
   valorPerdido = 684
 
-  constructor() { }
+  constructor(private headerService:HeaderService) { }
 
   ngOnInit(): void {
+    this.headerService.onOffHeader(true)
   }
 
   //voltar para home

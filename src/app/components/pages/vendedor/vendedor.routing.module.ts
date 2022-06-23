@@ -18,11 +18,11 @@ import { VendedorComponent } from './vendedor.component';
 
 
 const routes: Routes = [
-  {path:'vendedor', component:VendedorComponent},
-  {path:'vendedor/new', component:NovoVendedorComponent},
-  {path:'vendedor/edit', component:EditarVendedorComponent},
-  {path:'vendedor/edit/:id', component:EditarVendedorComponent},
-  {path:'vendedor/details', component:DetalhesVendedorComponent,
+  {path:'', component:VendedorComponent},
+  {path:'new', component:NovoVendedorComponent},
+  {path:'edit', component:EditarVendedorComponent},
+  {path:'edit/:id', component:EditarVendedorComponent},
+  {path:'details', component:DetalhesVendedorComponent,
   children:[
     {path:'historic', component:HistoricoComponent },
     {path:'historic/:id', component:HistoricoComponent },

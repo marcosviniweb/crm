@@ -10,13 +10,13 @@ import { TodosFunilComponent } from './todos-funil/todos-funil.component';
 
 const routes: Routes = [
 
-  {path:'funil', component:FunilComponent},
-  {path:'funil/new', component: NovoFunilComponent},
-  {path:'funil/all', component: TodosFunilComponent},
-  {path:'funil/all/add', component:AddVendedorComponent },
-  {path:'funil/all/add/:id', component:AddVendedorComponent },
-  {path:'funil/all/edit', component: EditFunilComponent},
-  {path:'funil/all/edit/:id', component: EditFunilComponent},
+  {path:'', component:FunilComponent},
+  {path:'new', component: NovoFunilComponent},
+  {path:'all', component: TodosFunilComponent},
+  {path:'all/add', component:AddVendedorComponent },
+  {path:'all/add/:id', component:AddVendedorComponent },
+  {path:'all/edit', component: EditFunilComponent},
+  {path:'all/edit/:id', component: EditFunilComponent},
 
 ];
 
