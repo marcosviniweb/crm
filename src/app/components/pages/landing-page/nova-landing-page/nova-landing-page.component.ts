@@ -17,6 +17,7 @@ export class NovaLandingPageComponent implements OnInit {
   public landing:Landing = {}
 
   funis:any = []
+  produtos: any = []
   add = faPlus
 
   campos = {
@@ -31,6 +32,11 @@ export class NovaLandingPageComponent implements OnInit {
   ngOnInit(){
     this.service.getFunil().subscribe((res)=> {
       this.funis = res
+      console.log(this.funis)
+    })
+
+    this.service.getProdutos().subscribe((res)=> {
+      this.produtos = res
       console.log(this.funis)
     })
   }

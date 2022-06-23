@@ -6,6 +6,7 @@ export interface Landing {
   funil?: string | undefined;
   campos?: Object[] | undefined;
   titulo?:string | undefined;
-  butao?: string | undefined
+  butao?: string | undefined;
+  produto?: string | undefined;
 
 }

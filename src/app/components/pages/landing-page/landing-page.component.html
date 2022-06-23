@@ -1,11 +1,11 @@
 <app-header></app-header>
 <main>
-  <div class="content" *ngFor = "let item of dados">
+  <div class="content" >
     <div class="title">
       <p>Lista de Landing Pages</p>
     </div>
     <div class="landing">
-      <div class="landing-content">
+      <div class="landing-content"  *ngFor = "let item of dados">
         <div class="landing-name">
           <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
         <p>{{item.nome}}</p>

@@ -14,7 +14,7 @@ import { IdeaService } from '../service/idea.service';
 export class CampanhaComponent implements OnInit {
 
   public campanha: Landing  = {};
-
+  public dadosCampanha: any;
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
@@ -25,8 +25,13 @@ export class CampanhaComponent implements OnInit {
 
   ngOnInit() {
       this.service.getCampanha().subscribe(data => {
-        console.log(data);
+       this.dadosCampanha = data
+       console.log(this.dadosCampanha)
       });
+  }
+
+  cadastrar(){
+    console.log(this.campanha)
   }
 
 }
