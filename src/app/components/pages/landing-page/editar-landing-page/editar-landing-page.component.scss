@@ -1,50 +1,58 @@
 main{
   display: flex;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .content{
   margin-top: 30px;
   width: 70%;
-  max-width: 1200px;
+  max-width: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   form{
-    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
     height: max-content;
-    min-height: 600px;
+    min-height: 800px;
     margin-top: 50px;
-    background: #bdbdbd;
+    background: #c7c7c7;
     box-shadow: 2px 3px 4px gray;
-    border-radius: 50px;
+    border-radius: 15px;
     margin-bottom: 20px;
 
     label{
       font-size: 18px;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
+
 
     }
 
     input{
-      width: 300px;
+      width: 85%;
+      max-width: 350px;
       height: 27px;
       text-indent: 10px;
       font-size: 16px;
-      border-radius: 10px;
-      margin-top: 15px;
+      border-radius: 5px;
       border: none;
+      margin-bottom: 35px;
 
     }
 
     select{
-      width: 200px;
+      width: 75%;
+      max-width: 200px;
       height: 25px;
       text-indent: 10px;
       font-weight: 600;
-      border-radius: 10px;
+      border-radius: 5px;
+      margin-bottom: 35px
     }
 
     .add-input{
@@ -56,7 +64,7 @@ main{
       background: gray;
       color: white;
       border-radius: 10px;
-      margin-left: 30px;
+      margin-left: 50px;
       margin-bottom: 100px;
       text-align: center;
       justify-content: space-evenly;
@@ -70,13 +78,15 @@ main{
     }
 
     .title{
+      display: flex;
+      justify-content: center;
       margin-top: 40px;
-      margin-left: 30px;
+      margin-bottom: 80px;
+      font-family: sans-serif;
     }
 
     .form{
-      margin-top: 30px;
-      margin-left: 30px;
+      margin-left: 50px;
       display: flex;
       flex-direction: column;
 
@@ -86,13 +96,12 @@ main{
     .form-select {
       display: flex;
       flex-direction: column;
-      margin-left: 30px;
-      margin-top: 15px;
+      margin-left: 50px;
 
 
     }
 
-    .edit{
+    .add{
       display: flex;
       justify-content: center;
 
@@ -106,15 +115,87 @@ main{
         border-radius: 10px;
         box-shadow: 1px 2px 3px gray;
         cursor: pointer;
+        margin-bottom: 20px;
      }
      button:hover{
       background: #6c4caf;
       color: black;
      }
     }
+  } .campos{
+    margin-top: 25px;
+    margin-left: 25px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: center;
+    width: 60%;
+    padding: 10px;
+    height: 200px;
+    overflow: auto;
+    background: rgb(168, 168, 168);
+    border-radius: 10px;
+    box-shadow: 2px 3px 4px gray;
+
+    .campos-content{
+      background: white;
+      padding: 5px;
+      box-shadow: 2px 2px 3px rgba(189, 189, 189, 0.952);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 95%;
+      margin-bottom: 10px;
+      fa-icon{
+        font-size: 20px;
+        border: 1px;
+      }
+
+      .campo{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        fa-icon {
+          font-size: 30px;
+          margin-right: 15px;
+        }
+        p{
+          font-size: 17px;
+          font-weight: 600;
+        }
+      }
+      .actions{
+        display: flex;
+        flex-direction: row;
+        width: 60px;
+        justify-content: space-between;
+        fa-icon{
+          font-size: 20px;
+          cursor: pointer;
+
+        }
+      }
+    }
+
+  }
+
+
+
+  #campo{
+    margin-bottom: 10px;
+  }
+  #tipo{
+    margin-bottom:10px;
+  }
+  #add{
+    margin: 0;
+    margin-bottom: 50px;
+    margin-left: 50px;
   }
 
 
 
 
-}
+  }

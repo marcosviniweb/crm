@@ -8,6 +8,7 @@ import { Vendedor } from "../interfaces/vendedor";
 import { Tarefa } from "../interfaces/tarefa";
 import { Produtos } from "../interfaces/produtos";
 import { Landing } from './../interfaces/landing';
+import { Responsavel } from "../interfaces/responsavel";
 
 export interface Idea {
    nome:'',
@@ -23,6 +24,7 @@ export class IdeaService {
   public tarefa = this.afs.collection<Tarefa>('Tarefa');
   public produto = this.afs.collection<Produtos>('Produto');
   public landing = this.afs.collection<Landing>('Landing');
+  public responsavel = this.afs.collection<Responsavel>('Responsavel');
 
 
   constructor(
@@ -129,5 +131,10 @@ export class IdeaService {
     );
 
   }
+
+  getLandingId(id: string): Observable<Landing[]>{
+    var ordenacao =  this.afs.collection<Landing>("Landing", ref => ref.where('id', '==', id)).valueChanges()
+    return ordenacao
+   }
 
 }

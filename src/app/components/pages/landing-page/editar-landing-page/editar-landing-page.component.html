@@ -3,28 +3,67 @@
   <div class="content">
     <form >
       <div class="title">
-        <h2>Editar Landing page</h2>
+        <h2>Criar Landing page</h2>
       </div>
       <div class="form">
         <label for="name">Nome da Landing Page</label>
-        <input type="text" id="name">
+        <input type="text" id="name" name="nome" [(ngModel)]="Datalanding.nome" >
+      </div>
+      <div class="form">
+        <label for="link">Link da pagina</label>
+        <input type="text" id="link" name="link" [(ngModel)]="Datalanding.link" >
       </div>
       <div class="form-select">
-        <label for="funnel">Selecione o Funi</label>
-        <select name="funnel" id="funnel">
-          <option value="Vendas instagram">Vendas Instagram</option>
+        <label for="funnel">Selecione o Funil</label>
+        <select name="funil" id="funnel" [(ngModel)]="Datalanding.funil" >
+          <option *ngFor="let item of funis" [value]="item.nome" >{{item.nome}}</option>
         </select>
       </div>
+      <div class="form-select">
+        <label for="funnel">Selecione o produto cadastrado: </label>
+        <select name="produto" id="produto" [(ngModel)]="Datalanding.produto" >
+          <option *ngFor="let item of produtos" [value]="item.nome" >{{item.nome}}</option>
+        </select>
+      </div>
+      <div class="form">
+        <label for="title">Titulo</label>
+        <input type="text" id="title" name="title" [(ngModel)]="Datalanding.titulo">
+      </div>
+      <h4 class="form">Selecione o campo que deseja alterar: </h4>
+      <div class="campos">
+        <div class="campos-content" *ngFor="let item of arrayCampos" >
+          <div class="campo" >
+            <fa-icon [icon]="campo"></fa-icon>
+            <p>Campo: {{item.campo}} / Tipo: {{item.tipo}}</p>
+          </div>
+          <div class="actions">
+            <fa-icon [icon]="delete" (click)="deleteCampo(item)" ></fa-icon>
+          </div>
+        </div>
+      </div>
+
       <div class="form" >
-        <label for="input">Adicionar campos na Landing Page</label>
-        <input *ngFor="let item of input" item type="text" id="input" placeholder="Campo {{item}}">
+        <label for="campo">Reescreva o campo selecionado</label>
+        <input type="text" id="campo" name="campo"  [(ngModel)]="campos.campo" >
       </div>
-      <div class="add-input" (click)="campoInput()">
+      <div class="form-select">
+        <label for="tipo">Alterar o tipo do campo</label>
+        <select name="tipo" id="tipo" [(ngModel)]="campos.tipo">
+          <option value="text">Texto</option>
+          <option value="tel">Telefone</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+      <button id="add" class="add-input" (click)="addCampos()">
         <fa-icon [icon]="add"></fa-icon>
-        <p>Adicionar campo</p>
+        <p>Alterar campo</p>
+      </button>
+      <div class="form">
+        <label for="button">Titulo do botão</label>
+        <input type="text" id="button" name="button" [(ngModel)]="Datalanding.butao">
       </div>
-      <div class="edit">
-        <button>Editar</button>
+      <div class="add">
+        <button (click)="alterar()" >Adicionar</button>
       </div>
     </form>
   </div>
