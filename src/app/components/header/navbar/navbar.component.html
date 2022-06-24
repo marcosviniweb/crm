@@ -20,7 +20,8 @@
     <div class="back" id="back" [routerLink]="routerBack">
       <fa-icon [icon]="back"></fa-icon>
     </div>
-    <div *ngIf="routes == 'vendedor'" style="width: 260px" class="add" id="add"  [routerLink]="['/vendedor/new']">
+    <div *ngIf="routes == 'vendedor'" style="width: 260px" class="add" id="add"
+    [routerLink]="['/vendedor/new']">
       <img src="assets/img/botao-adicionar.png" alt="">
       <p>Adicionar novo Vendedor</p>
     </div>

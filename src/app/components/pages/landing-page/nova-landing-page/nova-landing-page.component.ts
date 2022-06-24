@@ -1,3 +1,4 @@
+import { faFileAlt, faTrashAlt, faEdit } from '@fortawesome/free-regular-svg-icons';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
@@ -21,13 +22,16 @@ export class NovaLandingPageComponent implements OnInit {
   funis:any = []
   produtos: any = []
   add = faPlus
+  campo = faFileAlt
+  delete = faTrashAlt
+  edit = faEdit
 
   campos = {
     campo:'',
     tipo:''
   }
 
-  arrayCampos:Object[] = []
+  arrayCampos:any = []
 
   constructor( public service: IdeaService,  public fireservice: AngularFirestore, public router:Router ) { }
 
@@ -53,6 +57,15 @@ export class NovaLandingPageComponent implements OnInit {
 
     this.landing.campos = this.arrayCampos
 
+
+  }
+  
+  deleteCampo(item: any){
+    console.log(item)
+    let index = this.arrayCampos.indexOf(item)
+    if(index > -1){
+       this.arrayCampos.splice(index,1)
+    }
 
   }
 

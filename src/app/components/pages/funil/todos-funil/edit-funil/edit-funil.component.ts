@@ -46,10 +46,8 @@ export class EditFunilComponent implements OnInit {
    }
 
    editarFase(item: any){
-        this.item = item;
         let index = this.arrayFase.indexOf(item)
         this.index = this.arrayFase.indexOf(item)
-        console.log(this.index )
         this.FaseEdit =  this.arrayFase[index]
    }
 

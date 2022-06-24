@@ -45,6 +45,17 @@
         <fa-icon [icon]="add"></fa-icon>
         <p>Adicionar campo</p>
       </button>
+      <div class="campos">
+        <div class="campos-content" *ngFor="let item of arrayCampos" >
+          <div class="campo" >
+            <fa-icon [icon]="campo"></fa-icon>
+            <p>Campo: {{item.campo}} / Tipo: {{item.tipo}}</p>
+          </div>
+          <div class="actions">
+            <fa-icon [icon]="delete" (click)="deleteCampo(item)" ></fa-icon>
+          </div>
+        </div>
+      </div>
       <div class="form">
         <label for="button">Titulo do botão</label>
         <input type="text" id="button" name="button" [(ngModel)]="landing.butao">

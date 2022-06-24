@@ -12,7 +12,10 @@ import { HeaderService } from '../header.service';
 export class NavbarComponent implements OnInit {
 
   routes:string | undefined
-  @Input() public routerBack = '/home'
+
+  @Input() public routerBack = '/home';
+
+  @Input() public hiddenButton = 'show'
 
   back = faArrowLeft
   allFunnels = faEye
