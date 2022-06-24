@@ -31,33 +31,29 @@
       </div>
       <h4 class="form">Selecione o campo que deseja alterar: </h4>
       <div class="campos">
-        <div class="campos-content" *ngFor="let item of arrayCampos" >
+        <div class="campos-content" *ngFor="let item of Datalanding.campos; let i = index" >
           <div class="campo" >
             <fa-icon [icon]="campo"></fa-icon>
             <p>Campo: {{item.campo}} / Tipo: {{item.tipo}}</p>
           </div>
           <div class="actions">
-            <fa-icon [icon]="delete" (click)="deleteCampo(item)" ></fa-icon>
+            <fa-icon [icon]="edit" (click)="editarCampos(i)" ></fa-icon>
           </div>
         </div>
       </div>
 
       <div class="form" >
         <label for="campo">Reescreva o campo selecionado</label>
-        <input type="text" id="campo" name="campo"  [(ngModel)]="campos.campo" >
+        <input type="text" id="campo" name="campo"  [(ngModel)]="camposEdit.campo" >
       </div>
       <div class="form-select">
         <label for="tipo">Alterar o tipo do campo</label>
-        <select name="tipo" id="tipo" [(ngModel)]="campos.tipo">
+        <select name="tipo" id="tipo" [(ngModel)]="camposEdit.tipo">
           <option value="text">Texto</option>
           <option value="tel">Telefone</option>
           <option value="email">Email</option>
         </select>
       </div>
-      <button id="add" class="add-input" (click)="addCampos()">
-        <fa-icon [icon]="add"></fa-icon>
-        <p>Alterar campo</p>
-      </button>
       <div class="form">
         <label for="button">Titulo do botão</label>
         <input type="text" id="button" name="button" [(ngModel)]="Datalanding.butao">

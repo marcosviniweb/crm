@@ -16,23 +16,25 @@ export class EditarLandingPageComponent implements OnInit {
 
   public landing:Landing = {}
 
-  backPage = '/landingPage'
-  Datalanding:any = []
+  backPage = '/landingPage';
 
-  produtos: any = []
+  Datalanding:any = [];
 
-  add = faPlus
-  campo = faFileAlt
-  delete = faTrashAlt
-  edit = faEdit
-  funis: any = []
+  produtos: any = [];
 
-  campos = {
+  add = faPlus;
+  campo = faFileAlt;
+  delete = faTrashAlt;
+  edit = faEdit;
+  funis: any = [];
+
+
+  camposEdit = {
     campo:'',
     tipo:''
-  }
+  };
 
-  arrayCampos:any = []
+  arrayCampos:any = [];
 
   constructor(
     public service: IdeaService,
@@ -43,6 +45,7 @@ export class EditarLandingPageComponent implements OnInit {
 
 
   ngOnInit(){
+
     let id =  this.activeRoute.snapshot.params['id'];
     console.log(id);
     this.service.getLandingId(id).subscribe((res)=> {
@@ -61,27 +64,14 @@ export class EditarLandingPageComponent implements OnInit {
     })
   }
 
-  addCampos(){
-
-    let dadosCampos = JSON.stringify(this.campos)
-
-    let dados = JSON.parse(dadosCampos)
-
-    this.arrayCampos.push(dados)
-
-    this.landing.campos = this.arrayCampos
 
 
-  }
+  editarCampos(item: any){
 
-  deleteCampo(item: any){
-    console.log(item)
-    let index = this.arrayCampos.indexOf(item)
-    if(index > -1){
-       this.arrayCampos.splice(index,1)
+    this.camposEdit = this.Datalanding.campos[item]
     }
 
-  }
+
 
   alterar(){
     console.log(this.Datalanding);
