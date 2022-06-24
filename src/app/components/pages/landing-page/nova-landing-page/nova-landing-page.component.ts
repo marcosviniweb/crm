@@ -59,7 +59,7 @@ export class NovaLandingPageComponent implements OnInit {
 
 
   }
-  
+
   deleteCampo(item: any){
     console.log(item)
     let index = this.arrayCampos.indexOf(item)
@@ -70,11 +70,22 @@ export class NovaLandingPageComponent implements OnInit {
   }
 
   addLanding(){
-    console.log(this.landing);
     let id = this.fireservice.createId()
+    console.log(this.landing);
+    let dados = [{
+          id: id,
+          nome: this.landing.nome,
+          butao: this.landing.butao,
+          campos: this.landing.campos,
+          funil: this.landing.funil,
+          link: this.landing.link,
+          produto: this.landing.produto,
+          titulo: this.landing.titulo
+    }]
+
 
     try{
-      this.service.addLanding(id,this.landing)
+      this.service.addLanding(id,dados[0])
       alert('Landing Page cadastrada com sucesso !')
       this.router.navigate(['/landingPage'])
     }catch(error){console.log(error)}

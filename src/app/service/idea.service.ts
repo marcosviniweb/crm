@@ -9,6 +9,8 @@ import { Tarefa } from "../interfaces/tarefa";
 import { Produtos } from "../interfaces/produtos";
 import { Landing } from './../interfaces/landing';
 import { Responsavel } from "../interfaces/responsavel";
+import { Campanhas } from "../interfaces/campanhas";
+import { Clientes } from "../interfaces/clientes";
 
 export interface Idea {
    nome:'',
@@ -25,6 +27,8 @@ export class IdeaService {
   public produto = this.afs.collection<Produtos>('Produto');
   public landing = this.afs.collection<Landing>('Landing');
   public responsavel = this.afs.collection<Responsavel>('Responsavel');
+  public campanhas = this.afs.collection<Campanhas>('Campanha');
+  public clientes = this.afs.collection<Clientes>('Clientes');
 
 
   constructor(
@@ -117,7 +121,9 @@ export class IdeaService {
  }
 
  addLanding(id: any, dados: any){
-  return this.afs.collection('Landing').doc(id).set(dados)}
+  return this.afs.collection('Landing').doc(id).set(dados)
+}
+
 
   getCampanha(){
     return this.landing.snapshotChanges().pipe(
@@ -136,5 +142,21 @@ export class IdeaService {
     var ordenacao =  this.afs.collection<Landing>("Landing", ref => ref.where('id', '==', id)).valueChanges()
     return ordenacao
    }
+
+   editarlanding(id: any, dados: any){
+    return this.afs.collection('Landing').doc(id).update(dados)
+ }
+    exluirLanding(id: string){
+          return this.afs.collection('Landing').doc(id).delete()
+    }
+
+    getCampanhaId(id: string): Observable<Campanhas[]>{
+      var ordenacao =  this.afs.collection<Campanhas>("Landing", ref => ref.where('link', '==', id)).valueChanges()
+      return ordenacao
+     }
+
+     addCliente(id: any, dados: any){
+      return this.afs.collection('Clientes').doc(id).set(dados)
+    }
 
 }

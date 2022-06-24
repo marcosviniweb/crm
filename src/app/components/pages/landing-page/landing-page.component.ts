@@ -38,5 +38,8 @@ export class LandingPageComponent implements OnInit {
         console.log(this.dados)
     })
   }
-
+  excluir(id: string){
+      console.log(id)
+      this.service.exluirLanding(id)
+    }
 }

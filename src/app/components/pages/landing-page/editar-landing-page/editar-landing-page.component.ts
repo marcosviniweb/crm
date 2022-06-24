@@ -27,6 +27,7 @@ export class EditarLandingPageComponent implements OnInit {
   delete = faTrashAlt;
   edit = faEdit;
   funis: any = [];
+  id: string = '';
 
 
   camposEdit = {
@@ -46,9 +47,9 @@ export class EditarLandingPageComponent implements OnInit {
 
   ngOnInit(){
 
-    let id =  this.activeRoute.snapshot.params['id'];
-    console.log(id);
-    this.service.getLandingId(id).subscribe((res)=> {
+    this.id =  this.activeRoute.snapshot.params['id'];
+
+    this.service.getLandingId(this.id).subscribe((res)=> {
       this.Datalanding = res[0]
       console.log(this.Datalanding)
     })
@@ -75,13 +76,15 @@ export class EditarLandingPageComponent implements OnInit {
 
   alterar(){
     console.log(this.Datalanding);
-  //   let id = this.fireservice.createId()
 
-  //   try{
-  //     this.service.addLanding(id,this.landing)
-  //     alert('Landing Page cadastrada com sucesso !')
-  //     this.router.navigate(['/landingPage'])
-  //   }catch(error){console.log(error)}
+
+    try{
+      this.service.editarlanding(this.id,this.Datalanding)
+      alert('Landing Page altualizada com sucesso !')
+      this.router.navigate(['/landingPage'])
+    }catch(error){
+      console.log(error)
+    }
 
  }
 

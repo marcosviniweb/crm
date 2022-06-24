@@ -1,22 +1,15 @@
 <main id="main">
   <div class="content" id="content">
     <div class="title">
-      <h2>Ganhe 40% de desconto em qualquer curso</h2>
+      <h2>{{dadosCampanha.titulo}}</h2>
     </div>
-    <form>
-      <div class="info">
-        <label for="name">Nome:</label>
-        <input type="text" id="name">
+    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+      <div class="info" *ngFor="let item of dadosCampanha.campos">
+        <label for="name">{{item.campo}}</label>
+        <input [type]="item.tipo"  [name] = "item.tratado" ngModel>
       </div>
-      <div class="info">
-        <label for="tel">Telefone:</label>
-        <input type="tel" id="tel">
-      </div>
-      <div class="info">
-        <label for="email">Email:</label>
-        <input type="email" id="email">
-      </div>
+      <button id="button"  type = "submit" >{{dadosCampanha.butao}}</button>
     </form>
-    <button id="button" >Quero fazer minha faculdade</button>
+
   </div>
 </main>
