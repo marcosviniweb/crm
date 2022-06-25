@@ -27,4 +27,6 @@ export class FunilComponent implements OnInit {
       });
   }
 
+
+
 }

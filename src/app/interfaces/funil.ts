@@ -3,5 +3,5 @@ export interface Funil {
   empresa?: string | undefined;
   id?: string | undefined;
   fase?: string[] | undefined;
-
+  vendedor?: object[] | undefined;
 }

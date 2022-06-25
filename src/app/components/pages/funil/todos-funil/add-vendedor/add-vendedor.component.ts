@@ -4,6 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { IdeaService } from 'src/app/service/idea.service';
+import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { Responsavel } from 'src/app/interfaces/responsavel';
+import { Funil } from 'src/app/interfaces/funil';
 
 @Component({
   selector: 'app-add-vendedor',
@@ -16,8 +19,12 @@ export class AddVendedorComponent implements OnInit {
 
   add = faPlus
   id: string = '';
-  funil: any;
+  public funil: Funil = {};
   arrayFase: any;
+  vendedores : any;
+  public resp: Responsavel = {};
+
+
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
@@ -25,14 +32,33 @@ export class AddVendedorComponent implements OnInit {
     private activeRoute: ActivatedRoute
 
   ) {
-    this.id = this.activeRoute.snapshot.params['id'];
-    this.service.getFunilId(this.id ).subscribe(res =>{
-     this.funil = res;
-         console.log(res)
-   })
+
    }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.id = this.activeRoute.snapshot.params['id'];
+    this.service.getFunilId(this.id ).subscribe(res =>{
+     this.funil = res[0];
+         console.log(res)
+   })
+   this.service.getVendedor().subscribe(res =>{
+    this.vendedores = res;
+    console.log(this.vendedores);
+   });
+
+
+  }
+
+  edit(){
+    console.log(this.funil)
+
+    try{
+          this.service.editarFunil(this.id, this.funil);
+          alert('Vendedor(es) adicionado com sucesso');
+          this.router.navigate(['funil/all'])
+    }catch(error){
+      console.log(error)
+    }
   }
 
 

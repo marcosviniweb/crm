@@ -13,7 +13,6 @@ import { HeaderComponent } from '../../header/header.component';
 import {FormsModule} from "@angular/forms";
 import { HeaderModule } from '../../header/header.module';
 
-
 @NgModule({
   declarations: [
     FunilComponent,
@@ -29,7 +28,8 @@ import { HeaderModule } from '../../header/header.module';
     FontAwesomeModule,
     FuniRoutingModule,
     FormsModule,
-    HeaderModule
+    HeaderModule,
+
   ],
 
   exports: [

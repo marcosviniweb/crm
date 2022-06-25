@@ -1,6 +1,6 @@
 <app-navbar [routerBack]="backPage"></app-navbar>
 <main>
-  <div class="content"  *ngFor = "let item of funil">
+  <div class="content" >
     <div class="add-funnel">
       <div class="title">
         <p>Adicionar Vendedor</p>
@@ -8,22 +8,25 @@
       <form class="form" autocomplete="off" >
         <div class="form">
           <label for="name">Nome do Funil</label>
-          <input type="text" id="name"  readonly name = "nome" [(ngModel)] = "item.nome">
+          <input type="text" id="name"  readonly name = "nome" [(ngModel)] = "funil.nome">
         </div>
         <div class="form">
           <label for="company">Empresa</label>
-          <input type="text"  readonly name = "empresa" [(ngModel)] = "item.empresa" >
+          <input type="text"  readonly name = "empresa" [(ngModel)] = "funil.empresa" >
         </div>
         <div class="saller">
           <p>Adicionar vendedor no funil</p>
-          <div class="saller-selector">
-            <input type="checkbox" id="saller">
-            <label for="saller">Todos os vendedores</label>
+          <div class="form">
+            <select name="vendedor" id="vendedor" [(ngModel)]="funil.vendedor" multiple>
+              <option *ngFor="let item of vendedores" [value]="item.nome" >{{item.nome}}</option>
+            </select>
+
+
           </div>
         </div>
       </form>
       <div class="edit">
-        <button id="edit">
+        <button id="edit" (click)="edit()">
           <p>Editar</p>
         </button>
       </div>
