@@ -28,7 +28,8 @@ export class NovaLandingPageComponent implements OnInit {
 
   campos = {
     campo:'',
-    tipo:''
+    tipo:'',
+    tratado:''
   }
 
   arrayCampos:any = []
@@ -53,7 +54,13 @@ export class NovaLandingPageComponent implements OnInit {
 
     let dados = JSON.parse(dadosCampos)
 
+    // TRATANDO O CAMPO "TRATADO"
+    let espaco = dados.campo.replace(/ /g, "");
+    let fonte = espaco.toLowerCase();
+    dados.tratado = fonte
+    console.log(dados)
     this.arrayCampos.push(dados)
+
 
     this.landing.campos = this.arrayCampos
 
