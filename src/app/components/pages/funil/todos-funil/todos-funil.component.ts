@@ -37,6 +37,9 @@ export class TodosFunilComponent implements OnInit {
   ngOnInit(): void {
   }
 
+    deletar(id: any){
+        this.service.exluirFunil(id);
+    }
 
 
 

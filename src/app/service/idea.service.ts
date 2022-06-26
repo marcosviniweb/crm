@@ -136,16 +136,16 @@ export class IdeaService {
       })
     );
 
-  }
+    }
 
   getLandingId(id: string): Observable<Landing[]>{
     var ordenacao =  this.afs.collection<Landing>("Landing", ref => ref.where('id', '==', id)).valueChanges()
-    return ordenacao
-   }
+      return ordenacao
+    }
 
    editarlanding(id: any, dados: any){
     return this.afs.collection('Landing').doc(id).update(dados)
- }
+    }
     exluirLanding(id: string){
           return this.afs.collection('Landing').doc(id).delete()
     }
@@ -153,11 +153,16 @@ export class IdeaService {
     getCampanhaId(id: string): Observable<Campanhas[]>{
       var ordenacao =  this.afs.collection<Campanhas>("Landing", ref => ref.where('link', '==', id)).valueChanges()
       return ordenacao
-     }
+    }
 
      addCliente(id: any, dados: any){
       return this.afs.collection('Clientes').doc(id).set(dados)
     }
+
+    exluirFunil(id: string){
+      return this.afs.collection('Funil').doc(id).delete()
+    }
+
 
 
 

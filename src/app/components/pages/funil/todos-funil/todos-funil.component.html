@@ -14,7 +14,7 @@
           <div id="actions">
             <img src="assets/img/add.png" alt="Adicionar" [routerLink]="['/funil/all/add',  funil.id]">
             <fa-icon [icon]="edit" [routerLink]="['/funil/all/edit', funil.id]"></fa-icon>
-            <fa-icon [icon]="delete"></fa-icon>
+            <fa-icon [icon]="delete" (click)="deletar(funil.id)"></fa-icon>
           </div>
         </div>
       </div>

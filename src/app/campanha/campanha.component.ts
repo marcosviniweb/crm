@@ -50,22 +50,23 @@ export class CampanhaComponent implements OnInit {
   }
   submitForm(form:NgForm){
     this.clientes.campos = form.value
+    console.log( this.clientes.campos)
     let dados = [{
         id: this.dadosCampanha.id,
         campos:  this.clientes.campos,
-        funil: this.clientes.funil,
-        link: this.clientes.link,
-        nome: this.clientes.nome,
-        idlanding: this.clientes.idlanding,
-        produto: this.clientes.produto,
+        funil: this.dadosCampanha.funil,
+        link: this.dadosCampanha.link,
+        nome: this.dadosCampanha.nome,
+        idlanding: this.dadosCampanha.idlanding,
+        produto: this.dadosCampanha.produto,
     }]
-
-    try{
-          this.service.addCliente(this.dadosCampanha.id, dados[0])
-          alert("Parabéns - Inscrição feita com sucesso!")
-    }catch(error){
-      console.log(error)
-    }
+      console.log(dados)
+    // try{
+    //       this.service.addCliente(this.dadosCampanha.id, dados[0])
+    //       alert("Parabéns - Inscrição feita com sucesso!")
+    // }catch(error){
+    //   console.log(error)
+    // }
 
   }
 
