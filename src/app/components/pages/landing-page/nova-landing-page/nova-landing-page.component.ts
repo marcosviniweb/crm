@@ -81,6 +81,7 @@ export class NovaLandingPageComponent implements OnInit {
     console.log(this.landing);
     let dados = [{
           id: id,
+          idfunil: this.funis.id,
           nome: this.landing.nome,
           butao: this.landing.butao,
           campos: this.landing.campos,
