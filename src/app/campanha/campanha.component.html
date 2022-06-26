@@ -3,12 +3,13 @@
     <div class="title">
       <h2>{{dadosCampanha.titulo}}</h2>
     </div>
-    <form #form="ngForm" (ngSubmit)="submitForm(form)">
+    <form #f="ngForm" (ngSubmit)="submitForm(f)">
       <div class="info" *ngFor="let item of dadosCampanha.campos">
         <label for="name">{{item.campo}}</label>
         <input [type]="item.tipo"  [name] = "item.tratado" ngModel>
       </div>
       <button id="button"  type = "submit" >{{dadosCampanha.butao}}</button>
     </form>
+
   </div>
 </main>

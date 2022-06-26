@@ -56,23 +56,23 @@ export class CampanhaComponent implements OnInit {
 
   submitForm(form:NgForm){
     this.clientes.campos = form.value
-    console.log( this.clientes.campos)
+    let id = this.fireservice.createId()
     let dados = [{
-        id: this.dadosCampanha.id,
+        id: id,
         campos:  this.clientes.campos,
         funil: this.dadosCampanha.funil,
         link: this.dadosCampanha.link,
         nome: this.dadosCampanha.nome,
-        idlanding: this.dadosCampanha.idlanding,
+        idlanding: this.dadosCampanha.id,
         produto: this.dadosCampanha.produto,
     }]
       console.log(dados)
-    // try{
-    //       this.service.addCliente(this.dadosCampanha.id, dados[0])
-    //       alert("Parabéns - Inscrição feita com sucesso!")
-    // }catch(error){
-    //   console.log(error)
-    // }
+    try{
+          this.service.addCliente(id, dados[0])
+          alert("Parabéns - Inscrição feita com sucesso!")
+    }catch(error){
+      console.log(error)
+    }
 
   }
 
