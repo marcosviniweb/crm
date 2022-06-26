@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientesDetalhesComponent implements OnInit {
 
+  backPage = '/cliente';
+
   constructor() { }
 
   ngOnInit(): void {

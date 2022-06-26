@@ -10,6 +10,7 @@ import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
 })
 export class ClientesComponent implements OnInit {
 
+
   userIcon = faUserCircle
   whats = faWhatsappSquare
 

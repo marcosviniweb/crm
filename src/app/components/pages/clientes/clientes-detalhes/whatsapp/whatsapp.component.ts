@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
 @Component({
   selector: 'app-whatsapp',
   templateUrl: './whatsapp.component.html',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhatsappComponent implements OnInit {
 
+  whats = faWhatsapp
   constructor() { }
 
   ngOnInit(): void {

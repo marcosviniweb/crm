@@ -11,7 +11,7 @@ const routes: Routes = [
 
   {path:'', component:ClientesComponent},
   {path:'details', component:ClientesDetalhesComponent, children:[
-    {path:'historic', component:HistoricoComponent},
+    {path:'history', component:HistoricoComponent},
     {path:'email', component:EmailComponent},
     {path:'whatsapp', component:WhatsappComponent},
 
