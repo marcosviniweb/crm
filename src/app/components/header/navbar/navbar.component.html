@@ -40,3 +40,15 @@
     </div>
   </div>
 </nav>
+
+<nav *ngIf="routes?.includes('cliente')" style="background-color: #00e676;;" class="navbar">
+  <div class="nav-content">
+    <div class="back" id="back" [routerLink]="routerBack">
+      <fa-icon [icon]="back"></fa-icon>
+    </div>
+    <!-- <div class="add" id="add" style="width: 290px;" [routerLink]="['/landingPage/details']">
+      <img src="assets/img/botao-adicionar.png" alt="">
+      <p>Adicionar nova Landing Page</p>
+    </div> -->
+  </div>
+</nav>

@@ -15,6 +15,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
 import { CampanhaComponent } from './campanha/campanha.component';
 import { HeaderModule } from './components/header/header.module';
+import { ClientesComponent } from './components/pages/clientes/clientes.component';
 
 @NgModule({
   declarations: [

@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../components/header/header.service';
+import { Campanhas } from '../interfaces/campanhas';
 import { Clientes } from '../interfaces/clientes';
-import { Landing } from '../interfaces/landing';
-import { AuthService } from '../service/auth.service';
 import { IdeaService } from '../service/idea.service';
 
 @Component({
@@ -21,6 +19,8 @@ export class CampanhaComponent implements OnInit {
   public dadosCampanha: any;
 
   clientesTeste:any
+
+  dadosExibir:Campanhas[]= []
 
 
   id: string = '';
@@ -44,10 +44,16 @@ export class CampanhaComponent implements OnInit {
     this.headerService.onOffHeader(false)
 
       this.service.getCampanhaId(this.id).subscribe(data => {
-       this.dadosCampanha = data[0]
+       this.dadosCampanha = data[0];
+       this.dadosExibir = data;
        console.log(this.dadosCampanha)
+       console.log(this.dadosExibir[0])
+
       });
+
+
   }
+
   submitForm(form:NgForm){
     this.clientes.campos = form.value
     console.log( this.clientes.campos)

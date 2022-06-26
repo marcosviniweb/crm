@@ -22,6 +22,9 @@ const routes: Routes = [
   {path: 'vendedor',
   loadChildren:()=>import('./components/pages/vendedor/vendedor.module').then(m=>m.VendedorModule)},
 
+  {path: 'cliente',
+  loadChildren:()=>import('./components/pages/clientes/clientes.module').then(m=>m.ClientesModule)},
+
   {path:'register', component:RegisterComponent, canActivate: [LoginGuard]},
   {path:'campanha', component: CampanhaComponent},
   {path:'campanha/:id', component: CampanhaComponent}
