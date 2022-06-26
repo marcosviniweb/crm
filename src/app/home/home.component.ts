@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
+import { faFileAlt, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 import { HeaderService } from '../components/header/header.service';
@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   landing = faFileAlt
   funnel = faFilter
   seller = faHeadset
-
+  client = faUser
   //Resumo
   contatos = 15
   vendas = 30

@@ -114,6 +114,28 @@ main{
         }
 
       }
+
+      .card-client{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 30px;
+        padding: 20px;
+        width: 200px;
+        margin: 10px;
+        background-color: #00e676;
+        box-shadow: 2px 2px 5px gray;
+
+
+        .seller{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+        }
+
+      }
     }
 
   }
@@ -449,6 +471,10 @@ main{
 }
 #seller:hover {
   border: #22c7fb solid 2px;
+  cursor: pointer;
+}
+#client:hover {
+  border: #00a884 solid 2px;
   cursor: pointer;
 }
 

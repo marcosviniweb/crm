@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<main>
+  <div class="content">
+    <div class="filters">
+      <div  class="filter">
+        <label for="funnel">Funil: </label>
+        <select name="funil" id="funnel" >
+          <option  [value]="" ></option>
+        </select>
+      </div>
+      <div class="filter">
+        <p>Responsável:</p>
+        <select>
+          <option value="victorSanches">Todos</option>
+          <option value="victorSanches">Ricardo Lafuente</option>
+        </select>
+      </div>
+      <div class="filter">
+        <p>Etapas:</p>
+        <select>
+          <option value="todas">Todas as Etapas</option>
+        </select>
+      </div>
+    </div>
+    <div class="info-content">
+      <div class="title">
+        <p >Nome:</p>
+        <p >Etapa:</p>
+        <p >Última atualização:</p>
+      </div>
+      <div class="inform">
+        <!-- ngfor -->
+        <div class="inform-content" >
+          <div class="content" routerLink="/cliente/details">
+            <div class="name">
+              <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
+              <p>Ricardo Lafuente</p>
+            </div>
+            <div class="phase-info">
+              <p>Prospecção</p>
+            </div>
+            <div class="date">
+              <p>20/03/2022 ás 14:35</p>
+            </div>
+          </div>
+          <div class="whatsapp">
+            <fa-icon [icon]="whats"></fa-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
