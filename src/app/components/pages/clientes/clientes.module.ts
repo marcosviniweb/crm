@@ -9,7 +9,7 @@ import { ClienteRoutingModule } from './clientes.routing.module';
 import { EmailComponent } from './clientes-detalhes/email/email.component';
 import { HistoricoComponent } from './clientes-detalhes/historico/historico.component';
 import { WhatsappComponent } from './clientes-detalhes/whatsapp/whatsapp.component';
-
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -26,7 +26,8 @@ import { WhatsappComponent } from './clientes-detalhes/whatsapp/whatsapp.compone
     CommonModule,
     FontAwesomeModule,
     HeaderModule,
-    ClienteRoutingModule
+    ClienteRoutingModule,
+    FormsModule
   ]
 })
 export class ClientesModule { }

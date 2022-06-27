@@ -179,6 +179,18 @@ export class IdeaService {
       return ordenacao
     }
 
+    getEtapa(){
+      return this.etapa.snapshotChanges().pipe(
+        map(actions => {
+          return actions.map(a => {
+            const data = a.payload.doc.data();
+            const id = a.payload.doc.id;
+            return { id, ...data };
+          });
+        })
+      );
+
+      }
 
 
 

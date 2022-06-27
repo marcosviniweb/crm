@@ -10,12 +10,15 @@ import { ClientesComponent } from './clientes.component';
 const routes: Routes = [
 
   {path:'', component:ClientesComponent},
-  {path:'details', component:ClientesDetalhesComponent, children:[
+  {path:'details', component:ClientesDetalhesComponent,
+   children:[
     {path:'history', component:HistoricoComponent},
+    {path:'history/:id', component:HistoricoComponent},
     {path:'email', component:EmailComponent},
     {path:'whatsapp', component:WhatsappComponent},
 
-  ]}
+  ]},
+
 ]
 
 
