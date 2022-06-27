@@ -6,13 +6,12 @@
     </div>
     <div class="saller">
       <div class="saller-content" *ngFor = "let item of vendedores">
-        <div class="saller-name">
+        <div class="saller-name" [routerLink]="['/vendedor/details/historic', item.id]">
           <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
         <p>{{item.nome}}</p>
         </div>
         <div id="actions">
           <div id="actions">
-            <fa-icon [icon]="view" [routerLink]="['/vendedor/details/historic', item.id]"></fa-icon>
             <fa-icon [icon]="edit" [routerLink]="['/vendedor/edit', item.id]"></fa-icon>
             <fa-icon [icon]="delete"></fa-icon>
           </div>

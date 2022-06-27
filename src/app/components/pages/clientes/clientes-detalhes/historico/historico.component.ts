@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope, faPhoneVolume, faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faPhoneVolume, faCalendarCheck, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
 @Component({
   selector: 'app-historico',
@@ -9,6 +9,7 @@ import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./historico.component.scss']
 })
 export class HistoricoComponent implements OnInit {
+  userIcon = faUserCircle
 
   agendamento = faCalendarCheck
   whats = faWhatsapp

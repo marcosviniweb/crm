@@ -40,6 +40,7 @@ main{
       }
 
       .saller-name{
+        cursor: pointer;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -52,7 +53,7 @@ main{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 90px;
+  width: 50px;
   img{
     width: 20px;
     height: 20px;

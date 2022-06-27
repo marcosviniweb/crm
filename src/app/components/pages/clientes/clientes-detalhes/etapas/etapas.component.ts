@@ -1,16 +1,14 @@
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { Component, OnInit } from '@angular/core';
 
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-
 @Component({
-  selector: 'app-whatsapp',
-  templateUrl: './whatsapp.component.html',
-  styleUrls: ['./whatsapp.component.scss']
+  selector: 'app-etapas',
+  templateUrl: './etapas.component.html',
+  styleUrls: ['./etapas.component.scss']
 })
-export class WhatsappComponent implements OnInit {
+export class EtapasComponent implements OnInit {
   userIcon = faUserCircle
-  
   whats = faWhatsapp
   constructor() { }
 
