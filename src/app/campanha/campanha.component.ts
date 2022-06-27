@@ -24,6 +24,9 @@ export class CampanhaComponent implements OnInit {
 
 
   id: string = '';
+  nomefunil: string = '';
+  etapafunil: any;
+  etapa:any;
   constructor(
 
     public fireservice: AngularFirestore,
@@ -47,7 +50,7 @@ export class CampanhaComponent implements OnInit {
        this.dadosCampanha = data[0];
        this.dadosExibir = data;
        console.log(this.dadosCampanha)
-       console.log(this.dadosExibir[0])
+        this.nomefunil = this.dadosCampanha.funil;
 
       });
 
@@ -59,16 +62,38 @@ export class CampanhaComponent implements OnInit {
     let id = this.fireservice.createId()
     let dados = [{
         id: id,
+        idfunil: this.dadosCampanha.funil,
         campos:  this.clientes.campos,
-        funil: this.dadosCampanha.funil,
         link: this.dadosCampanha.link,
         nome: this.dadosCampanha.nome,
         idlanding: this.dadosCampanha.id,
         produto: this.dadosCampanha.produto,
     }]
-      console.log(dados)
+
+
+      let idetapa = this.fireservice.createId()
+      console.log(this.nomefunil)
+
+      this.service.getFunilEtapa(this.nomefunil).subscribe(res => {
+            this.etapafunil = res[0]
+
+            console.log(this.etapa)
+
+            this.etapa = [{
+              id: idetapa,
+              campos: this.clientes.campos,
+              etapa: this.etapafunil.fase[0],
+              atualizacao: new Date().toLocaleDateString(),
+              tarefa : 'Contato Adicionado',
+              idfunil: this.nomefunil,
+              }]
+              this.service.addEtapa(idetapa,this.etapa[0])
+     })
+
+
     try{
-          this.service.addCliente(id, dados[0])
+           this.service.addCliente(id, dados[0])
+
           alert("Parabéns - Inscrição feita com sucesso!")
     }catch(error){
       console.log(error)

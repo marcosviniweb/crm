@@ -35,6 +35,11 @@ export class EditarLandingPageComponent implements OnInit {
     tipo:''
   };
 
+  campos = {
+    campo:'',
+    tipo:'',
+    tratado:''
+  }
   arrayCampos:any = [];
 
   constructor(
@@ -71,7 +76,24 @@ export class EditarLandingPageComponent implements OnInit {
 
     this.camposEdit = this.Datalanding.campos[item]
     }
+    addCampos(){
 
+      let dadosCampos = JSON.stringify(this.campos)
+
+      let dados = JSON.parse(dadosCampos)
+
+      // TRATANDO O CAMPO "TRATADO"
+      let espaco = dados.campo.replace(/ /g, "");
+      let fonte = espaco.toLowerCase();
+      dados.tratado = fonte
+      console.log(dados)
+      this.arrayCampos.push(dados)
+
+
+      this.landing.campos = this.arrayCampos
+
+
+    }
 
 
   alterar(){

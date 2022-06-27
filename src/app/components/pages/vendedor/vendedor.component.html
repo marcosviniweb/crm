@@ -1,11 +1,11 @@
 <app-navbar></app-navbar>
 <main>
-  <div class="content" *ngFor = "let item of vendedores">
+  <div class="content" >
     <div class="title">
-      <p>Nome do vendedor({{vendedores.length}})</p>
+      <p>Nome do vendedor</p>
     </div>
     <div class="saller">
-      <div class="saller-content">
+      <div class="saller-content" *ngFor = "let item of vendedores">
         <div class="saller-name">
           <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
         <p>{{item.nome}}</p>

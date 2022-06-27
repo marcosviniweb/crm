@@ -11,6 +11,7 @@ import { Landing } from './../interfaces/landing';
 import { Responsavel } from "../interfaces/responsavel";
 import { Campanhas } from "../interfaces/campanhas";
 import { Clientes } from "../interfaces/clientes";
+import { Etapa } from "../interfaces/etapa";
 
 export interface Idea {
    nome:'',
@@ -29,6 +30,7 @@ export class IdeaService {
   public responsavel = this.afs.collection<Responsavel>('Responsavel');
   public campanhas = this.afs.collection<Campanhas>('Campanha');
   public clientes = this.afs.collection<Clientes>('Clientes');
+  public etapa = this.afs.collection<Etapa>('Etapa');
 
 
   constructor(
@@ -161,6 +163,15 @@ export class IdeaService {
 
     exluirFunil(id: string){
       return this.afs.collection('Funil').doc(id).delete()
+    }
+
+    addEtapa(id: any, dados: any){
+      return this.afs.collection('Etapa').doc(id).set(dados)
+    }
+
+    getFunilEtapa(id: any): Observable<Funil[]>{
+      var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where('id', '==', id)).valueChanges()
+      return ordenacao
     }
 
 

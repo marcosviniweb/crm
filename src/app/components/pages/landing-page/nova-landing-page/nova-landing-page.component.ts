@@ -78,10 +78,9 @@ export class NovaLandingPageComponent implements OnInit {
 
   addLanding(){
     let id = this.fireservice.createId()
-    console.log(this.landing);
+    console.log(this.funis.id);
     let dados = [{
           id: id,
-          idfunil: this.funis.id,
           nome: this.landing.nome,
           butao: this.landing.butao,
           campos: this.landing.campos,

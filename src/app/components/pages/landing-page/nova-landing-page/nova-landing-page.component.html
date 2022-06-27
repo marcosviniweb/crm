@@ -16,7 +16,7 @@
       <div class="form-select">
         <label for="funnel">Selecione o Funil</label>
         <select name="funil" id="funnel" [(ngModel)]="landing.funil" >
-          <option *ngFor="let item of funis" [value]="item.nome" >{{item.nome}}</option>
+          <option *ngFor="let item of funis" [value]="item.id" >{{item.nome}}</option>
         </select>
       </div>
       <div class="form-select">

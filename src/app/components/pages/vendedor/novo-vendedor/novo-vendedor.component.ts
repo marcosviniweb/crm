@@ -50,7 +50,7 @@ export class NovoVendedorComponent implements OnInit {
       ]
       try{
         await this.afa.createUserWithEmailAndPassword(this.vendedor.email, this.vendedor.senha);
-        this.service.cadastrarVendedor(id, dados);
+        this.service.cadastrarVendedor(id, dados[0]);
         alert('Cadastrado com sucesso');
         this.router.navigate(['vendedor'])
       }catch(error){
