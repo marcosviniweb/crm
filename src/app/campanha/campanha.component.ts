@@ -48,6 +48,7 @@ export class CampanhaComponent implements OnInit {
 
       this.service.getCampanhaId(this.id).subscribe(data => {
        this.dadosCampanha = data[0];
+       console.log( this.dadosCampanha)
        this.dadosExibir = data;
       //  console.log(this.dadosCampanha)
         this.nomefunil = this.dadosCampanha.funil;
@@ -70,6 +71,7 @@ export class CampanhaComponent implements OnInit {
         nome: this.dadosCampanha.nome,
         idlanding: this.dadosCampanha.id,
         produto: this.dadosCampanha.produto,
+        valorproduto: this.dadosCampanha.valorproduto,
     }]
 
 
@@ -78,6 +80,7 @@ export class CampanhaComponent implements OnInit {
             // console.log(  this.etapafunil)
 
             let idetapa = this.fireservice.createId()
+            let idrelatorio = this.fireservice.createId()
 
             let dados = [{
               id: idetapa,
@@ -89,7 +92,20 @@ export class CampanhaComponent implements OnInit {
               tarefa : 'Contato Adicionado',
               idfunil: this.nomefunil,
               }]
+
+              let dadosrelatorio = [{
+                id: idrelatorio,
+                idcliente: id,
+                nomecliente: form.value.nome,
+                etapa: this.etapafunil.fase[0],
+                atualizacao: new Date().toLocaleDateString(),
+                tarefa : 'Contato Adicionado',
+                idfunil: this.nomefunil,
+                valorproduto:  this.dadosCampanha.valorproduto,
+                }]
+
                this.service.addEtapa(idetapa,dados[0])
+               this.service.addRelatorioValores(idrelatorio, dadosrelatorio[0])
                 console.log(dados)
      })
 

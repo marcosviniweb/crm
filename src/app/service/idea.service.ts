@@ -198,6 +198,9 @@ export class IdeaService {
       return ordenacao
     }
 
+    addRelatorioValores(id: any, dados: any){
+      return this.afs.collection('Relatorio Etapas').doc(id).set(dados)
+    }
 
 
 }
