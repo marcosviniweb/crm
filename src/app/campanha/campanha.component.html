@@ -4,11 +4,21 @@
       <h2>{{dadosCampanha.titulo}}</h2>
     </div>
     <form #f="ngForm" (ngSubmit)="submitForm(f)">
+      <div class="info">
+      <label for="name">Nome:</label>
+      <input type="text" name = "nome" ngModel>
+      </div>
+      <div class="info">
+        <label for="name">Telefone:</label>
+        <input type="text" name = "telefone" ngModel>
+        </div>
       <div class="info" *ngFor="let item of dadosCampanha.campos">
         <label for="name">{{item.campo}}</label>
         <input [type]="item.tipo"  [name] = "item.tratado" ngModel>
       </div>
+      <div align = "center">
       <button id="button"  type = "submit" >{{dadosCampanha.butao}}</button>
+    </div>
     </form>
 
   </div>
