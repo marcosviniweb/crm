@@ -101,6 +101,7 @@ export class CampanhaComponent implements OnInit {
                 atualizacao: new Date().toLocaleDateString(),
                 tarefa : 'Contato Adicionado',
                 idfunil: this.nomefunil,
+                produto: this.dadosCampanha.produto,
                 valorproduto:  this.dadosCampanha.valorproduto,
                 }]
 
