@@ -25,16 +25,23 @@ export class NovaLandingPageComponent implements OnInit {
   campo = faFileAlt
   delete = faTrashAlt
   edit = faEdit
-
+  valorproduto: any;
+  valoritem: string = "";
   campos = {
     campo:'',
     tipo:'',
     tratado:''
   }
 
+  produto = {
+      nome: '',
+      valor: ''
+  }
+
   arrayCampos:any = []
 
-  constructor( public service: IdeaService,  public fireservice: AngularFirestore, public router:Router ) { }
+  constructor(
+    public service: IdeaService,  public fireservice: AngularFirestore, public router:Router ) { }
 
   ngOnInit(){
     this.service.getFunil().subscribe((res)=> {
@@ -76,8 +83,19 @@ export class NovaLandingPageComponent implements OnInit {
 
   }
 
+  // PEGAR O VALOR DO PRODUTO
+
+  valor(id: string){
+    console.log(id)
+        this.service.getprodutovalor(id).subscribe(res =>{
+           this.valorproduto = res
+           console.log(this.valorproduto[0].valor)
+        })
+  }
+
   addLanding(){
     let id = this.fireservice.createId()
+
     console.log(this.funis.id);
     let dados = [{
           id: id,
@@ -87,9 +105,10 @@ export class NovaLandingPageComponent implements OnInit {
           funil: this.landing.funil,
           link: this.landing.link,
           produto: this.landing.produto,
+          valorproduto: this.valorproduto[0].valor,
           titulo: this.landing.titulo
     }]
-
+      console.log(dados)
 
     try{
       this.service.addLanding(id,dados[0])

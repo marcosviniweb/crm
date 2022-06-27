@@ -49,7 +49,7 @@ export class CampanhaComponent implements OnInit {
       this.service.getCampanhaId(this.id).subscribe(data => {
        this.dadosCampanha = data[0];
        this.dadosExibir = data;
-       console.log(this.dadosCampanha)
+      //  console.log(this.dadosCampanha)
         this.nomefunil = this.dadosCampanha.funil;
 
       });
@@ -57,7 +57,7 @@ export class CampanhaComponent implements OnInit {
 
   }
 
-  submitForm(form:NgForm){
+  async submitForm(form:NgForm){
     this.clientes.campos = form.value
     let id = this.fireservice.createId()
     let dados = [{
@@ -73,28 +73,29 @@ export class CampanhaComponent implements OnInit {
     }]
 
 
-      let idetapa = this.fireservice.createId()
-      console.log(this.nomefunil)
-
-      this.service.getFunilEtapa(this.nomefunil).subscribe(res => {
+     await this.service.getFunilEtapa(this.nomefunil).subscribe(res => {
             this.etapafunil = res[0]
+            // console.log(  this.etapafunil)
 
-            console.log(this.etapa)
+            let idetapa = this.fireservice.createId()
 
-            this.etapa = [{
+            let dados = [{
               id: idetapa,
+              nomecliente: form.value.nome,
+              telefonecliente: form.value.telefone,
               campos: this.clientes.campos,
               etapa: this.etapafunil.fase[0],
               atualizacao: new Date().toLocaleDateString(),
               tarefa : 'Contato Adicionado',
               idfunil: this.nomefunil,
               }]
-              this.service.addEtapa(idetapa,this.etapa[0])
+               this.service.addEtapa(idetapa,dados[0])
+                console.log(dados)
      })
 
 
     try{
-           this.service.addCliente(id, dados[0])
+            this.service.addCliente(id, dados[0])
 
           alert("Parabéns - Inscrição feita com sucesso!")
     }catch(error){

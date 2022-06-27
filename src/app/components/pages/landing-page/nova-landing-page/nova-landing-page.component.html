@@ -21,15 +21,15 @@
       </div>
       <div class="form-select">
         <label for="funnel">Selecione o produto cadastrado: </label>
-        <select name="produto" id="produto" [(ngModel)]="landing.produto" >
+        <select name="produto" id="produto" [(ngModel)]="landing.produto"  (ngModelChange)="valor($event)">
           <option *ngFor="let item of produtos" [value]="item.nome" >{{item.nome}}</option>
         </select>
       </div>
+
       <div class="form">
         <label for="title">Titulo</label>
         <input type="text" id="title" name="title" [(ngModel)]="landing.titulo">
       </div>
-
       <div class="form" >
         <label for="campo">Adicionar campos na Landing Page</label>
         <input type="text" id="campo" name="campo"  [(ngModel)]="campos.campo" >

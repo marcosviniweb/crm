@@ -169,8 +169,8 @@ export class IdeaService {
       return this.afs.collection('Etapa').doc(id).set(dados)
     }
 
-    getFunilEtapa(idfunil: any): Observable<Etapa[]>{
-      var ordenacao =  this.afs.collection<Etapa>("Etapa", ref => ref.where('idfunil', '==', idfunil)).valueChanges()
+    getFunilEtapa(idfunil: any): Observable<Funil[]>{
+      var ordenacao =  this.afs.collection<Funil>("Funil", ref => ref.where('id', '==', idfunil)).valueChanges()
       return ordenacao
     }
 
@@ -191,6 +191,12 @@ export class IdeaService {
       );
 
       }
+
+
+    getprodutovalor(produto: any): Observable<Produtos[]>{
+      var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('nome', '==', produto)).valueChanges()
+      return ordenacao
+    }
 
 
 

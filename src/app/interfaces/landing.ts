@@ -10,6 +10,6 @@ export interface Landing {
   campos?: Object[] | undefined;
   titulo?:string | undefined;
   butao?: string | undefined;
-  produto?: string | undefined;
+  produto?: Object[] ;
 
 }
