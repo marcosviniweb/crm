@@ -1,7 +1,32 @@
 main{
   display: flex;
   margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+
+}
+
+.user{
+  height: 50px;
+  width: max-content;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 2px 2px 3px gray;
+  fa-icon{
+    color: #6e83b7;
+    font-size: 35px;
+    margin-right: 5px;
+
+  }
+  h2{
+    font-size: 18px;
+  }
+
 }
 
 .content{
@@ -14,55 +39,73 @@ main{
   margin-bottom: 50px;
 
   .info{
+    border-radius: 15px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 95%;
-    height: 70px;
+    height: max-content;
     padding: 20px;
-    background-color: white;
+    background-color: #00e676;
     box-shadow: 1px 1px 3px gray;
     margin-top: 10px;
     margin-bottom: 10px;
 
-    fa-icon{
-      margin-left: 10px;
-      margin-right: 25px;
-      font-size: 40px;
-    }
-
-  }
-  .info-content{
-    display: flex;
-    flex-direction: column;
-
-
-    h2{
+    textarea{
+      border-radius: 5px;
+      text-indent: 20px;
+      width: 90%;
+      height: 300px;
+      resize: none;
       font-size: 18px;
+      font-family: 'Segoe UI';
+      font-weight: 500;
+
     }
-    p{
-      font-size: 12px;
+    fa-icon{
+      font-size: 70px;
+      margin-bottom: 20px;
+      color: #ffffff;
     }
+    button{
+
+      border: none;
+      border-radius: 10px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+      background-color: #128c7e;
+      color: #ffffff;
+      height: 50px;
+      width: 120px;
+      box-shadow: 3px 3px 5px rgba(128, 128, 128, 0.671);
+      cursor: pointer;
+
+
+      fa-icon{
+        margin-top: 20px;
+        font-size: 25px;
+        margin-right: 15px;
+      }
+      p{
+        font-size: 17px;
+        font-weight: 600;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }
+    button:hover {
+      color: #00e676;
+      fa-icon{
+        color: #00e676;
+      }
+    }
+
+
   }
-  button{
-    display: flex;
-    justify-content: space-between;
-    padding: 7px;
-    align-items: center;
-    width: 120px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: 600;
-    color: white;
-    background-color: #3e96f5;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 2px 2px 3px rgba(128, 128, 128, 0.753);
-    margin-bottom: 15px;
-    cursor: pointer;
-  }
-  button:hover{
-    background: #1064bd;
-    color: #cfcfcd;
-  }
+
 
 }

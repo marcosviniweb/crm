@@ -10,6 +10,7 @@ import { EmailComponent } from './clientes-detalhes/email/email.component';
 import { HistoricoComponent } from './clientes-detalhes/historico/historico.component';
 import { WhatsappComponent } from './clientes-detalhes/whatsapp/whatsapp.component';
 import {FormsModule} from "@angular/forms";
+import { EtapasComponent } from './clientes-detalhes/etapas/etapas.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {FormsModule} from "@angular/forms";
     ClientesDetalhesComponent,
     EmailComponent,
     HistoricoComponent,
+    EtapasComponent,
     WhatsappComponent
 
 

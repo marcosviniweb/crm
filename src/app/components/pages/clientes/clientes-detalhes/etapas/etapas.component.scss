@@ -6,7 +6,6 @@ main{
   justify-content: center;
 
 }
-
 .user{
   height: 50px;
   width: max-content;
@@ -28,18 +27,19 @@ main{
   }
 
 }
-
 .content{
   width: 69%;
   max-width: 1000px;
   margin-top: 50px;
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   margin-bottom: 50px;
 
   .info{
     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     width: 95%;
     height: 70px;
@@ -49,23 +49,27 @@ main{
     margin-top: 10px;
     margin-bottom: 10px;
 
-    fa-icon{
-      margin-left: 10px;
-      margin-right: 25px;
-      font-size: 40px;
-    }
-
   }
   .info-content{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
 
 
     h2{
-      font-size: 18px;
+      font-size: 20px;
     }
     p{
-      font-size: 12px;
+      font-size: 18px;
+      margin-left: 5px;
+    }
+    select{
+      width: 150px;
+      height: 25px;
+      text-align: center;
+      font-weight: 600;
+      border-radius: 5px;
+      margin-left: 10px;
     }
   }
   button{
