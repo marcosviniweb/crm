@@ -21,6 +21,7 @@ export class FunilComponent implements OnInit {
   resparray: any;
   etapasarray: any;
   etapas: any;
+  etapafunil: any;
   public funil: Funil = {};
 
   constructor(
@@ -35,6 +36,7 @@ export class FunilComponent implements OnInit {
       });
 
 
+
   }
 
   responsavel(id: any) {
@@ -43,6 +45,12 @@ export class FunilComponent implements OnInit {
       this.resparray = res[0].vendedor
       this.etapas = res[0].fase
     });
+
+    this.service.getFunilEtapa(this.funilselect).subscribe((res) => {
+      this.etapafunil = res
+      console.log(this.etapafunil)
+   });
+
 
   }
 
@@ -53,6 +61,15 @@ export class FunilComponent implements OnInit {
       this.etapas = res[0].fase
     });
 
+
+
+  }
+
+  filtrofinal(id: any){
+    this.service.getFunilEtapaInteressado(this.funilselect,id ).subscribe((res) => {
+      this.etapafunil = res
+      console.log(this.etapafunil)
+   });
   }
 
 
