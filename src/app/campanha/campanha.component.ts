@@ -15,6 +15,8 @@ import { IdeaService } from '../service/idea.service';
 export class CampanhaComponent implements OnInit {
 
 
+  concluido = false
+
   public clientes: Clientes  = {};
   public dadosCampanha: any;
 
@@ -56,6 +58,10 @@ export class CampanhaComponent implements OnInit {
       });
 
 
+  }
+
+  conclusao(){
+    this.concluido = true
   }
 
   async submitForm(form:NgForm){
@@ -120,6 +126,7 @@ export class CampanhaComponent implements OnInit {
     }
 
   }
+
 
 
 }

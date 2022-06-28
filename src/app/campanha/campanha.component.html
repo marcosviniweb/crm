@@ -1,4 +1,4 @@
-<main id="main">
+<main id="main" *ngIf="concluido == false">
   <div class="content" id="content">
     <div class="title">
       <h2>{{dadosCampanha.titulo}}</h2>
@@ -17,8 +17,18 @@
         <input [type]="item.tipo"  [name] = "item.tratado" ngModel>
       </div>
       <div align = "center">
-      <button id="button"  type = "submit" >{{dadosCampanha.butao}}</button>
+      <button id="button" (click)="conclusao()"  type = "submit" >{{dadosCampanha.butao}}</button>
     </div>
     </form>
+  </div>
+</main>
+
+
+<!-- cadastro concluído -->
+
+<main id="next" *ngIf="concluido == true">
+  <div class="content-next" id="content-next">
+    <h2>Parabéns !</h2>
+    <p>Sua inscrição foi efetuada com sucesso, entraremos em contato em breve !</p>
   </div>
 </main>
