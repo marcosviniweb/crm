@@ -61,7 +61,16 @@ export class CampanhaComponent implements OnInit {
   }
 
   conclusao(){
-    this.concluido = true
+
+    if(this.concluido == false){
+      this.concluido = true
+    }
+    else{
+      this.concluido = false
+    }
+
+    console.log(this.concluido);
+
   }
 
   async submitForm(form:NgForm){

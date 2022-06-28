@@ -6,7 +6,7 @@
     <form #f="ngForm" (ngSubmit)="submitForm(f)">
       <div class="info">
       <label for="name">Nome:</label>
-      <input type="text" name = "nome" ngModel>
+      <input type="text" name = "nome"  ngModel>
       </div>
       <div class="info">
         <label for="name">Telefone:</label>
@@ -14,7 +14,7 @@
         </div>
       <div class="info" *ngFor="let item of dadosCampanha.campos">
         <label for="name">{{item.campo}}</label>
-        <input [type]="item.tipo"  [name] = "item.tratado" ngModel>
+        <input [type]="item.tipo"  [name] = "item.tratado"  ngModel>
       </div>
       <div align = "center">
       <button id="button" (click)="conclusao()"  type = "submit" >{{dadosCampanha.butao}}</button>
@@ -30,5 +30,6 @@
   <div class="content-next" id="content-next">
     <h2>Parabéns !</h2>
     <p>Sua inscrição foi efetuada com sucesso, entraremos em contato em breve !</p>
+    <button (click)="conclusao()">Ok</button>
   </div>
 </main>

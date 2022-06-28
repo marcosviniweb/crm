@@ -123,5 +123,18 @@ main {
     margin-top: 20px;
 
   }
+  button{
+    box-shadow: 2px 2px 3px gray;
+    margin-top: 50px;
+    height: 35px;
+    border: none;
+    width: 200px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    background-color: #3e96f5;
+    color: white;
+    cursor: pointer;
+  }
 
 }
