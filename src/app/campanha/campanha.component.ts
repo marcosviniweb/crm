@@ -123,13 +123,21 @@ export class CampanhaComponent implements OnInit {
                this.service.addEtapa(idetapa,dados[0])
                this.service.addRelatorioValores(idrelatorio, dadosrelatorio[0])
                 console.log(dados)
+                if(this.concluido == false){
+                  this.concluido = true
+                }
+                else{
+                  this.concluido = false
+                }
+
+                console.log(this.concluido);
      })
 
 
     try{
             this.service.addCliente(id, dados[0])
 
-          alert("Parabéns - Inscrição feita com sucesso!")
+
     }catch(error){
       console.log(error)
     }
