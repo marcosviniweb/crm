@@ -1,16 +1,25 @@
+<app-navbar [routerBack]="backPage"></app-navbar>
+<nav class="menu">
+
+  <!-- <button routerLinkActive="active"  [routerLink]="['/cliente/details/history', cliente[0].id]" >Histórico</button>
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/email',  cliente[0].id]" >Email</button>
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/phase',  cliente[0].id]" >Etapas</button>
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/whatsapp',  cliente[0].id ]" >Whatsapp</button> -->
+
+</nav>
 <main>
-  <div class="user">
+  <!-- <div class="user">
     <fa-icon [icon]="userIcon"></fa-icon>
     <h2>Nome do cliente</h2>
-  </div>
+  </div> -->
   <div class="content">
    <div class="info">
       <fa-icon [icon]="whats"></fa-icon>
-      <textarea name="" id="" cols="30" rows="10" placeholder="Digite uma mensagem no whatsapp"></textarea>
+      <textarea name="" id="" cols="30" [(ngModel)]="msg" rows="10" placeholder="Digite uma mensagem no whatsapp"></textarea>
       <div>
-        <button>
+        <button (click) = "enviar()">
           <fa-icon [icon]="send"></fa-icon>
-          <p>Enviar</p>
+          <p >Enviar</p>
         </button>
       </div>
    </div>

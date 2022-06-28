@@ -50,14 +50,15 @@ export class ClientesComponent implements OnInit {
 
   }
 
-  responsavel(id: any) {
+  async responsavel() {
     console.log(this.funilselect)
-    this.service.getFunilId(this.funilselect).subscribe((res) => {
+   await this.service.getFunilId(this.funilselect).subscribe((res) => {
+        console.log(res)
       this.resparray = res[0].vendedor
       this.etapas = res[0].fase
     });
 
-    this.service.getFunilEtapa(this.funilselect).subscribe((res) => {
+    await this.service.getClienteFunil(this.funilselect).subscribe((res) => {
       this.clientes = res
       console.log(this.clientes)
    });

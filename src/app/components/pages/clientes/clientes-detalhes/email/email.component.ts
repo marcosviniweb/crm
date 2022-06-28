@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 import { faEnvelope, faPlus, faUserCircle } from '@fortawesome/free-solid-svg-icons';
+import { IdeaService } from 'src/app/service/idea.service';
 
 @Component({
   selector: 'app-email',
@@ -12,9 +14,18 @@ export class EmailComponent implements OnInit {
 
   email = faEnvelope
   add = faPlus
-  constructor() { }
+  cliente: any;
+  constructor(
+    public service: IdeaService,
+    public activeRoute: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit() {
+    let id =  this.activeRoute.snapshot.params['id'];
+    console.log(id);
+     this.service.getCliente(id).subscribe((res) => {
+           this.cliente = res;
+     })
+   }
 
 }

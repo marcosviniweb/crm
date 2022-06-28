@@ -90,4 +90,36 @@ main{
     color: #cfcfcd;
   }
 
+
 }
+
+nav{
+  display: inline-flex;
+  width: 100%;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  background: white;
+  box-shadow: 2px 2px 3px gray;
+  button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #00e676;
+    color: white;
+    box-shadow: 1px 0px 2px 1.5px gray;
+  }
+.active{
+    box-shadow: none;
+    color: rgb(207, 207, 207);
+    background-color: #00a884 ;
+}
+
+}
+
+

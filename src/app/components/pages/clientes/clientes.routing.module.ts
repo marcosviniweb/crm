@@ -16,10 +16,14 @@ const routes: Routes = [
     {path:'history', component:HistoricoComponent},
     {path:'history/:id', component:HistoricoComponent},
     {path:'email', component:EmailComponent},
+    {path:'email/:id', component:EmailComponent},
     {path:'phase', component:EtapasComponent},
+    {path:'phase/:id', component:EtapasComponent},
     {path:'whatsapp', component:WhatsappComponent},
+    {path:'whatsapp/:id', component:WhatsappComponent},
 
   ]},
+  {path:'details/:id', component:ClientesDetalhesComponent}
 
 ]
 

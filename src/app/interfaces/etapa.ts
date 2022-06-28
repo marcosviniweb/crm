@@ -6,5 +6,5 @@ export interface Etapa {
   tarefas?: string | undefined;
   idfunil?: string | undefined;
   responsavel?: string | undefined;
-
+  telefonecliente?: string | undefined;
 }

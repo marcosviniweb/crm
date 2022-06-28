@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faPhoneVolume, faCalendarCheck, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons';
+import { IdeaService } from 'src/app/service/idea.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-historico',
   templateUrl: './historico.component.html',
@@ -16,9 +18,19 @@ export class HistoricoComponent implements OnInit {
   ligar = faPhoneVolume
   email = faEnvelope
   anotar = faFileAlt
-  constructor() { }
+  cliente: any;
+  backPage = '/cliente';
+  constructor(
+    public service: IdeaService,
+    public activeRoute: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+   let id =  this.activeRoute.snapshot.params['id'];
+   console.log(id);
+    this.service.getCliente(id).subscribe((res) => {
+          this.cliente = res;
+    })
   }
 
 }

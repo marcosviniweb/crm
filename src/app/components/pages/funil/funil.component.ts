@@ -46,7 +46,7 @@ export class FunilComponent implements OnInit {
       this.etapas = res[0].fase
     });
 
-    this.service.getFunilEtapa(this.funilselect).subscribe((res) => {
+    this.service.getClienteFunil(this.funilselect).subscribe((res) => {
       this.etapafunil = res
       console.log(this.etapafunil)
    });

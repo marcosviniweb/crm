@@ -100,6 +100,7 @@ export class CampanhaComponent implements OnInit {
             let dados = [{
               id: idetapa,
               nomecliente: form.value.nome,
+              idcliente: id,
               telefonecliente: form.value.telefone,
               campos: this.clientes.campos,
               etapa: this.etapafunil.fase[0],

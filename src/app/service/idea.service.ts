@@ -202,5 +202,25 @@ export class IdeaService {
       return this.afs.collection('Relatorio Etapas').doc(id).set(dados)
     }
 
+    getCliente(id: any): Observable<Clientes[]>{
+      var ordenacao =  this.afs.collection<Clientes>("Clientes", ref => ref.where('id', '==', id)).valueChanges()
+      return ordenacao
+    }
+
+    getClienteEtapa(id: any): Observable<Etapa[]>{
+      var ordenacao =  this.afs.collection<Etapa>("Etapa", ref => ref.where('idcliente', '==', id)).valueChanges()
+      return ordenacao
+    }
+
+    editarEtapa(id: any, dados: any){
+      return this.afs.collection('Etapa').doc(id).update(dados)
+  }
+
+  getClienteFunil(id: any): Observable<Etapa[]>{
+    var ordenacao =  this.afs.collection<Etapa>("Etapa", ref => ref.where('idfunil', '==', id)).valueChanges()
+    return ordenacao
+  }
+
+
 
 }
