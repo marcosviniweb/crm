@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { faWhatsappSquare } from '@fortawesome/free-brands-svg-icons';
 
@@ -50,14 +51,15 @@ export class ClientesComponent implements OnInit {
 
   }
 
-  responsavel(id: any) {
+  async responsavel() {
     console.log(this.funilselect)
-    this.service.getFunilId(this.funilselect).subscribe((res) => {
+   await this.service.getFunilId(this.funilselect).subscribe((res) => {
+        console.log(res)
       this.resparray = res[0].vendedor
       this.etapas = res[0].fase
     });
 
-    this.service.getFunilEtapa(this.funilselect).subscribe((res) => {
+    await this.service.getClienteFunil(this.funilselect).subscribe((res) => {
       this.clientes = res
       console.log(this.clientes)
    });

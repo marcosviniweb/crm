@@ -2,7 +2,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { faEdit, faFileAlt, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { IdeaService } from 'src/app/service/idea.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Landing } from 'src/app/interfaces/landing';
 

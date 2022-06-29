@@ -4,7 +4,7 @@
     <div class="filters">
       <div  class="filter">
         <label for="funnel">Funil: </label>
-        <select name="id" id="id" [(ngModel)]="funilselect"  (ngModelChange)="responsavel($event)" >
+        <select name="id" id="id" [(ngModel)]="funilselect"  (ngModelChange)="responsavel()" >
           <option *ngFor="let item of funis" [value]="item.id"  >{{item.nome}}</option>
         </select>
       </div>
@@ -30,7 +30,7 @@
       <div class="inform">
         <!-- ngfor -->
         <div class="inform-content" *ngFor="let item of clientes">
-          <div class="content" [routerLink]="['/cliente/details/history', item.id]">
+          <div class="content" [routerLink]="['/cliente/details/history', item.idcliente]">
 
             <div class="name">
               <fa-icon class="userIcon" [icon]="userIcon"></fa-icon>
@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="whatsapp">
-            <fa-icon [icon]="whats"></fa-icon>
+            <fa-icon [icon]="whats" [routerLink]="['/cliente/details/whatsapp', item.idcliente]"></fa-icon>
           </div>
         </div>
       </div>

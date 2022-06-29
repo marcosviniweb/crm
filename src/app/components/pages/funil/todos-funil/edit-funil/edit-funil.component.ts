@@ -1,6 +1,7 @@
 import { faEdit } from '@fortawesome/free-regular-svg-icons';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { faPlus, faFilter } from '@fortawesome/free-solid-svg-icons';

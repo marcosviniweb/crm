@@ -1,12 +1,11 @@
+import { HeaderService } from './../../header/header.service';
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { Router } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { Landing } from 'src/app/interfaces/landing';
-import { AuthService } from 'src/app/service/auth.service';
 import { IdeaService } from 'src/app/service/idea.service';
 
 @Component({
@@ -21,9 +20,7 @@ export class LandingPageComponent implements OnInit {
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
-    private router: Router,
-    private authService: AuthService,
-    private afa: AngularFireAuth,
+    public headerService:HeaderService
     ) { }
 
   userIcon = faUserCircle
@@ -32,7 +29,7 @@ export class LandingPageComponent implements OnInit {
   view = faEye
 
   ngOnInit() {
-
+    this.headerService.onOffHeader(true)
     this.service.getCampanha().subscribe(data => {
         this.dados = data
         console.log(this.dados)

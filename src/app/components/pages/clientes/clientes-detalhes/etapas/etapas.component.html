@@ -1,18 +1,26 @@
+<nav class="menu">
+
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/history', cliente[0].idcliente]" >Histórico</button>
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/email',  cliente[0].idcliente]" >Email</button>
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/phase',  cliente[0].id]" >Etapas</button>
+  <!-- <button routerLinkActive="active"  [routerLink]="['/cliente/details/whatsapp',  cliente[0].id ]" >Whatsapp</button> -->
+
+</nav>
 <main>
-  <div class="user">
+  <!-- <div class="user">
     <fa-icon [icon]="userIcon"></fa-icon>
     <h2>Nome do cliente</h2>
-  </div>
+  </div> -->
   <div class="content">
    <div class="info">
     <div class="info-content">
       <h2>Etapa atual:</h2>
-      <p>Prospecção</p>
-    </div>
+      <p>{{cliente[0].etapa}}</p>
+    </div><Br>
     <div class="info-content">
       <h2>Editar Etapa:</h2>
-      <select name="" id="">
-        <option value="">Prospecção</option>
+      <select name="produto" id="produto" [(ngModel)]="etapaselected"  (ngModelChange)="faseEscolhida($event)">
+        <option *ngFor="let item of etapas" [value]="item" >{{item}}</option>
       </select>
     </div>
    </div>

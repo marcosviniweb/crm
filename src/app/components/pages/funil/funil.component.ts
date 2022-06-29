@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons';
@@ -46,7 +47,7 @@ export class FunilComponent implements OnInit {
       this.etapas = res[0].fase
     });
 
-    this.service.getFunilEtapa(this.funilselect).subscribe((res) => {
+    this.service.getClienteFunil(this.funilselect).subscribe((res) => {
       this.etapafunil = res
       console.log(this.etapafunil)
    });

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeaderService } from '../components/header/header.service';
@@ -14,6 +15,8 @@ import { IdeaService } from '../service/idea.service';
 })
 export class CampanhaComponent implements OnInit {
 
+
+  concluido = false
 
   public clientes: Clientes  = {};
   public dadosCampanha: any;
@@ -58,6 +61,19 @@ export class CampanhaComponent implements OnInit {
 
   }
 
+  conclusao(){
+
+    if(this.concluido == false){
+      this.concluido = true
+    }
+    else{
+      this.concluido = false
+    }
+
+    console.log(this.concluido);
+
+  }
+
   async submitForm(form:NgForm){
     this.clientes.campos = form.value
     let id = this.fireservice.createId()
@@ -85,6 +101,7 @@ export class CampanhaComponent implements OnInit {
             let dados = [{
               id: idetapa,
               nomecliente: form.value.nome,
+              idcliente: id,
               telefonecliente: form.value.telefone,
               campos: this.clientes.campos,
               etapa: this.etapafunil.fase[0],
@@ -108,18 +125,27 @@ export class CampanhaComponent implements OnInit {
                this.service.addEtapa(idetapa,dados[0])
                this.service.addRelatorioValores(idrelatorio, dadosrelatorio[0])
                 console.log(dados)
+                if(this.concluido == false){
+                  this.concluido = true
+                }
+                else{
+                  this.concluido = false
+                }
+
+                console.log(this.concluido);
      })
 
 
     try{
             this.service.addCliente(id, dados[0])
 
-          alert("Parabéns - Inscrição feita com sucesso!")
+
     }catch(error){
       console.log(error)
     }
 
   }
+
 
 
 }

@@ -25,10 +25,11 @@ export class LoginComponent implements OnInit {
  async login(){
      console.log(this.userLogin)
     try {
-      await this.authService.login(this.userLogin);
+      await this.authService.login(this.userLogin)
+
       this.router.navigate(['/home'])
     } catch (error) {
-      console.log(error)
+      //console.log(error)
     } finally {
      // this.loading.dismiss();
     }
