@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   showHeader = true
   user: any;
-  id:any;
+  nome:any;
   constructor(
     private headerService:HeaderService,
     public fireservice: AngularFirestore,
@@ -40,14 +40,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.headerService.viewEvent.subscribe((event)=> this.viewHeader(event))
-     let valor = localStorage.getItem('id')
+    let nome = localStorage.getItem('nomeuser')
 
-     this.id =  JSON.parse(valor!)
-     console.log(this.id)
-    this.service.getUserId(this.id).subscribe((user)=>{
-       this.user = user
-       console.log(this.user)
-    });
+     this.nome =  JSON.parse(nome!)
+
   }
 
   viewHeader(view:boolean){

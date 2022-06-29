@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
   taxaCoversao = '20%';
   perdas = 90
   valorPerdido = 684
+  user: any;
 
   constructor(
     private headerService:HeaderService,
@@ -50,9 +51,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
    let idstorage = this.afa.auth.currentUser?.uid
-    localStorage.setItem('id', JSON.stringify(idstorage));
-    this.headerService.onOffHeader(true)
 
+    this.headerService.onOffHeader(true)
+    this.service.getUserId(idstorage).subscribe((user)=>{
+     this.user = user
+     localStorage.setItem('nomeuser', JSON.stringify(this.user[0].nome));
+   });
   }
 
   //voltar para home
