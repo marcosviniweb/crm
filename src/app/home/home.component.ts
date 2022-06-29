@@ -1,9 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
 
 import { faFileAlt, faUser } from '@fortawesome/free-regular-svg-icons';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { faHeadset } from '@fortawesome/free-solid-svg-icons';
 import { HeaderService } from '../components/header/header.service';
+import { AuthService } from '../service/auth.service';
+import { IdeaService } from '../service/idea.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -34,10 +39,20 @@ export class HomeComponent implements OnInit {
   perdas = 90
   valorPerdido = 684
 
-  constructor(private headerService:HeaderService) { }
+  constructor(
+    private headerService:HeaderService,
+    public fireservice: AngularFirestore,
+    public service: IdeaService,
+    private router: Router,
+    private afa: AngularFireAuth,
+    private authService: AuthService,
+    ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+   let idstorage = this.afa.auth.currentUser?.uid
+    localStorage.setItem('id', JSON.stringify(idstorage));
     this.headerService.onOffHeader(true)
+
   }
 
   //voltar para home
