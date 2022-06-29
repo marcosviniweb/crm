@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { HeaderService } from 'src/app/components/header/header.service';
 import { Vendedor } from 'src/app/interfaces/vendedor';
@@ -44,12 +44,13 @@ export class NovoVendedorComponent implements OnInit {
           email: this.vendedor.email,
           empresa: this.vendedor.empresa,
           endereco: this.vendedor.endereco,
+          tipo: 'Vendedor',
           nome: this.vendedor.nome,
           telefone: this.vendedor.telefone,
         }
       ]
       try{
-        await this.afa.createUserWithEmailAndPassword(this.vendedor.email, this.vendedor.senha);
+        await this.afa.auth.createUserWithEmailAndPassword(this.vendedor.email, this.vendedor.senha);
         this.service.cadastrarVendedor(id, dados[0]);
         alert('Cadastrado com sucesso');
         this.router.navigate(['vendedor'])

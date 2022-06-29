@@ -1,6 +1,7 @@
 import { HeaderService } from './../../header/header.service';
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 import { faEdit, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import { faEye, faUserCircle } from '@fortawesome/free-solid-svg-icons';

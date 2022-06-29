@@ -1,4 +1,4 @@
-import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference  } from "@angular/fire/compat/firestore";
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference  } from "@angular/fire/firestore";
 import { Injectable } from '@angular/core';
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
@@ -23,7 +23,7 @@ export interface Idea {
 export class IdeaService {
 
   public funil = this.afs.collection<Funil>('Funil');
-  public vendedor = this.afs.collection<Vendedor>('Vendedor');
+  public usuarios = this.afs.collection<Vendedor>('Usuarios');
   public tarefa = this.afs.collection<Tarefa>('Tarefa');
   public produto = this.afs.collection<Produtos>('Produto');
   public landing = this.afs.collection<Landing>('Landing');
@@ -61,11 +61,11 @@ export class IdeaService {
     }
 
     cadastrarVendedor(id: any, dados: any){
-      return this.afs.collection('Vendedor').doc(id).set(dados)
+      return this.afs.collection('Usuarios').doc(id).set(dados)
     }
 
     getVendedor(){
-      return this.vendedor.snapshotChanges().pipe(
+      return this.usuarios.snapshotChanges().pipe(
         map(actions => {
           return actions.map(a => {
             const data = a.payload.doc.data();
@@ -77,12 +77,12 @@ export class IdeaService {
      }
 
      getvendedorId(id: string): Observable<Vendedor[]>{
-      var ordenacao =  this.afs.collection<Vendedor>("Vendedor", ref => ref.where('id', '==', id)).valueChanges()
+      var ordenacao =  this.afs.collection<Vendedor>("Usuarios", ref => ref.where('id', '==', id)).valueChanges()
       return ordenacao
      }
 
   editarVendedor(id: any, dados: any){
-      return this.afs.collection('Vendedor').doc(id).update(dados)
+      return this.afs.collection('Usuarios').doc(id).update(dados)
    }
 
    addTarefa(id: any, dados: any){
@@ -221,6 +221,10 @@ export class IdeaService {
     return ordenacao
   }
 
+  getUserId(id: any): Observable<Vendedor[]>{
+    var ordenacao =  this.afs.collection<Vendedor>("Usuarios", ref => ref.where('id', '==', id)).valueChanges()
+    return ordenacao
+  }
 
 
 }

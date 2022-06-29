@@ -8,11 +8,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { AngularFireAuthModule} from '@angular/fire/compat/auth';
-import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore/';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CampanhaComponent } from './campanha/campanha.component';
 import { HeaderModule } from './components/header/header.module';
 import { ClientesComponent } from './components/pages/clientes/clientes.component';
@@ -32,7 +31,6 @@ import { ClientesComponent } from './components/pages/clientes/clientes.componen
     AngularFireModule.initializeApp(environment.firebase),
     FontAwesomeModule,
     AngularFireAuthModule,
-    AngularFireDatabaseModule,
     FormsModule,
     AngularFirestoreModule,
     HeaderModule
