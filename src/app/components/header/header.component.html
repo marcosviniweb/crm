@@ -4,8 +4,8 @@
       <div class="logo"><img src="../../../assets/img/logo.png" height="40px"></div>
       <div class="search-bar">
         <form>
-          <fa-icon [icon]="search"></fa-icon>
-          <input type="text" placeholder="Pesquisar">
+          <fa-icon [icon]="searchIcon"></fa-icon>
+          <input type="text" placeholder="Pesquisar" (input)="search($event)">
         </form>
       </div>
       <div class="user">

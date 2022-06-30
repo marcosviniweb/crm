@@ -111,11 +111,11 @@ export class NovaLandingPageComponent implements OnInit {
     }]
       console.log(dados)
 
-    try{
-      this.service.addLanding(id,dados[0])
-      alert('Landing Page cadastrada com sucesso !')
-      this.router.navigate(['/landingPage'])
-    }catch(error){console.log(error)}
+    // try{
+    //   this.service.addLanding(id,dados[0])
+    //   alert('Landing Page cadastrada com sucesso !')
+    //   this.router.navigate(['/landingPage'])
+    // }catch(error){console.log(error)}
 
   }
 
