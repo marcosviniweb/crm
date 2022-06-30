@@ -23,6 +23,15 @@
         <option *ngFor="let item of etapas" [value]="item" >{{item}}</option>
       </select>
     </div>
+
+    <div class="info-content">
+      <h2>Status:</h2>
+      <select name="produto" id="produto" [(ngModel)]="status"  (ngModelChange)="statuscliente($event)">
+        <option value = "Desistiu" >Cliente Desistiu</option>
+        <option value = "Sem resposta" >Sem resposta</option>
+      </select>
+    </div>
+
    </div>
   </div>
 </main>

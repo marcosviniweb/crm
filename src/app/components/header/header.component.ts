@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+import { AuthService } from '../../service/auth.service';
 
 //userBarIcons
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -25,26 +26,33 @@ export class HeaderComponent implements OnInit {
 
   showHeader = true
   user: any;
+  nome:any;
   constructor(
     private headerService:HeaderService,
     public fireservice: AngularFirestore,
     public service: IdeaService,
     private router: Router,
     private afa: AngularFireAuth,
+    private authService: AuthService,
     ) {
 
    }
 
   ngOnInit() {
     this.headerService.viewEvent.subscribe((event)=> this.viewHeader(event))
+    let nome = localStorage.getItem('nomeuser')
 
-    // this.service.getUserId().subscribe((user)=>{
-    //    this.user =user[0]
-    // });
+     this.nome =  JSON.parse(nome!)
+
   }
 
   viewHeader(view:boolean){
     this.showHeader = view
+  }
+
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['/'])
   }
 
 }

@@ -10,8 +10,8 @@
       </div>
       <div class="user">
         <div class="username">
-          <h2>Victor Sanches</h2>
-          <p>Vendedor</p>
+          <h2>{{nome}}</h2>
+          <p></p>
         </div>
       </div>
       <div class="icons">
@@ -21,7 +21,7 @@
         <div class="arrowDown">
           <fa-icon [icon]="arrowDown"></fa-icon>
         </div>
-        <div class="out">
+        <div class="out" (click)="logout()">
           <fa-icon [icon]="sign"></fa-icon>
         </div>
       </div>

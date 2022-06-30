@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CampanhaComponent } from './campanha/campanha.component';
 import { HeaderModule } from './components/header/header.module';
 import { ClientesComponent } from './components/pages/clientes/clientes.component';
+// import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ClientesComponent } from './components/pages/clientes/clientes.componen
     AngularFireAuthModule,
     FormsModule,
     AngularFirestoreModule,
-    HeaderModule
+    HeaderModule,
+    // ToastrModule.forRoot(),
 
   ],
 
