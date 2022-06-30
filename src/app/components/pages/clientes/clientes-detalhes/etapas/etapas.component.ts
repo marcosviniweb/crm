@@ -19,6 +19,7 @@ export class EtapasComponent implements OnInit {
   funil: string = '';
   etapaselected: string = '';
   etapas: any;
+  status: string = '' ;
   constructor(
     public service: IdeaService,
     public activeRoute: ActivatedRoute
@@ -44,8 +45,18 @@ export class EtapasComponent implements OnInit {
    faseEscolhida(etapa: string){
         console.log(etapa)
         let dados = {
-           etapa: etapa
+           etapa: etapa,
+
         }
         this.service.editarEtapa(this.idetapa, dados)
    }
+
+   statuscliente(etapa: string){
+    console.log(etapa)
+    let dados = {
+
+       status:etapa
+    }
+    this.service.editarEtapa(this.idetapa, dados)
+}
 }
