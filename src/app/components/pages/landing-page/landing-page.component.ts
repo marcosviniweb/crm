@@ -39,4 +39,5 @@ export class LandingPageComponent implements OnInit {
       console.log(id)
       this.service.exluirLanding(id)
     }
+  
 }

@@ -21,7 +21,7 @@
       </div>
       <div class="form-select">
         <label for="funnel">Selecione o produto cadastrado: </label>
-        <select name="produto" id="produto" [(ngModel)]="landing.produto"  (ngModelChange)="valor($event)">
+        <select name="produto" id="produto" [(ngModel)]="landing.produto"  (ngModelChange)="valor($event)" multiple>
           <option *ngFor="let item of produtos" [value]="item.nome" >{{item.nome}}</option>
         </select>
       </div>

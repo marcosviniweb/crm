@@ -22,7 +22,7 @@ export class CampanhaComponent implements OnInit {
   public dadosCampanha: any;
 
   clientesTeste:any
-
+  background = 'https://i.pinimg.com/originals/5f/e6/2d/5fe62d64fee91c7edb0cce32ff5dd63c.jpg'
   dadosExibir:Campanhas[]= []
 
 

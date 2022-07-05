@@ -28,6 +28,7 @@ export class NovaLandingPageComponent implements OnInit {
   edit = faEdit
   valorproduto: any;
   valoritem: string = "";
+
   campos = {
     campo:'',
     tipo:'',
@@ -90,7 +91,7 @@ export class NovaLandingPageComponent implements OnInit {
     console.log(id)
         this.service.getprodutovalor(id).subscribe(res =>{
            this.valorproduto = res
-           console.log(this.valorproduto[0].valor)
+           console.log(this.valorproduto.valor)
         })
   }
 
