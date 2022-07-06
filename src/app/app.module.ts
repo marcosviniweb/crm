@@ -15,6 +15,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { CampanhaComponent } from './campanha/campanha.component';
 import { HeaderModule } from './components/header/header.module';
 import { ClientesComponent } from './components/pages/clientes/clientes.component';
+import { PhonePipe } from './shared/phone-pipe/phone.pipe';
 // import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
@@ -24,6 +25,7 @@ import { ClientesComponent } from './components/pages/clientes/clientes.componen
     LoginComponent,
     RegisterComponent,
     CampanhaComponent,
+    PhonePipe,
  ],
 
   imports: [
@@ -39,7 +41,9 @@ import { ClientesComponent } from './components/pages/clientes/clientes.componen
 
   ],
 
-  exports: [ ],
+  exports: [
+    PhonePipe
+  ],
 
 
   providers: [],

@@ -24,7 +24,7 @@
 
 }
 main {
-  background:  url(/assets/img/background.jpg) no-repeat  center / cover !important;
+  background-image:  center / cover !important;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -137,4 +137,9 @@ main {
     cursor: pointer;
   }
 
+}
+span{
+  font-size: 10px;
+  margin-top: 0;
+  color: red;
 }

@@ -26,6 +26,7 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@ng-select/ng-select": "^9.0.1",
+    "angular-input-masks": "^4.4.1",
     "firebase": "^7.7.0",
     "ng-multiselect-dropdown": "^0.3.8",
     "ngx-toastr": "^15.0.0",

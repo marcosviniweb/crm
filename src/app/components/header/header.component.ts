@@ -19,7 +19,7 @@ import { HeaderService } from './header.service';
 })
 export class HeaderComponent implements OnInit {
 
-  search = faSearch
+  searchIcon = faSearch
   arrowDown = faChevronDown
   userIcon = faUserCircle
   sign = faSignOutAlt
@@ -53,6 +53,14 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.authService.logout();
     this.router.navigate(['/'])
+  }
+
+  search(e:Event){
+    const target = e.target as HTMLInputElement
+    const value = target.value
+
+    
+
   }
 
 }
