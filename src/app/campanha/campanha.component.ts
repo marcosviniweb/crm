@@ -62,6 +62,8 @@ export class CampanhaComponent implements OnInit {
     this.service.getCampanhaId(this.id).subscribe(data => {
 
       this.dadosCampanha = data[0];
+      console.log(this.dadosCampanha.campos);
+
 
       this.dadosExibir = data;
 
@@ -77,12 +79,12 @@ export class CampanhaComponent implements OnInit {
 
 
 
-   console.log(this.index);
+
 
   }
 
   getBackground(){
-            let url = 'url(' + this.background  + ') '
+            let url = 'url(' + this.background  + ')'
             console.log(url);
           return url
   }

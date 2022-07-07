@@ -1,4 +1,7 @@
-<main id="main" [ngStyle]="{'background-image': getBackground() }" *ngIf="concluido == false">
+<main id="main" [style.background-image]="'url('+this.background+')'"
+[style.background]="'no-repeat center center / cover'"
+
+*ngIf="concluido == false">
   <div class="content" id="content">
        <div class="title">
       <h2>{{dadosCampanha.titulo}}</h2>
@@ -15,10 +18,12 @@
         <input type="tel"  name = "telefone" #telefone="ngModel"
         [ngModel]="telefone.value" pattern="[0-9]{2}[9]{1}[0-9]{4}[0-9]{4}"  required>
         </div>
-        <div class="info" *ngFor="let item of dadosCampanha.campos">
-        <label for="name">{{item.campo}}</label>
-        <input [type]="item.tipo" [name] = "item.tratado"  ngModel required>
-      </div>
+        <div *ngIf="!dadosCampanha.campos.includes('Sem dados')">
+          <div class="info"  *ngFor="let item of dadosCampanha.campos"  >
+            <label for="name">{{item.campo}}</label>
+            <input [type]="item.tipo" [name] = "item.tratado"  ngModel required>
+          </div>
+        </div>
       <div class="cursos" id="cursos">
         <label for="index">Selecione o curso desejado:</label>
         <select name="index" id="curso" [(ngModel)]="index" required>
@@ -26,7 +31,7 @@
         </select>
       </div>
       <div align = "center">
-      <button  id="button"   type = "submit" *ngIf="f.valid" >{{dadosCampanha.butao}}</button>
+      <button  id="button" [disabled]="!f.valid"  type = "submit">{{dadosCampanha.butao}}</button>
     </div>
     </form>
   </div>

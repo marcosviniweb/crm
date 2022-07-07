@@ -24,7 +24,7 @@
 
 }
 main {
-  background-image:  no-repeat center center / cover !important;
+
   height: 100vh;
   width: 100%;
   display: flex;
@@ -86,14 +86,12 @@ main {
     border-radius: 5px;
     text-align: center;
     font-weight: 600;
-    background-color: #3e96f5;
-    color: white;
     cursor: pointer;
   }
-  button:hover{
-    background: #2d6db1;
-    color: #eee;
-  }
+  // button:hover{
+  //   background: #2d6db1;
+  //   color: #eee;
+  // }
 }
 
 #next{
@@ -134,7 +132,6 @@ main {
     font-weight: 600;
     background-color: #3e96f5;
     color: white;
-    cursor: pointer;
   }
 
 }
@@ -160,4 +157,8 @@ span{
     font-size: 14px;
     font-weight: 500;
   }
+
+}
+#main{
+  background-image:  no-repeat center center / cover !important;
 }
