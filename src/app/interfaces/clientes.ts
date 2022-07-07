@@ -4,6 +4,7 @@ export interface Clientes {
         funil?: string | undefined;
         link?: string | undefined;
         nome?: string | undefined;
+        nomecliente?: string | undefined;
         idlanding?: string | undefined;
         produto?: {} | undefined;
         telefonecliente?: string | undefined;

@@ -20,6 +20,7 @@ export class EtapasComponent implements OnInit {
   etapaselected: string = '';
   etapas: any;
   status: string = '' ;
+
   constructor(
     public service: IdeaService,
     public activeRoute: ActivatedRoute
@@ -30,6 +31,8 @@ export class EtapasComponent implements OnInit {
     console.log(id);
      this.service.getClienteEtapa(id).subscribe((res) => {
           this.cliente = res;
+          console.log(res);
+
           this.funil = this.cliente[0].idfunil;
           this.idetapa = this.cliente[0].id;
           this.service.getFunilEtapa(this.funil ).subscribe((res) => {

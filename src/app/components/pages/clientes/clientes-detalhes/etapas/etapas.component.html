@@ -2,7 +2,7 @@
 
   <button routerLinkActive="active"  [routerLink]="['/cliente/details/history', cliente[0].idcliente]" >Histórico</button>
   <button routerLinkActive="active"  [routerLink]="['/cliente/details/email',  cliente[0].idcliente]" >Email</button>
-  <button routerLinkActive="active"  [routerLink]="['/cliente/details/phase',  cliente[0].id]" >Etapas</button>
+  <button routerLinkActive="active"  [routerLink]="['/cliente/details/phase',  cliente[0].idcliente]" >Etapas</button>
   <!-- <button routerLinkActive="active"  [routerLink]="['/cliente/details/whatsapp',  cliente[0].id ]" >Whatsapp</button> -->
 
 </nav>
@@ -34,9 +34,9 @@
 
 
    </div>
-   <div class="view-content">
+   <div class="view-content" *ngFor="let item of cliente">
     <div class="view-status">
-      <p>O client (x) desistiu</p>
+      <p>O cliente: <b>{{item.nomecliente}}</b> esta com o status de: <b>{{item.status}}</b></p>
     </div>
   </div>
   </div>
