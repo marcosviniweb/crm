@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,7 +6,6 @@ import { HeaderService } from '../components/header/header.service';
 import { Campanhas } from '../interfaces/campanhas';
 import { Clientes } from '../interfaces/clientes';
 import { IdeaService } from '../service/idea.service';
-import { AngularFireStorage } from '@angular/fire/storage';
 
 
 @Component({
@@ -42,7 +40,6 @@ export class CampanhaComponent implements OnInit {
     public headerService:HeaderService,
     public activeRoute: ActivatedRoute,
     private router: Router,
-    private storage: AngularFireStorage,
   ) { }
 
   ngOnInit() {
@@ -57,7 +54,7 @@ export class CampanhaComponent implements OnInit {
     //   console.log(link);
     // });
     this.id = this.router.url.split('/')[2];
-
+    console.log(this.id)
 
     this.service.getCampanhaId(this.id).subscribe(data => {
 
