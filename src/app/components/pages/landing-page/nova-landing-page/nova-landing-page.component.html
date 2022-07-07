@@ -21,8 +21,8 @@
       </div>
       <div class="form-select">
         <label for="funnel">Selecione o produto cadastrado: </label>
-        <select name="produto" id="produto" [(ngModel)]="landing.produto"  (ngModelChange)="valor($event)" multiple>
-          <option *ngFor="let item of produtos" [value]="item.nome" >{{item.nome}}</option>
+        <select name="produto" id="produto" [(ngModel)]="landing.produto" >
+          <option *ngFor="let item of produtos" [value]="item.categoria" >{{item.categoria}}</option>
         </select>
       </div>
 
@@ -32,7 +32,8 @@
       </div>
       <div class="form">
         <label for="background">Selecione o plano de fundo</label>
-        <input type="file" name="background" id="background">
+        <input type="file" name="background" id="background" (change)="getImageBackground($event)">
+        <img [src]="imageSrc" width="50px" height="50px">
       </div>
       <div class="form" >
         <label for="campo">Adicionar campos na Landing Page</label>

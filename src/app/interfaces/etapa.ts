@@ -1,5 +1,6 @@
 export interface Etapa {
   id?: string | undefined;
+  idclinte?: string | undefined;
   campos?: object[] | undefined;
   etapa?: string | undefined;
   atualizacao?: string | undefined;

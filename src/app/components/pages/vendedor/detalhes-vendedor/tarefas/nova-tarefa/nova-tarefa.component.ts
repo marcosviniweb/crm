@@ -15,6 +15,10 @@ export class NovaTarefaComponent implements OnInit {
 
   public tarefa: Tarefa = {};
   funels: any;
+  clientesFunil:any
+  user:any
+  idstorage = this.afa.auth.currentUser?.uid
+  etapaCliente:any
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
@@ -24,10 +28,33 @@ export class NovaTarefaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-     this.service.getFunil().subscribe(res =>{
+
+
+    this.service.getFunil().subscribe(res =>{
         this.funels = res
-      console.log(res)
      })
+
+     this.service.getUserId(this.idstorage).subscribe((user)=>{
+      this.user = user
+    });
+  }
+
+  getEtapa(id:any){
+    this.service.getClienteEtapaHistorico(id).subscribe((res)=>{
+      this.etapaCliente = res[0].etapa
+
+
+    })
+  }
+
+
+  getIdFunil(id:any){
+    console.log(id);
+
+    this.service.getClienteIdFunil(id).subscribe(res=>{
+      this.clientesFunil = res
+
+    })
   }
 
   criarTarefa(){
@@ -42,8 +69,25 @@ export class NovaTarefaComponent implements OnInit {
           cliente: this.tarefa.cliente,
 
     }]
+
+    let idHistorico = this.fireservice.createId();
+    let historico = {
+      id: idHistorico,
+      atividade: this.tarefa.atividade,
+      idVendedor: this.idstorage,
+      cliente: this.tarefa.cliente,
+      data:this.tarefa.data,
+      hora:this.tarefa.hora,
+      etapa: this.etapaCliente,
+      idFunil:this.tarefa.funil ,
+      mensagem:this.tarefa.anotacao
+    }
+    console.log(historico);
+
+
     try{
       this.service.addTarefa(id, dados[0])
+      this.service.addHistorico(id, historico)
       console.log(this.tarefa)
       alert('Tarefa Criada com sucesso')
       this.router.navigate(['vendedor/details/tasks']);

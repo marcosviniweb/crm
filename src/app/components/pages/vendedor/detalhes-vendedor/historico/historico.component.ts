@@ -1,3 +1,4 @@
+import { IdeaService } from 'src/app/service/idea.service';
 import { Component, OnInit } from '@angular/core';
 
 import { faCalendarCheck } from '@fortawesome/free-solid-svg-icons';
@@ -19,9 +20,15 @@ export class HistoricoComponent implements OnInit {
   email = faEnvelope
   anotar = faFileAlt
 
-  constructor() { }
+  historico:any
+  constructor( public service: IdeaService) { }
 
   ngOnInit(): void {
+    this.service.getHistorico().subscribe((res)=>{
+      this.historico = res
+      console.log(this.historico);
+
+    })
   }
 
 }

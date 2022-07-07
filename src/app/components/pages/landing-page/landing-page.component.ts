@@ -30,6 +30,7 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit() {
     this.headerService.onOffHeader(true)
+
     this.service.getCampanha().subscribe(data => {
         this.dados = data
         console.log(this.dados)
@@ -39,5 +40,5 @@ export class LandingPageComponent implements OnInit {
       console.log(id)
       this.service.exluirLanding(id)
     }
-  
+
 }

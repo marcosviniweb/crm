@@ -19,6 +19,8 @@ export class HistoricoComponent implements OnInit {
   email = faEnvelope
   anotar = faFileAlt
   cliente: any;
+  dadosCliente:any
+  historicoCliente:any
   backPage = '/cliente';
   constructor(
     public service: IdeaService,
@@ -26,11 +28,23 @@ export class HistoricoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
    let id =  this.activeRoute.snapshot.params['id'];
    console.log(id);
     this.service.getCliente(id).subscribe((res) => {
-          this.cliente = res;
+      this.cliente = res;
+      console.log(res);
     })
+    
+    this.service.getCliente(id).subscribe((res) => {
+      this.dadosCliente = res[0].nomecliente;
+      this.service.getClienteHistorico(this.dadosCliente).subscribe((res)=>{
+
+        this.historicoCliente = res
+
+      })
+    })
+
   }
 
 }

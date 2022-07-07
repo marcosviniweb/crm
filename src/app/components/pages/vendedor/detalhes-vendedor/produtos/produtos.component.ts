@@ -17,7 +17,7 @@ export class ProdutosComponent implements OnInit {
   add = faPlus
   delete = faTrashAlt
   edit = faEdit
-  products:any[] = []
+  products:any
   constructor(
     public fireservice: AngularFirestore,
     public service: IdeaService,
@@ -29,8 +29,20 @@ export class ProdutosComponent implements OnInit {
   ngOnInit() {
     this.service.getProdutos().subscribe((res) => {
             this.products = res;
+            console.log(this.products);
+
     });
+
+
 
   }
 
+  deleteProd(id:any){
+    let alerta = confirm('Você deseja excluir este produto ?')
+
+    if(alerta == true){
+      this.service.exluirProduto(id)
+    }
+
+  }
 }

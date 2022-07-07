@@ -1,3 +1,5 @@
+import { faTrashAlt, faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faGraduationCap, faDollarSign } from '@fortawesome/free-solid-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -12,8 +14,19 @@ import { IdeaService } from 'src/app/service/idea.service';
   styleUrls: ['./edit-produto.component.scss']
 })
 export class EditProdutoComponent implements OnInit {
-  products:any[] = []
+  products:any
   funels:any[] = []
+
+  curso = faGraduationCap
+  delete = faTrashAlt
+  dolar = faDollarSign
+  edit = faEdit;
+
+  cursosEdit={
+    curso:'',
+    valor:0
+  }
+
   public produto: Produtos = {};
   constructor(
     public fireservice: AngularFirestore,
@@ -25,8 +38,11 @@ export class EditProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.service.getProdutos().subscribe((res) => {
-      this.products = res;
+    let id = this.activeRoute.snapshot.params['id'];
+    this.service.getProdutoId(id).subscribe((res) => {
+      this.products = res[0];
+      console.log(res);
+
     });
     this.service.getFunil().subscribe((res) => {
       this.funels = res;
@@ -34,10 +50,21 @@ export class EditProdutoComponent implements OnInit {
 
 
   }
+    editarCampos(item: any){
+
+    this.cursosEdit = this.products.arrayProd[item]
+    }
+
+    excluirCampos(i:any){
+      this.products.arrayProd.splice(i,1)
+    }
+
   editarProduto(){
     let id = this.activeRoute.snapshot.params['id'];
+    console.log(this.products);
+
     try{
-          this.service.editarProdutos(id, this.products[0]);
+          this.service.editarProdutos(id, this.products);
           alert('Editado com sucesso');
           this.router.navigate(['vendedor/details/products']);
       }catch(error){

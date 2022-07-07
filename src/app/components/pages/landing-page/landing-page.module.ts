@@ -10,6 +10,7 @@ import { LandingPageRoutingModule } from './landing-page.routing.module';
 import { FunilModule } from '../funil/funil.module';
 import { FormsModule } from '@angular/forms';
 import { HeaderModule } from '../../header/header.module';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 
 
 
@@ -25,7 +26,8 @@ import { HeaderModule } from '../../header/header.module';
     FontAwesomeModule,
     LandingPageRoutingModule,
     FormsModule,
-    HeaderModule
+    HeaderModule,
+    AngularFireStorageModule
   ]
 })
 export class LandingPageModule { }

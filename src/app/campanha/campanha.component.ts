@@ -7,6 +7,8 @@ import { HeaderService } from '../components/header/header.service';
 import { Campanhas } from '../interfaces/campanhas';
 import { Clientes } from '../interfaces/clientes';
 import { IdeaService } from '../service/idea.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+
 
 @Component({
   selector: 'app-campanha',
@@ -22,7 +24,7 @@ export class CampanhaComponent implements OnInit {
   public dadosCampanha: any;
 
   clientesTeste:any
-  background = 'https://i.pinimg.com/originals/5f/e6/2d/5fe62d64fee91c7edb0cce32ff5dd63c.jpg'
+  background = '';
   dadosExibir:Campanhas[]= []
 
 
@@ -30,35 +32,65 @@ export class CampanhaComponent implements OnInit {
   nomefunil: string = '';
   etapafunil: any;
   etapa:any;
+  cursos:any
+  curso:any
+  index:any
   constructor(
 
     public fireservice: AngularFirestore,
     public service: IdeaService,
     public headerService:HeaderService,
     public activeRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage,
   ) { }
 
   ngOnInit() {
-    //esconder o header
+    //let storageRef = this.storage.storage.ref('imagens/to/1657209139863marvel.png');
+    // var pathReference = this.storage.ref('imagens/1657209139863marvel.png');
 
+    // console.log(pathReference)
+    //esconder o header
+    this.headerService.onOffHeader(false)
     // this.activeRoute.paramMap.subscribe(params => {
     //   let link = params.get('link');
     //   console.log(link);
     // });
     this.id = this.router.url.split('/')[2];
-    this.headerService.onOffHeader(false)
-
-      this.service.getCampanhaId(this.id).subscribe(data => {
-       this.dadosCampanha = data[0];
-       console.log( this.dadosCampanha)
-       this.dadosExibir = data;
-      //  console.log(this.dadosCampanha)
-        this.nomefunil = this.dadosCampanha.funil;
-
-      });
 
 
+    this.service.getCampanhaId(this.id).subscribe(data => {
+
+      this.dadosCampanha = data[0];
+      console.log(this.dadosCampanha.campos);
+
+
+      this.dadosExibir = data;
+
+      this.nomefunil = this.dadosCampanha.funil;
+
+      this.service.getprodutovalor(this.dadosCampanha.produto).subscribe(res =>{
+        this.cursos = res[0].arrayProd
+
+      this.background = this.dadosCampanha.imagePath
+     })
+
+    });
+
+
+
+
+
+  }
+
+  getBackground(){
+            let url = 'url(' + this.background  + ')'
+            console.log(url);
+          return url
+  }
+
+  cursoselect(id:any){
+    console.log(id)
   }
 
   conclusao(){
@@ -76,6 +108,12 @@ export class CampanhaComponent implements OnInit {
 
   async submitForm(form:NgForm){
     this.clientes.campos = form.value
+
+    console.log(this.cursos[this.index].valor);
+
+
+
+
     let id = this.fireservice.createId()
     let dados = [{
         id: id,
@@ -86,9 +124,10 @@ export class CampanhaComponent implements OnInit {
         link: this.dadosCampanha.link,
         nome: this.dadosCampanha.nome,
         idlanding: this.dadosCampanha.id,
-        produto: this.dadosCampanha.produto,
-        valorproduto: this.dadosCampanha.valorproduto,
+        produto: this.cursos[this.index].curso,
+        valorproduto: this.cursos[this.index].valor
     }]
+    console.log(dados);
 
 
      await this.service.getFunilEtapa(this.nomefunil).subscribe(res => {
@@ -118,8 +157,8 @@ export class CampanhaComponent implements OnInit {
                 atualizacao: new Date().toLocaleDateString(),
                 tarefa : 'Contato Adicionado',
                 idfunil: this.nomefunil,
-                produto: this.dadosCampanha.produto,
-                valorproduto:  this.dadosCampanha.valorproduto,
+                produto: this.cursos[this.index].curso,
+                valorproduto:  this.cursos[this.index].valor
                 }]
 
                this.service.addEtapa(idetapa,dados[0])

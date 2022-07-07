@@ -1,3 +1,4 @@
+import { Historico } from './../interfaces/historico';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, DocumentReference  } from "@angular/fire/firestore";
 import { Injectable } from '@angular/core';
 import { map, take } from 'rxjs/operators';
@@ -31,7 +32,7 @@ export class IdeaService {
   public campanhas = this.afs.collection<Campanhas>('Campanha');
   public clientes = this.afs.collection<Clientes>('Clientes');
   public etapa = this.afs.collection<Etapa>('Etapa');
-
+  public historico = this.afs.collection<Historico>('Historico');
 
   constructor(
     public afs: AngularFirestore
@@ -194,7 +195,7 @@ export class IdeaService {
 
 
     getprodutovalor(produto: any): Observable<Produtos[]>{
-      var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('nome', '==', produto)).valueChanges()
+      var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('categoria', '==', produto)).valueChanges()
       return ordenacao
     }
 
@@ -226,5 +227,41 @@ export class IdeaService {
     return ordenacao
   }
 
+  getProdutoId(id: string): Observable<Produtos[]>{
+    var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('id', '==', id)).valueChanges()
+    return ordenacao
+   }
 
+   exluirProduto(id: string){
+    return this.afs.collection('Produto').doc(id).delete()
+  }
+
+  getClienteIdFunil(id: any): Observable<Clientes[]>{
+    var ordenacao =  this.afs.collection<Clientes>("Clientes", ref => ref.where('idfunil', '==', id)).valueChanges()
+    return ordenacao
+  }
+  addHistorico(id: any, dados: any){
+    return this.afs.collection('Historico').doc(id).set(dados)
+ }
+  getClienteEtapaHistorico(id: any): Observable<Etapa[]>{
+  var ordenacao =  this.afs.collection<Etapa>("Etapa", ref => ref.where('nomecliente', '==', id)).valueChanges()
+  return ordenacao
+  }
+  getClienteHistorico(id: any): Observable<Historico[]>{
+  var ordenacao =  this.afs.collection<Historico>("Historico", ref => ref.where('cliente', '==', id)).valueChanges()
+  return ordenacao
+  }
+
+  getHistorico(){
+    return this.historico.snapshotChanges().pipe(
+      map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data();
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        });
+      })
+    );
+
+    }
 }
