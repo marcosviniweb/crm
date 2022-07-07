@@ -118,16 +118,14 @@ export class NovaLandingPageComponent implements OnInit {
   async addLanding() {
     let id = this.fireservice.createId();
     let imagePath = '';
-    let imageBucket = '';
     if(!this.landing.campos){
         this.landing.campos = ['Sem dados']
    }
 
     await this.storage.upload(this.refFile, this.path).then((res)=>{
-      imagePath = res.ref.fullPath;
-      imageBucket = res.ref.bucket;
+      imagePath = `https://firebasestorage.googleapis.com/v0/b/${res.ref.bucket}/o/imagens%2F${res.ref.name}?alt=media`;
 
-
+    })
     console.log(this.funis.id);
     let dados = [
       {
@@ -139,8 +137,7 @@ export class NovaLandingPageComponent implements OnInit {
         link: this.landing.link,
         produto: this.landing.produto,
         titulo: this.landing.titulo,
-        imagePath: imagePath,
-        imageBucket: imageBucket
+        imagePath: imagePath
       },
     ];
     console.log(dados);
@@ -152,7 +149,7 @@ export class NovaLandingPageComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
-    })
+
 
   }
 }

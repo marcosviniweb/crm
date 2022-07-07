@@ -7,6 +7,8 @@ import { HeaderService } from '../components/header/header.service';
 import { Campanhas } from '../interfaces/campanhas';
 import { Clientes } from '../interfaces/clientes';
 import { IdeaService } from '../service/idea.service';
+import { AngularFireStorage } from '@angular/fire/storage';
+
 
 @Component({
   selector: 'app-campanha',
@@ -22,7 +24,7 @@ export class CampanhaComponent implements OnInit {
   public dadosCampanha: any;
 
   clientesTeste:any
-  background = 'https://i.pinimg.com/originals/5f/e6/2d/5fe62d64fee91c7edb0cce32ff5dd63c.jpg'
+  background = '';
   dadosExibir:Campanhas[]= []
 
 
@@ -39,11 +41,15 @@ export class CampanhaComponent implements OnInit {
     public service: IdeaService,
     public headerService:HeaderService,
     public activeRoute: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage,
   ) { }
 
   ngOnInit() {
+    //let storageRef = this.storage.storage.ref('imagens/to/1657209139863marvel.png');
+    // var pathReference = this.storage.ref('imagens/1657209139863marvel.png');
 
+    // console.log(pathReference)
     //esconder o header
     this.headerService.onOffHeader(false)
     // this.activeRoute.paramMap.subscribe(params => {
@@ -63,7 +69,8 @@ export class CampanhaComponent implements OnInit {
 
       this.service.getprodutovalor(this.dadosCampanha.produto).subscribe(res =>{
         this.cursos = res[0].arrayProd
-       console.log(this.cursos)
+
+      this.background = this.dadosCampanha.imagePath
      })
 
     });
@@ -72,6 +79,12 @@ export class CampanhaComponent implements OnInit {
 
    console.log(this.index);
 
+  }
+
+  getBackground(){
+            let url = 'url(' + this.background  + ') '
+            console.log(url);
+          return url
   }
 
   cursoselect(id:any){

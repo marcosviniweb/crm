@@ -1,4 +1,4 @@
-<main id="main" [ngStyle]="{'background-image': 'url(' + background + ')'}" *ngIf="concluido == false">
+<main id="main" [ngStyle]="{'background-image': getBackground() }" *ngIf="concluido == false">
   <div class="content" id="content">
        <div class="title">
       <h2>{{dadosCampanha.titulo}}</h2>
