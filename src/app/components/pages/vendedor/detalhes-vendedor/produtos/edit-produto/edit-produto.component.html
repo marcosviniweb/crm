@@ -1,25 +1,48 @@
 <main>
   <div class="content">
     <form>
-      <div class="form-content" *ngFor = "let product of products">
+      <div class="form-content">
         <div class="form-select">
-          <label for="funnel">Funil</label>
-          <select name="funnel" id="funnel"  name = "nome" [(ngModel)]="product.funil">
+          <div class="funil">
+          <label for="funnel">Funil:</label>
+          <select name="funnel" id="funnel"  name = "funil" [(ngModel)]="produto.funil">
             <option [value]="funil.nome"  *ngFor="let funil of funels">{{funil.nome}}</option>
           </select>
+          </div>
+          <div class="category">
+            <label for="category" >Categoria:</label>
+            <input type="text" id="category" name = "category" [(ngModel)]="products.categoria">
+          </div>
         </div>
-        <div class="form">
+        <div class="form" >
           <div class="products">
-          <label for="product">Nome do serviço/produto:</label>
-          <input type="text" id="product" name = "nome" [(ngModel)]="product.nome">
+          <label for="product">Nome curso:</label>
+          <input type="text" id="product" name = "nome" [(ngModel)]="cursosEdit.curso">
           </div>
           <div class="price">
-          <label for="price">Valor:</label>
-          <input type="text" id="price" name = "valor" [(ngModel)]="product.valor">
+          <label for="price" >Valor:</label>
+          <input type="number" id="price" name = "valor" [(ngModel)]="cursosEdit.valor ">
           </div>
         </div>
       </div>
-      <button (click) = "editarProduto()">Editar Produto/Serviço</button>
+
+      <div class="funnels">
+        <div class="funnels-content" *ngFor="let item of products.arrayProd; let i = index">
+          <div class="funnel" >
+            <fa-icon [icon]="curso" ></fa-icon>
+            <p>Curso:{{item.curso}}</p>
+          </div>
+          <div class="funnel">
+            <fa-icon [icon]="dolar" ></fa-icon>
+            <p>Preço: {{item.valor | currency:'BRL':true}}</p>
+          </div>
+          <div class="actions">
+            <fa-icon [icon]="edit" (click)="editarCampos(i)" ></fa-icon>
+            <fa-icon [icon]="delete" (click)="excluirCampos(i)" ></fa-icon>
+          </div>
+        </div>
+      </div>
+      <button id="enviar" (click)="editarProduto()">Editar Produto/Serviço</button>
     </form>
   </div>
 </main>

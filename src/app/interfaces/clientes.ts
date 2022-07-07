@@ -5,6 +5,6 @@ export interface Clientes {
         link?: string | undefined;
         nome?: string | undefined;
         idlanding?: string | undefined;
-        produto?: string | undefined;
+        produto?: {} | undefined;
         telefonecliente?: string | undefined;
 }

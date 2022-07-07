@@ -143,3 +143,21 @@ span{
   margin-top: 0;
   color: red;
 }
+
+#cursos{
+  display: flex;
+  flex-direction: column;
+  label{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  select{
+    width: 40%;
+    text-indent: 5px;
+    border-radius: 10px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

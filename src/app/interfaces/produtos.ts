@@ -6,4 +6,6 @@ export interface Produtos {
   valor?: number | undefined;
   data?: number | undefined;
   hora?: number | undefined;
+  arrayProd?:[] | undefined
+  categoria?:string | undefined;
 }

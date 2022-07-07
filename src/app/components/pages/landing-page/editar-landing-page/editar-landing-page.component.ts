@@ -73,7 +73,7 @@ export class EditarLandingPageComponent implements OnInit {
 
 
 
-  editarCampos(item: any){
+   editarCampos(item: any){
 
     this.camposEdit = this.Datalanding.campos[item]
     }

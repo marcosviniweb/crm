@@ -3,20 +3,44 @@
     <form>
       <div class="form-content">
         <div class="form-select">
-          <label for="funnel">Funil</label>
+          <div class="funil">
+          <label for="funnel">Funil:</label>
           <select name="funnel" id="funnel"  name = "funil" [(ngModel)]="produto.funil">
             <option [value]="funil.nome"  *ngFor="let funil of funels">{{funil.nome}}</option>
           </select>
+          </div>
+          <div class="category">
+            <label for="category" >Categoria:</label>
+            <input type="text" id="category" name = "category" [(ngModel)]="produto.categoria" >
+          </div>
         </div>
         <div class="form">
           <div class="products">
-          <label for="product">Nome do serviço/produto:</label>
-          <input type="text" id="product" name = "nome" [(ngModel)]="produto.nome">
+          <label for="product">Nome curso:</label>
+          <input type="text" id="product" name = "nome" [(ngModel)]="dadosProd.curso">
           </div>
           <div class="price">
           <label for="price" >Valor:</label>
-          <input type="number" id="price" name = "valor" [(ngModel)]="produto.valor">
+          <input type="number" id="price" name = "valor" [(ngModel)]="dadosProd.valor">
           </div>
+        </div>
+      </div>
+      <div class="add-phase">
+        <button id="add-phase" (click)="addProd()">
+          <p>Adicionar curso</p>
+        </button>
+      </div>
+      <div class="funnels">
+        <div class="funnels-content" *ngFor="let item of arrayProd; let i = index" >
+          <div class="funnel">
+            <fa-icon [icon]="curso" ></fa-icon>
+            <p>Curso: {{item.curso}}</p>
+          </div>
+          <div class="funnel">
+            <fa-icon [icon]="dolar" ></fa-icon>
+            <p>Preço: {{item.valor | currency:'BRL':true}}</p>
+          </div>
+          <fa-icon [icon]="delete" (click)="deleteProd(i)" ></fa-icon>
         </div>
       </div>
       <button (click) = "criarProduto()">Criar Produto/Serviço</button>

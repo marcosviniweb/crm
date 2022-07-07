@@ -8,14 +8,18 @@
     <div class="icon">
       <fa-icon [icon]="curso"></fa-icon>
     </div>
-    <div class="info-content">
-      <h2>{{product.nome}}</h2>
+    <div class="info-content" >
+      <h2>{{product.categoria}}</h2>
       <p>{{product.data}} - {{product.hora}}</p>
-      <p>Valor: R$ {{product.valor}},00</p>
+      <div id="cursos" *ngFor="let item of product.arrayProd">
+        <p><b>Curso:</b> {{item.curso}}</p>
+        <p><b>Valor:</b>{{item.valor | currency:'BRL':true}}</p>
+      </div>
+
     </div>
     <div class="actions">
       <fa-icon [icon]="edit"  [routerLink]="['/vendedor/details/editProducts', product.id]"></fa-icon>
-      <fa-icon [icon]="delete"></fa-icon>
+      <fa-icon [icon]="delete" (click)="deleteProd(product.id)" ></fa-icon>
     </div>
     </div>
   </div>

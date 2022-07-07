@@ -55,6 +55,7 @@ export class NovaLandingPageComponent implements OnInit {
       this.produtos = res
       console.log(this.funis)
     })
+
   }
 
   addCampos(){
@@ -91,7 +92,7 @@ export class NovaLandingPageComponent implements OnInit {
     console.log(id)
         this.service.getprodutovalor(id).subscribe(res =>{
            this.valorproduto = res
-           console.log(this.valorproduto.valor)
+          //  console.log(this.valorproduto.categoria)
         })
   }
 
@@ -107,16 +108,15 @@ export class NovaLandingPageComponent implements OnInit {
           funil: this.landing.funil,
           link: this.landing.link,
           produto: this.landing.produto,
-          valorproduto: this.valorproduto[0].valor,
           titulo: this.landing.titulo
     }]
       console.log(dados)
 
-    // try{
-    //   this.service.addLanding(id,dados[0])
-    //   alert('Landing Page cadastrada com sucesso !')
-    //   this.router.navigate(['/landingPage'])
-    // }catch(error){console.log(error)}
+    try{
+      this.service.addLanding(id,dados[0])
+      alert('Landing Page cadastrada com sucesso !')
+      this.router.navigate(['/landingPage'])
+    }catch(error){console.log(error)}
 
   }
 

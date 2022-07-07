@@ -194,7 +194,7 @@ export class IdeaService {
 
 
     getprodutovalor(produto: any): Observable<Produtos[]>{
-      var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('nome', '==', produto)).valueChanges()
+      var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('categoria', '==', produto)).valueChanges()
       return ordenacao
     }
 
@@ -224,6 +224,15 @@ export class IdeaService {
   getUserId(id: any): Observable<Vendedor[]>{
     var ordenacao =  this.afs.collection<Vendedor>("Usuarios", ref => ref.where('id', '==', id)).valueChanges()
     return ordenacao
+  }
+
+  getProdutoId(id: string): Observable<Produtos[]>{
+    var ordenacao =  this.afs.collection<Produtos>("Produto", ref => ref.where('id', '==', id)).valueChanges()
+    return ordenacao
+   }
+
+   exluirProduto(id: string){
+    return this.afs.collection('Produto').doc(id).delete()
   }
 
 

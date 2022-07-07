@@ -30,6 +30,9 @@ export class CampanhaComponent implements OnInit {
   nomefunil: string = '';
   etapafunil: any;
   etapa:any;
+  cursos:any
+  curso:any
+  index:any
   constructor(
 
     public fireservice: AngularFirestore,
@@ -40,25 +43,39 @@ export class CampanhaComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    //esconder o header
 
+    //esconder o header
+    this.headerService.onOffHeader(false)
     // this.activeRoute.paramMap.subscribe(params => {
     //   let link = params.get('link');
     //   console.log(link);
     // });
     this.id = this.router.url.split('/')[2];
-    this.headerService.onOffHeader(false)
-
-      this.service.getCampanhaId(this.id).subscribe(data => {
-       this.dadosCampanha = data[0];
-       console.log( this.dadosCampanha)
-       this.dadosExibir = data;
-      //  console.log(this.dadosCampanha)
-        this.nomefunil = this.dadosCampanha.funil;
-
-      });
 
 
+    this.service.getCampanhaId(this.id).subscribe(data => {
+
+      this.dadosCampanha = data[0];
+
+      this.dadosExibir = data;
+
+      this.nomefunil = this.dadosCampanha.funil;
+
+      this.service.getprodutovalor(this.dadosCampanha.produto).subscribe(res =>{
+        this.cursos = res[0].arrayProd
+       console.log(this.cursos)
+     })
+
+    });
+
+
+
+   console.log(this.index);
+
+  }
+
+  cursoselect(id:any){
+    console.log(id)
   }
 
   conclusao(){
@@ -76,6 +93,12 @@ export class CampanhaComponent implements OnInit {
 
   async submitForm(form:NgForm){
     this.clientes.campos = form.value
+
+    console.log(this.cursos[this.index].valor);
+
+
+
+
     let id = this.fireservice.createId()
     let dados = [{
         id: id,
@@ -86,9 +109,10 @@ export class CampanhaComponent implements OnInit {
         link: this.dadosCampanha.link,
         nome: this.dadosCampanha.nome,
         idlanding: this.dadosCampanha.id,
-        produto: this.dadosCampanha.produto,
-        valorproduto: this.dadosCampanha.valorproduto,
+        produto: this.cursos[this.index].curso,
+        valorproduto: this.cursos[this.index].valor
     }]
+    console.log(dados);
 
 
      await this.service.getFunilEtapa(this.nomefunil).subscribe(res => {
@@ -118,8 +142,8 @@ export class CampanhaComponent implements OnInit {
                 atualizacao: new Date().toLocaleDateString(),
                 tarefa : 'Contato Adicionado',
                 idfunil: this.nomefunil,
-                produto: this.dadosCampanha.produto,
-                valorproduto:  this.dadosCampanha.valorproduto,
+                produto: this.cursos[this.index].curso,
+                valorproduto:  this.cursos[this.index].valor
                 }]
 
                this.service.addEtapa(idetapa,dados[0])
