@@ -119,10 +119,14 @@ export class NovaLandingPageComponent implements OnInit {
     let id = this.fireservice.createId();
     let imagePath = '';
     let imageBucket = '';
+    if(!this.landing.campos){
+        this.landing.campos = ['Sem dados']
+   }
+
     await this.storage.upload(this.refFile, this.path).then((res)=>{
       imagePath = res.ref.fullPath;
       imageBucket = res.ref.bucket;
-    })
+
 
     console.log(this.funis.id);
     let dados = [
@@ -148,5 +152,7 @@ export class NovaLandingPageComponent implements OnInit {
     } catch (error) {
       console.log(error);
     }
+    })
+
   }
 }
