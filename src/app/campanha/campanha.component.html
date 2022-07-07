@@ -1,49 +1,73 @@
-<main id="main" [style.background-image]="'url('+this.background+')'"
-[style.background]="'no-repeat center center / cover'"
-
-*ngIf="concluido == false">
+<main
+  id="main"
+  [style.background-image]="'url(' + this.background + ')'"
+  [style.background]="'no-repeat center center / cover'"
+  *ngIf="concluido == false"
+>
   <div class="content" id="content">
-       <div class="title">
-      <h2>{{dadosCampanha.titulo}}</h2>
+    <div id="logo">
+      <img [src]="logo" height="80px" >
+    </div>
+    <div class="title">
+      <h2>{{ dadosCampanha.titulo }}</h2>
     </div>
     <form #f="ngForm" (ngSubmit)="submitForm(f)">
       <div class="info">
-      <label for="name">Nome:</label>
-      <span *ngIf="name.invalid && name.dirty">*Nome invalido !*</span>
-      <input type="text"  name = "nome" #name="ngModel" [ngModel]="name.value" required>
+        <label for="name">Nome:</label>
+        <span *ngIf="name.invalid && name.dirty">*Nome invalido !*</span>
+        <input
+          type="text"
+          name="nome"
+          #name="ngModel"
+          [ngModel]="name.value"
+          required
+        />
       </div>
       <div class="info">
         <label for="tel">Telefone:</label>
-        <span *ngIf="telefone.invalid && telefone.dirty">*Numero de telefone invalido !*</span>
-        <input type="tel"  name = "telefone" #telefone="ngModel"
-        [ngModel]="telefone.value" pattern="[0-9]{2}[9]{1}[0-9]{4}[0-9]{4}"  required>
+        <span *ngIf="telefone.invalid && telefone.dirty"
+          >*Numero de telefone invalido !*</span
+        >
+        <input
+          type="tel"
+          name="telefone"
+          #telefone="ngModel"
+          [ngModel]="telefone.value"
+          pattern="[0-9]{2}[9]{1}[0-9]{4}[0-9]{4}"
+          required
+        />
+      </div>
+      <div *ngIf="!dadosCampanha.campos.includes('Sem dados')">
+        <div class="info" *ngFor="let item of dadosCampanha.campos">
+          <label for="name">{{ item.campo }}</label>
+          <input [type]="item.tipo" [name]="item.tratado" ngModel required />
         </div>
-        <div *ngIf="!dadosCampanha.campos.includes('Sem dados')">
-          <div class="info"  *ngFor="let item of dadosCampanha.campos"  >
-            <label for="name">{{item.campo}}</label>
-            <input [type]="item.tipo" [name] = "item.tratado"  ngModel required>
-          </div>
-        </div>
+      </div>
       <div class="cursos" id="cursos">
         <label for="index">Selecione o curso desejado:</label>
         <select name="index" id="curso" [(ngModel)]="index" required>
-          <option  *ngFor="let item of cursos;let i = index" [value]="i" >{{item.curso}}</option>
+          <option *ngFor="let item of cursos; let i = index" [value]="i">
+            {{ item.curso }}
+          </option>
         </select>
       </div>
-      <div align = "center">
-      <button  id="button" [disabled]="!f.valid"  type = "submit">{{dadosCampanha.butao}}</button>
-    </div>
+      <div align="center">
+        <button class="button" id="button" [disabled]="!f.valid" type="submit">
+          {{ dadosCampanha.butao }}
+        </button>
+      </div>
     </form>
   </div>
 </main>
-
 
 <!-- cadastro concluído -->
 
 <main id="next" *ngIf="concluido == true">
   <div class="content-next" id="content-next">
     <h2>Parabéns !</h2>
-    <p>Sua inscrição foi efetuada com sucesso, entraremos em contato em breve !</p>
+    <p>
+      Sua inscrição foi efetuada com sucesso, entraremos em contato em breve !
+    </p>
     <button (click)="conclusao()">Ok</button>
   </div>
 </main>

@@ -32,6 +32,7 @@ export class NovaLandingPageComponent implements OnInit {
   valorproduto: any;
   valoritem: string = '';
   path!: File;
+  pathLogo!: File;
   fileToUpload: File | null = null;
 
   campos = {
@@ -47,7 +48,9 @@ export class NovaLandingPageComponent implements OnInit {
 
   arrayCampos: any = [];
   imageSrc: any;
+  logoSrc: any;
   refFile: any;
+  refFileLogo: any;
 
   constructor(
     public service: IdeaService,
@@ -81,6 +84,25 @@ export class NovaLandingPageComponent implements OnInit {
 
 
   }
+
+  getLogo(files: any) {
+    const date = new Date().getTime();
+    this.fileToUpload = files;
+
+    //arquivo que deve ser enviado
+    this.pathLogo = files.target.files[0];
+
+    //nome do arquivo que deve ser enviado
+    this.refFileLogo = `imagens/${date}${this.pathLogo.name}`;
+
+    //colocar imagem do input em uma variavel para mostrar na tela
+    //variavel motrada aqui é a this.imagSrc so substituir para a que vai mostrar
+    const reader = new FileReader();
+    reader.onload = (e) => (this.logoSrc = reader.result);
+    reader.readAsDataURL(this.pathLogo);
+
+  }
+
 
   addCampos() {
     let dadosCampos = JSON.stringify(this.campos);
@@ -118,13 +140,17 @@ export class NovaLandingPageComponent implements OnInit {
   async addLanding() {
     let id = this.fireservice.createId();
     let imagePath = '';
+    let logoPath = '';
     if(!this.landing.campos){
         this.landing.campos = ['Sem dados']
    }
 
     await this.storage.upload(this.refFile, this.path).then((res)=>{
       imagePath = `https://firebasestorage.googleapis.com/v0/b/${res.ref.bucket}/o/imagens%2F${res.ref.name}?alt=media`;
+    })
 
+    await this.storage.upload(this.refFileLogo, this.pathLogo).then((res)=>{
+      logoPath = `https://firebasestorage.googleapis.com/v0/b/${res.ref.bucket}/o/imagens%2F${res.ref.name}?alt=media`;
     })
     console.log(this.funis.id);
     let dados = [
@@ -137,7 +163,8 @@ export class NovaLandingPageComponent implements OnInit {
         link: this.landing.link,
         produto: this.landing.produto,
         titulo: this.landing.titulo,
-        imagePath: imagePath
+        imagePath: imagePath,
+        logoPath: logoPath
       },
     ];
     console.log(dados);

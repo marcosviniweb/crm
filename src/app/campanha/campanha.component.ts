@@ -23,6 +23,7 @@ export class CampanhaComponent implements OnInit {
 
   clientesTeste:any
   background = '';
+  logo = '';
   dadosExibir:Campanhas[]= []
 
 
@@ -70,6 +71,7 @@ export class CampanhaComponent implements OnInit {
         this.cursos = res[0].arrayProd
 
       this.background = this.dadosCampanha.imagePath
+      this.logo = this.dadosCampanha.logoPath
      })
 
     });
