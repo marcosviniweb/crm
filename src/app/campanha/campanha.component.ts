@@ -34,6 +34,7 @@ export class CampanhaComponent implements OnInit {
   cursos:any
   curso:any
   index:any
+  linkobg: any;
   constructor(
 
     public fireservice: AngularFirestore,
@@ -72,6 +73,7 @@ export class CampanhaComponent implements OnInit {
 
       this.background = this.dadosCampanha.imagePath
       this.logo = this.dadosCampanha.logoPath
+      this.linkobg = this.dadosCampanha.linkobg
      })
 
     });

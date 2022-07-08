@@ -141,6 +141,7 @@ export class NovaLandingPageComponent implements OnInit {
     let id = this.fireservice.createId();
     let imagePath = '';
     let logoPath = '';
+    console.log(this.landing.linkobg)
     if(!this.landing.campos){
         this.landing.campos = ['Sem dados']
    }
@@ -152,7 +153,7 @@ export class NovaLandingPageComponent implements OnInit {
     await this.storage.upload(this.refFileLogo, this.pathLogo).then((res)=>{
       logoPath = `https://firebasestorage.googleapis.com/v0/b/${res.ref.bucket}/o/imagens%2F${res.ref.name}?alt=media`;
     })
-    console.log(this.funis.id);
+
     let dados = [
       {
         id: id,
@@ -161,6 +162,7 @@ export class NovaLandingPageComponent implements OnInit {
         campos: this.landing.campos,
         funil: this.landing.funil,
         link: this.landing.link,
+        linkobg: this.landing.linkobg,
         produto: this.landing.produto,
         titulo: this.landing.titulo,
         imagePath: imagePath,

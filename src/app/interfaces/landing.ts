@@ -5,6 +5,7 @@ export interface Landing {
   nomecliente?: string | undefined;
   telefonecliente?: string | undefined;
   link?: string | undefined;
+  linkobg?: string | undefined;
   nome?: string | undefined;
   funil?: string | undefined;
   campos?: Object[] | undefined;
