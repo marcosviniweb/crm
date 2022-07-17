@@ -17,6 +17,7 @@ export class NovaTarefaComponent implements OnInit {
   funels: any;
   clientesFunil:any
   user:any
+  nomevendedor: any;
   idstorage = this.afa.auth.currentUser?.uid
   etapaCliente:any
   constructor(
@@ -36,6 +37,7 @@ export class NovaTarefaComponent implements OnInit {
 
      this.service.getUserId(this.idstorage).subscribe((user)=>{
       this.user = user
+       this.nomevendedor  = this.user[0].nome;
     });
   }
 
@@ -75,6 +77,7 @@ export class NovaTarefaComponent implements OnInit {
       id: idHistorico,
       atividade: this.tarefa.atividade,
       idVendedor: this.idstorage,
+      nomevendedor: this.nomevendedor ,
       cliente: this.tarefa.cliente,
       data:this.tarefa.data,
       hora:this.tarefa.hora,
