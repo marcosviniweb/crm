@@ -1,7 +1,7 @@
 <div class="content" *ngIf="showHeader == true">
   <div class="userBar">
     <div class="row">
-      <div class="logo"><img src="../../../assets/img/logo.png" height="40px"></div>
+      <div class="logo" [routerLink]="['/home']"><img src="../../../assets/img/logo.png" height="40px"></div>
       <div class="search-bar">
         <form>
           <fa-icon [icon]="searchIcon"></fa-icon>

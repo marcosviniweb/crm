@@ -13,6 +13,10 @@
         <label for="link">Link da pagina</label>
         <input type="text" id="link" name="link" [(ngModel)]="landing.link" >
       </div>
+      <div class="form">
+        <label for="linkobg">Link da pagina de obrigado</label>
+        <input type="text" id="linkobg" name="linkobg" [(ngModel)]="landing.linkobg" >
+      </div>
       <div class="form-select">
         <label for="funnel">Selecione o Funil</label>
         <select name="funil" id="funnel" [(ngModel)]="landing.funil" >
@@ -34,6 +38,11 @@
         <label for="background">Selecione o plano de fundo</label>
         <input type="file" name="background" id="background" (change)="getImageBackground($event)">
         <img [src]="imageSrc" width="50px" height="50px">
+      </div>
+      <div class="form">
+        <label for="logo">Logo</label>
+        <input type="file" name="logo" id="logo" (change)="getLogo($event)">
+        <img [src]="logoSrc" width="50px" height="50px">
       </div>
       <div class="form" >
         <label for="campo">Adicionar campos na Landing Page</label>

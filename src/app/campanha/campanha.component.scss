@@ -38,7 +38,7 @@ main {
   align-items: center;
   margin-right: 100px;
   border-radius: 30px;
-  height: 500px;
+  min-height: 500px;
   width: 30%;
   max-width: 500px;
   background: white;
@@ -82,16 +82,21 @@ main {
     margin-top: 50px;
     height: 35px;
     border: none;
-    width: 200px;
+    min-width: 150px;
     border-radius: 5px;
     text-align: center;
     font-weight: 600;
+    background-color: #3e96f5;
+    color: white;
     cursor: pointer;
   }
-  // button:hover{
-  //   background: #2d6db1;
-  //   color: #eee;
-  // }
+
+  button:disabled{
+    background: #eee;
+    box-shadow: none;
+    color: gray;
+    cursor: default;
+  }
 }
 
 #next{
@@ -161,4 +166,7 @@ span{
 }
 #main{
   background-image:  no-repeat center center / cover !important;
+}
+#logo{
+  margin-top: 10px;
 }

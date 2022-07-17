@@ -40,9 +40,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.headerService.viewEvent.subscribe((event)=> this.viewHeader(event))
+
     let nome = localStorage.getItem('nomeuser')
 
-     this.nome =  JSON.parse(nome!)
+    this.nome =  JSON.parse(nome!)
 
   }
 
@@ -59,7 +60,7 @@ export class HeaderComponent implements OnInit {
     const target = e.target as HTMLInputElement
     const value = target.value
 
-    
+
 
   }
 

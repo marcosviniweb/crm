@@ -26,7 +26,7 @@ const routes: Routes = [
   loadChildren:()=>import('./components/pages/clientes/clientes.module').then(m=>m.ClientesModule)},
 
   {path:'register', component:RegisterComponent, canActivate: [LoginGuard]},
-  {path:'campanha', component: CampanhaComponent, canActivate: [AuthGuard] },
+  {path:'campanha', component: CampanhaComponent},
   {path:'campanha/:id', component: CampanhaComponent}
 ];
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -7,7 +6,6 @@ import { HeaderService } from '../components/header/header.service';
 import { Campanhas } from '../interfaces/campanhas';
 import { Clientes } from '../interfaces/clientes';
 import { IdeaService } from '../service/idea.service';
-import { AngularFireStorage } from '@angular/fire/storage';
 
 
 @Component({
@@ -25,6 +23,7 @@ export class CampanhaComponent implements OnInit {
 
   clientesTeste:any
   background = '';
+  logo = '';
   dadosExibir:Campanhas[]= []
 
 
@@ -35,6 +34,7 @@ export class CampanhaComponent implements OnInit {
   cursos:any
   curso:any
   index:any
+  linkobg: any;
   constructor(
 
     public fireservice: AngularFirestore,
@@ -42,7 +42,6 @@ export class CampanhaComponent implements OnInit {
     public headerService:HeaderService,
     public activeRoute: ActivatedRoute,
     private router: Router,
-    private storage: AngularFireStorage,
   ) { }
 
   ngOnInit() {
@@ -57,7 +56,7 @@ export class CampanhaComponent implements OnInit {
     //   console.log(link);
     // });
     this.id = this.router.url.split('/')[2];
-
+    console.log(this.id)
 
     this.service.getCampanhaId(this.id).subscribe(data => {
 
@@ -73,6 +72,8 @@ export class CampanhaComponent implements OnInit {
         this.cursos = res[0].arrayProd
 
       this.background = this.dadosCampanha.imagePath
+      this.logo = this.dadosCampanha.logoPath
+      this.linkobg = this.dadosCampanha.linkobg
      })
 
     });
