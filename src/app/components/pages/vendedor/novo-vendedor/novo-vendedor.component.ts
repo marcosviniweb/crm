@@ -44,10 +44,10 @@ export class NovoVendedorComponent implements OnInit {
         let dados = [
           {
             id: id,
-            cpf: this.vendedor.cpf,
+            // cpf: this.vendedor.cpf,
             email: this.vendedor.email,
             empresa: this.vendedor.empresa,
-            endereco: this.vendedor.endereco,
+            // endereco: this.vendedor.endereco,
             tipo: 'Vendedor',
             nome: this.vendedor.nome,
             telefone: this.vendedor.telefone,
